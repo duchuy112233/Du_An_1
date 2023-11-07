@@ -1,0 +1,79 @@
+#navbarSupportedContent #center {
+    margin-left: 400px;
+}
+
+#navbarSupportedContent ul li a {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+    color: black;
+}
+#navbarSupportedContent ul li .submenu li a {
+    padding-left: 40px;
+    padding-right: 40px;
+  font-size: 16px;
+  
+}
+#navbarSupportedContent ul li .submenu li a:hover {
+  
+    color: rgb(2, 142, 2);
+    text-shadow: 0 0 1px;
+    
+}
+
+#navbarSupportedContent ul li a:hover {
+    font-size: 20px;
+    color: rgb(2, 142, 2);
+    text-shadow: 0 0 5px;
+}
+
+.container-fluid a:hover {
+    color: rgb(25, 25, 119);
+    text-shadow: 0 0 5px;
+}
+
+.container-fluid a {
+    font-size: 19px;
+    color: rgb(25, 25, 119);
+    text-decoration: none;
+}
+
+.tk {
+    display: flex;
+    gap: 10px;
+}
+
+.gh {
+    margin-left: 20px;
+    margin-right: 60px;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    
+
+}
+
+.submenu li {
+    list-style: none;
+    background-color: ghostwhite;
+    padding: 10px 40px;
+}
+
+
+.submenu li:hover {
+    background-color: gainsboro;        
+}
+
+/* Hiển thị danh sách con khi hover vào mục cha */
+.nav-item:hover .submenu {
+    display: block;
+}
+
+#menu {
+    background-color: gray;
+}
+
+/* Định dạng danh sách con */

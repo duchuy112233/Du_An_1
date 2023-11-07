@@ -1,0 +1,79 @@
+.tendm {
+    margin-bottom: 40px;
+}
+
+.card-body a {
+    background-color: rgb(25, 25, 119);
+    font-size: 17px;
+}
+
+.card-body a:hover {
+    background-color: red;
+}
+
+.card {
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.card .card-img-top {
+    width: 250px;
+    height: 250px;
+    margin-left: 20px;
+    padding: 5px 0px;
+}
+
+#gia1 {
+    color: #009B48;
+    font-size: 20px;
+}
+
+#gia {
+    font-size: 14px;
+}
+
+.card-title {
+    height: 220px;
+    font-size: 20px;
+    text-align: center;
+}
+.card-price{
+    width: 400px;
+}
+
+.tgh {
+
+    color: blue;
+    border: 0px solid white;
+    background-color: white;
+}
+
+.tgh:hover {
+    text-shadow: 0 0 3px;
+    color: red;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-left: 30px;
+}
+
+#them {
+    color: #009B48;
+}
+
+.card-body .heig {
+    height: 60px;
+}
+
+.card-body .heig .name {
+    height: 60px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.center {
+    margin-left: 5%;
+}

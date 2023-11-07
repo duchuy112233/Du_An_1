@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  font-size: 30px;
+}
+
+.footer {
+  margin-top: 100px;
+}
+.list-item-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.list-item-link img {
+  width: 50px;
+  margin-right: 10px;
+}
+.main-web {
+  min-height: 1000px;
+}
+.card-price span:first-child {
+  text-decoration: line-through;
+  color: gray;
+}
+.card-price span:last-child {
+  color: red;
+  font-weight: bold;
+}
+.img-detail {
+  width: 90%;
+}
+.line-through {
+  text-decoration: line-through;
+  color: gray;
+}
+.text-right {
+  width: 100%;
+  text-align: right;
+}
+.w-50 {
+  width: 10rem !important;
+  margin: 20px;
+}
