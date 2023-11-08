@@ -26,7 +26,7 @@
 
             <div class="cent">
                 <br>
-                <h2>ĐÃ ĐẶT HÀNG THÀNH CÔNG jjjjjjjj</h2>             
+                <h2>ĐÃ ĐẶT HÀNG THÀNH</h2>             
                 Đơn hàng sẽ sớm được giao tới tay quý khách <br>
                 Xin chân thành cảm ơn!
             </div>
