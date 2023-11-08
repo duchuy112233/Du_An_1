@@ -1,5 +1,5 @@
 <div class="footer">
-<a href="#"><img src="image/logoweb.jpg" alt=""></a> <br>
+<a href="#"><img src="../image/logoweb.jpg" alt=""></a> <br>
 <span>@ LAPTOPIA</span>
 </div>
 </div>

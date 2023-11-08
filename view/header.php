@@ -12,7 +12,7 @@
     <div class="container">
         <div class="top-header"></div>
         <div class="bottom-header">
-            <a href="index.php"><img src="image/logoweb.jpg"></a>
+            <a href="index.php"><img src="../image/logoweb.jpg"></a>
             <div class="timkiem-header">
                 <form class="timkiem" method="post" action="index.php?act=sanpham">
                     <input type="text" name="kyw" class="form-control" placeholder="Nhập tên sản phẩm" />
