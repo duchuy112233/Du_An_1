@@ -1,0 +1,80 @@
+.chitiet-tong {
+    padding: 50px 300px;
+
+    margin-bottom: 50px;
+
+}
+
+.chitiet-row {
+    display: flex;
+    gap: 50px;
+}
+
+.chitiet-img {
+    border: 1px solid gray;
+    margin-bottom: 30px;
+}
+
+.chitiet-img img {
+    width: 300px;
+    padding: 20px 0px;
+}
+
+.chitiet-thongso li {
+    list-style: none;
+    padding: 5px 0px;
+}
+
+.chitiet-mota {
+    width: 700px;
+}
+
+.chitiet-muahang {
+    padding: 15px 20px;
+    background-color: #009B48;
+    text-align: center;
+    margin-top: 110px;
+    border-radius: 10px;
+
+}
+
+.chitiet-muahang:hover {
+    background-color: red;
+
+}
+
+.chitiet-muahang a {
+    text-decoration: none;
+    color: white;
+
+}
+.binhluan {
+    border: 1px solid gray;
+    height: 400px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.binhluan-name {
+    margin-top: 100px;
+}
+
+.formbinhluan {
+    padding: 20px 50px;
+    float: right;
+}
+
+#nhap {
+    height: 40px;
+    width: 1300px;
+}
+
+.formbinhluan .nut-gui {
+    background-color: #009B48;
+    padding: 10px 10px;
+    color: white;
+    font-weight: bold;
+}
+.formbinhluan .nut-gui:hover {
+    background-color: red;  
+}
