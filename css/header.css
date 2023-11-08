@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+   width: 100%; 
+   margin: 0 auto;
+}
+/* header */
+.top-header{
+height: 30px;
+background-color: #009B48;
+}
+.bottom-header {
+    border-bottom: 1px solid gainsboro;
+    padding: 20px 60px;
+    font-size: 20px;
+    margin-bottom: 15px;
+    display: flex;
+}
+
+.bottom-header img {
+    width: 140px;
+}
+.timkiem-header{
+    display: flex;
+    justify-content: space-between;
+}
+.timkiem input[type="text"]{
+    height: 45px;
+    width: 500px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    margin-left: 200px;
+    padding-left: 5px;
+    outline: none;
+}
+.timkiem input[type="submit"]{
+    height: 45px;
+    border: none;
+    background-color: #dddddd;
+    border-radius: 4px;
+    padding: 0px 10px;
+    cursor: pointer;
+}
+.timkiem input[type="submit"]:hover{
+background-color: #cccccc;
+}
+  /* dangky/dangnhap */
+.form-menu {
+    margin-top: 10px;
+    margin-left: 150px;
+    display: flex;
+    gap: 20px;
+}
+.form-menu a{
+    text-decoration: none;
+    color: #575757;
+}
+.form-menu a i{
+border-radius: 30px;
+border: 1px solid #cccccc;
+padding: 8px;
+}
+.form-menu a:hover i{
+background-color: #cccccc;
+}
+/* MENU */
+.menu {
+    padding: 20px 0;
+    background-color: #dddddd;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.menu .menu-row {
+    display: flex;
+    list-style: none;
+}
+.menu .menu-row .nav-item {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.menu .menu-row .nav-item a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #575757;
+}
+.menu .menu-row .nav-item a:hover {
+    color: #17d570;
+}
+/* Hiển thị danh sách con khi hover vào mục cha */
+.nav-item:hover .submenu {
+    display: block;
+}
+.submenu {
+    display: none;
+    border-radius: 8px;
+    background-color: #ffffff;
+    position: absolute;
+    list-style-type: none;
+    z-index: 1;
+    min-width: 130px;
+    min-height: 100px;
+}
+  .submenu a {
+    padding: 10px;
+    text-decoration: none;
+    display: block; /* Làm cho các mục menu con trở thành khối, để tạo khoảng cách giữa chúng */
+  }
