@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="giaodien/css/header.css">
     <link rel="stylesheet" href="giaodien/css/giaodien.css">
     <link rel="stylesheet" href="giaodien/css/footer.css">
+    <link rel="stylesheet" href="giaodien/css/sanphamct.css">
 </head>
 <body>
     <!-- header -->

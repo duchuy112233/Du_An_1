@@ -5,62 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-        .chitiet-tong {
-            padding: 50px 300px;
-     
-            margin-bottom: 50px;
-
-        }
-
-        .chitiet-row {
-            display: flex;
-            gap: 50px;
-        }
-
-        .chitiet-img {
-            border: 1px solid gray;
-            margin-bottom: 30px;
-        }
-
-        .chitiet-img img {
-            width: 300px;
-            padding: 20px 0px;
-        }
-
-        .chitiet-thongso li {
-            list-style: none;
-            padding: 5px 0px;
-        }
-
-        .chitiet-mota {
-            width: 700px;
-        }
-
-        .chitiet-muahang {
-            padding: 15px 20px;
-            background-color: #009B48;
-            text-align: center;
-            margin-top: 110px;
-            border-radius: 10px;
-
-        }
-
-        .chitiet-muahang:hover {
-            background-color: red;
-
-        }
-
-        .chitiet-muahang a {
-            text-decoration: none;
-            color: white;
-
-        }
-    </style>
 </head>
 
 <body>
-    <div class="container">
+    <div class="mr-banner">
         <div class="">
             <div class="chitiet-tong">
                 <div class="chitiet-row">
@@ -118,7 +66,7 @@
                 <div class="container-fuild">
                     <div class="row">
                         <!-- SP1 -->
-                        <div class="card" style="width: 18rem">
+                        <div class="card" >
                             <a href="index.php?act=sanphamct"> <img src="image/sp1.jpg" class="imagesp" /></a>
 
                             <div class="card-body">
@@ -138,7 +86,7 @@
                             </div>
                         </div>
                         <!-- SP2 -->
-                        <div class="card" style="width: 18rem">
+                        <div class="card" >
                             <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
 
                             <div class="card-body">
@@ -158,7 +106,7 @@
                             </div>
                         </div>
                         <!-- SP3 -->
-                        <div class="card" style="width: 18rem">
+                        <div class="card" >
                             <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
 
                             <div class="card-body">
@@ -178,7 +126,7 @@
                             </div>
                         </div>
                         <!-- SP4 -->
-                        <div class="card" style="width: 18rem">
+                        <div class="card" >
                             <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
 
                             <div class="card-body">
@@ -198,7 +146,7 @@
                             </div>
                         </div>
                         <!-- SP5 -->
-                        <div class="card" style="width: 18rem">
+                        <div class="card" >
                             <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
 
                             <div class="card-body">
@@ -222,7 +170,16 @@
             </div>
             <hr>
 
-       <?php include 'binhluan/binhluan.php' ?>
+            <h4 class="binhluan-name">BÌNH LUẬN</h4>
+
+
+<div class="binhluan">
+    <form class="formbinhluan" action="" method="post">
+        <input type="text" id="nhap">
+        <input class="nut-gui" type="submit" name="guibinhluan" value="Gửi">
+
+    </form>
+</div>
         </div>
     </div>
 
