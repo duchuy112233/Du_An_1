@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,20 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dự án 01</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="giaodien/css/header.css">
     <link rel="stylesheet" href="giaodien/css/giaodien.css">
 </head>
-
 <body>
-     <!-- header -->
-     <?php include "giaodien/headertop.php"; ?>
     <!-- header -->
     <?php include "giaodien/header.php"; ?>
-    <!-- MENU -->
-    <?php include "giaodien/menu.php"; ?>
-    <!-- ---- -->
+    <!-- end header -->
     <div class="main">
         <?php
-
         if (isset($_GET['act']) && ($_GET['act']) != "") {
             $act = ($_GET['act']);
             switch ($act) {
@@ -37,7 +29,6 @@
         } else {
             include "giaodien/home.php";
         }
-
         ?>
     </div>
 

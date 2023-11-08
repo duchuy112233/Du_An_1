@@ -9,9 +9,13 @@
 </head>
 
 <body>
-    <div class="container">
-        <?php include "giaodien/banner.php"; ?>
-    </div>
+<div class="mr-banner"> 
+<div class="banner">
+        <img id="banner" src="image/anh1.jpg">
+        <button class="pre" onclick="pre()">&#10094;</button>
+        <button class="next" onclick="next()">&#10095;</button>
+</div>
+</div>
 
     <div class="top-home">
         <div class="icon-top">
