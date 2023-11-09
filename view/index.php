@@ -7,6 +7,9 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
         case 'sanphamct':
             include "sanphamct.php";
             break;
+        case 'signinup':
+            include "signinup.php";
+            break;
         default:
             include "home.php";
             break;

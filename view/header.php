@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/sanphamct.css">
+    <link rel="stylesheet" href="../css/signinup.css">
 </head>
 <body>
     <div class="container">
