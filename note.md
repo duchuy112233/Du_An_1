@@ -1,1 +1,0 @@
-cái này có hơi quá không các ông ?
