@@ -7,7 +7,7 @@
     margin: 0 auto;
 }
 .headeradmin {
-    background-color: #329A45;
+    background-color: #ffd700;
     color: #fff;
     border-radius: 4px;
     padding: 10px 20px;
@@ -17,7 +17,7 @@
     font-size: 2vw;
 }
 .menu_admin {
-    background-color: #329A45;
+    background-color: #009879;
     border-radius: 4px;
     display: flex;
     justify-content: space-between;
@@ -39,13 +39,13 @@
 }
 
 .menu_admin ul li a:hover {
-    color: #ff6600;
+    color: #00cc99;
 }
 .home{
     text-decoration: none;
     color: #fff;
     padding-right: 10px;
-    }
-    .home:hover{
-    color: #ff6600;
-    }
+}
+.home:hover{
+    color: #00cc99;
+}
