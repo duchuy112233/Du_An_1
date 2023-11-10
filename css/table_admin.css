@@ -67,7 +67,7 @@ input[type="password"]:focus,
 input[type="email"]:focus,
 input[type="number"]:focus,
 input[type="file"]:focus{
-    border: #00CC99;
+    border: #008979;
 	box-shadow: 0 0 1px 1.5px #00CC99;
 	box-shadow: 0 0 0 3px -moz-mac-focusring;
 	color: #222; 
