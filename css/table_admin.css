@@ -34,7 +34,7 @@ color: #009879;
 .formcontent input[type="submit"],
 .formcontent input[type="reset"],
 .formcontent input[type="button"] {
-    border: 1px solid #ccc;
+    border: 1px solid #009879;
     border-radius: 4px;
     padding: 5px 10px;
     background-color: white;
@@ -44,6 +44,32 @@ color: #009879;
 .formcontent input[type="button"]:hover {
     background-color: #009879;
     color: #fff;
-    border: none;
-    cursor: pointer;
+}
+.formcontent input[type="text"],
+.formcontent input[type="number"],
+.formcontent input[type="email"],
+.formcontent input[type="password"],
+.formcontent input[type="file"]{
+    width: 100%;
+    border: 1px solid #009879;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+select{
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+select:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="file"]:focus{
+    border: #00CC99;
+	box-shadow: 0 0 1px 1.5px #00CC99;
+	box-shadow: 0 0 0 3px -moz-mac-focusring;
+	color: #222; 
+	outline: none; 
 }

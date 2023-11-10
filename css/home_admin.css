@@ -1,14 +1,17 @@
-.home1{
+.home1 {
     text-decoration: none;
-    }
-    .home1:hover{
+}
+
+.home1:hover {
     text-decoration: underline;
-    }
-    .dm{
+}
+
+.dm {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    }
-    .dm li{
+}
+
+.dm li {
     margin-bottom: 3px;
-    }
+}
