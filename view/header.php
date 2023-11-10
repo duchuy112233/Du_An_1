@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dự án 01</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/home.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/sanphamct.css">
-    <link rel="stylesheet" href="../css/signinup.css">
+    <link rel="stylesheet" href="../css/view.css">
 </head>
 <body>
     <div class="container">
@@ -23,7 +19,7 @@
                 </form>
                 <div class="form-menu">
                     <div class="dn">
-                        <a href="#"><i class="fa-solid fa-user" style="color: #000000;"></i> Tài khoản </i></a>
+                        <a href="index.php?act=signinup"><i class="fa-solid fa-user" style="color: #000000;"></i> Tài khoản </i></a>
                     </div>
                     <div class="giohang-icon">
                         <a href="index.php?act=addtocart"> <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i> Giỏ hàng</a>
