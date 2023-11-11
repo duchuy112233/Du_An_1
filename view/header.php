@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="../css/view.css">
 </head>
+
 <body>
     <div class="container">
         <div class="top-header"></div>
@@ -29,27 +31,32 @@
         </div>
 
         <div class="menu">
-        <ul class="menu-row">
-            <li class="nav-item">
-                <a href="index.php">TRANG CHỦ</a>
-            </li>
-            <li class="nav-item">
-                <a href="#">DANH MỤC</a>
-                <ul class="submenu">
-                    <!-- Danh mục -->
-                    <li><a href="#">lap top</a></li>
-                    <li><a href="#">lap top</a></li>
-                    <li><a href="#">lap top</a></li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a href="index.php?act=lienhe">LIÊN HỆ</a>
-            </li>
-            <li class="nav-item">
-                <a href="index.php?act=gopy">GÓP Ý</a>
-            </li>
-            <li class="nav-item">
-                <a href="index.php?act=hoidap">HỎI ĐÁP</a>
-            </li>
-        </ul>
-    </div>
+            <ul class="menu-row">
+                <li class="nav-item">
+                    <a href="index.php">TRANG CHỦ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">DANH MỤC</a>
+                    <ul class="submenu">
+                        <!-- Danh mục -->
+                        <?php
+                        $dsdm = loadall_danhmuc();
+                        foreach ($dsdm as $dm) {
+                            extract($dm);
+                            $linkdm = "index.php?act=sanpham&iddm=" . $id;
+                            echo '<li><a  href="' . $linkdm . '">' . $name . '</a></li>';
+                        }
+                        ?>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?act=lienhe">LIÊN HỆ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?act=gopy">GÓP Ý</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?act=hoidap">HỎI ĐÁP</a>
+                </li>
+            </ul>
+        </div>
