@@ -21,7 +21,7 @@
                 </form>
                 <div class="form-menu">
                     <div class="dn">
-                        <a href="index.php?act=signinup"><i class="fa-solid fa-user" style="color: #000000;"></i> Tài khoản </i></a>
+                        <a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> Tài khoản </i></a>
                     </div>
                     <div class="giohang-icon">
                         <a href="index.php?act=addtocart"> <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i> Giỏ hàng</a>
@@ -39,14 +39,9 @@
                     <a class="nav-link" href="#">DANH MỤC</a>
                     <ul class="submenu">
                         <!-- Danh mục -->
-                        <?php
-                        $dsdm = loadall_danhmuc();
-                        foreach ($dsdm as $dm) {
-                            extract($dm);
-                            $linkdm = "index.php?act=sanpham&iddm=" . $id;
-                            echo '<li><a  href="' . $linkdm . '">' . $name . '</a></li>';
-                        }
-                        ?>
+                        <?php foreach($listdm as $dm) : ?>
+                            <li><a href=""><?php echo $dm['name'] ?></a></li>
+                        <?php endforeach ?>
                     </ul>
                 </li>
                 <li class="nav-item">
