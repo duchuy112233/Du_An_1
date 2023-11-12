@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="../css/view.css">
 </head>
-
 <body>
     <div class="container">
         <div class="top-header"></div>
@@ -20,15 +18,23 @@
                     <input type="submit" name="timkiem" value="Tìm Kiếm">
                 </form>
                 <div class="form-menu">
-                    <div class="dn">
+                    <div class="dn-header">
                         <?php if(isset($_SESSION['user'])) { ?>
-                            <a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> <?php echo $_SESSION['user']['user'] ?> </i></a>
+                            <li class="nav-item"><a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> <?php echo $_SESSION['user']['user'] ?> </i></a>
+                            <ul class = "submenu" >
+                                <li class="header-tk"> <a  href="#">Quên mật khẩu </a></li>
+                                <li class="header-tk"> <a  href="#">Cập nhật tài khoản </a></li>
+                                <?php if($_SESSION['user']['role']==1){ ?>
+                                <li class="header-tk"> <a  href="../admin/index.php">Đăng nhập vào ADMIN</a></li>
+                                <?php } ?>
+                                <li class="header-tk"> <a  href="index.php?act=dangxuat">Đăng xuất</a></li>
+                            </ul></li>
                         <?php } else { ?>
-                            <a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> Tài khoản </i></a>
+                            <a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> Đăng nhập </i></a>
                         <?php } ?> 
                     </div>
                     <div class="giohang-icon">
-                        <a href="index.php?act=addtocart"> <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i> Giỏ hàng</a>
+                        <a href="index.php?act=addtocart"> <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i> Giỏ hàng </a>
                     </div>
                 </div>
             </div>
@@ -56,9 +62,6 @@
                 </li>
                 <li class="nav-item">
                     <a href="index.php?act=hoidap">HỎI ĐÁP</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.php?act=dangxuat">cmm kiên</a>
                 </li>
             </ul>
         </div>

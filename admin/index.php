@@ -53,6 +53,19 @@ if(isset($_GET['act']) && !empty($_GET['act'])){
                 header("location: index.php?act=listdm");
             }
             break;
+        //Phần tài khoản
+        case 'listtk':
+            break;
+        case 'addtk':
+            break;
+        case 'edittk':
+            break;
+        case 'deletetk':
+            if(isset($_GET['idkh']) && $_GET['idkh'] > 0){
+                delete_taikhoan($_GET['idkh']);
+                header("location: index.php?act=listtk");
+            }
+            break;
         default:
         include "home.php";
             break;

@@ -30,7 +30,6 @@ background-color: #009B48;
     justify-content: space-between;
 }
 .timkiem input[type="text"]{
-    text-align: center;
     height: 45px;
     width: 500px;
     border: 1px solid #cccccc;
@@ -69,6 +68,16 @@ padding: 8px;
 }
 .form-menu a:hover i{
 background-color: #cccccc;
+}
+.form-menu .dn-header li{
+list-style-type: none;
+}
+.header-tk a{
+    font-size: 16px;
+    color: black;
+}
+.header-tk a:hover{
+    color: red;
 }
 /* MENU */
 .menu {
