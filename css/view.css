@@ -347,18 +347,16 @@ border: none;
 }
 /* Form đăng nhâp/đăng ký */
 #wrapper{
-      display: grid;
-      place-items: center;
-      margin: 0;
-      background-color: #fff;
+text-align: center;
+background-color: #fff;
 }
 #wrapper form{
-border: 1px solid #dadce0;
-border-radius: 4px;
+border-radius: 10px;
 padding: 30px;
 box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
         0 10px 10px rgba(0, 0, 0, 0.22);
 width: 45%;
+margin: auto;
 }
 #wrapper h3{
 text-align: center;
@@ -382,28 +380,35 @@ font-size: 13px;
 .form-group{
 margin-bottom: 15px;
 }
-#wrapper input{
-height: 50px;
+#wrapper input[type="text"],
+#wrapper input[type="email"],
+#wrapper input[type="password"]{
 width: 100%;
 outline: none;
-border: 1px solid #dadce0;
-padding: 10px;
-border-radius: 4px;
-font-size: inherit;
+border: none;
+padding: 12px 15px;
 color: #202114;
-background-color: #dddddd;
+background-color: #eee;
 }
 #wrapper input[type="text"]:focus,
 #wrapper input[type="password"]:focus,
 #wrapper input[type="email"]:focus{
-	box-shadow: 0 0 1px 1.5px #1a73e8;
+	border: 2px solid #202114;
 	color: #222; 
 	outline: none; 
 }
 #wrapper form input[type="submit"]{
-background: #1a73e8;
+/* background: #1a73e8;
 color: #fff;
-cursor: pointer;
+cursor: pointer; */
+border-radius: 20px;
+border: 1px solid #009B48;
+background-color: #009B48;
+color: #FFFFFF;
+font-size: 12px;
+font-weight: bold;
+padding: 12px 45px;
+letter-spacing: 1px;
 }
 #wrapper form input[type="submit"]:hover{
 opacity: 0.85;

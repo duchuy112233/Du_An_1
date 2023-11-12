@@ -16,7 +16,7 @@
         }?>
         </p><br>
         <p>Bạn chưa có tài khoản? <a href="index.php?act=dangky"><span class="dk">Đăng kí ngay</span></a></p><br>
-        <span class="span">Hoặc đăng nhập</span>
+        <span class="span">Hoặc sử dụng phương pháp đăng nhập</span>
         <div class="social-container">
                 <a href="#" class="social"><i class="fa-brands fa-facebook" style="color: #000000;"></i></i></a>
                 <a href="#" class="social"><i class="fab fa-google-plus-g" style="color: #000000;"></i></a>
