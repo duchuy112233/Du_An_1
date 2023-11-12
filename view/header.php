@@ -18,13 +18,54 @@
                 <form class="timkiem" method="post" action="index.php?act=sanpham">
                     <input type="text" name="kyw" class="form-control" placeholder="Nhập tên sản phẩm" />
                     <input type="submit" name="timkiem" value="Tìm Kiếm">
+                    <style>
+                        .nav-item {
+                            list-style: none;
+                        }
+                        .header-tk a{
+                            font-size: 16px;
+                            color: black;
+                        }
+                        .header-tk a:hover{
+                           
+                            color: red;
+                        }
+                    </style>
                 </form>
                 <div class="form-menu">
-                    <div class="dn">
-                        <a href="index.php?act=signinup"><i class="fa-solid fa-user" style="color: #000000;"></i> Tài khoản </i></a>
+                    <div>
+                        <?php
+
+
+                        if (isset($_POST['dangnhap']) && $_POST['dangnhap']) {
+                            $user = $_POST['user'];
+                            $pass = $_POST['pass'];
+                        } else {
+                            if (isset($_SESSION['user'])) {
+                                echo '<div>';
+                                echo ' <li class="nav-item">
+                                <a href="index.php?act=dn"><i class="fa-solid fa-user"></i>
+                                <ul class = "submenu" >
+
+                                    <li class="header-tk"> <a  href="#">Quên mật khẩu </a></li>
+                                    <li class="header-tk"> <a  href="#">Cập nhật tài khoản </a></li>
+                                    <li class="header-tk"> <a  href="../admin/index.php">Đăng nhập vào ADMIN</a></li>
+
+                                </ul>
+                                
+                                
+                                </a> </li>';
+                                echo '</div>';
+                            } else {
+                                echo '<div >';
+                                echo '<a href="index.php?act=dn"><i class="fa-solid fa-user" style="color: #000000;"></i> Đăng nhập </i></a>';
+                                echo '</div>';
+                            }
+                        }
+                        ?>
                     </div>
                     <div class="giohang-icon">
-                        <a href="index.php?act=addtocart"> <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i> Giỏ hàng</a>
+                        <a href="index.php?act=addtocart"> <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i></a>
                     </div>
                 </div>
             </div>
