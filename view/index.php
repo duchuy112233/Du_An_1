@@ -41,6 +41,7 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 $login=dangnhap($email,$pass);
                 if(is_array($login)){
                 $_SESSION['user']=$login;
+                header("Location: index.php");
                 }
                 else if(empty($_POST['email']) || empty($_POST['pass'])){
                 $thongbao3="Vui lòng nhập đầy đủ!";
@@ -50,6 +51,10 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 }
                 }
                 include "taikhoan/dangnhap.php";
+            break;
+        case 'dangxuat':
+            session_unset();
+            include "home.php";
             break;
         default:
             include "home.php";

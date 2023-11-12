@@ -21,7 +21,11 @@
                 </form>
                 <div class="form-menu">
                     <div class="dn">
-                        <a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> Tài khoản </i></a>
+                        <?php if(isset($_SESSION['user'])) { ?>
+                            <a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> <?php echo $_SESSION['user']['user'] ?> </i></a>
+                        <?php } else { ?>
+                            <a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> Tài khoản </i></a>
+                        <?php } ?> 
                     </div>
                     <div class="giohang-icon">
                         <a href="index.php?act=addtocart"> <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i> Giỏ hàng</a>
@@ -52,6 +56,9 @@
                 </li>
                 <li class="nav-item">
                     <a href="index.php?act=hoidap">HỎI ĐÁP</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?act=dangxuat">cmm kiên</a>
                 </li>
             </ul>
         </div>
