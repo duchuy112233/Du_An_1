@@ -11,11 +11,11 @@
     <div class="container">
         <div class="top-header"></div>
         <div class="bottom-header">
-            <a href="index.php"><img src="../image/logoweb.jpg"></a>
+            <a href="index.php"><img src="../image/logo1.png"></a>
             <div class="timkiem-header">
-                <form class="timkiem" method="post" action="index.php?act=sanpham">
-                    <input type="text" name="kyw" class="form-control" placeholder="Nhập tên sản phẩm" />
-                    <input type="submit" name="timkiem" value="Tìm Kiếm">
+                <form class="search-box" method="post" action="#">
+                    <input type="text" name="kyw" placeholder="Nhập tên sản phẩm...">
+                    <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i></button>
                 </form>
                 <div class="form-menu">
                     <div class="dn-header">
