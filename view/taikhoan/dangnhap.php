@@ -2,11 +2,9 @@
 <h3>Đăng nhập</h3><br>
     <form action="index.php?act=dangnhap" method="post">
         <div class="form-group">
-            <p><label for="">Email</label></p>
             <input type="email" name="email" placeholder="Email">
         </div>
         <div class="form-group">
-            <p><label for="">Mật khẩu</label></p>
             <input type="password" name="pass" placeholder="Mật khẩu">
         </div>
         <a href=""><p class="mk">Quên mật khẩu?</p></a><br>

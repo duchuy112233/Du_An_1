@@ -356,7 +356,9 @@ border: none;
 border: 1px solid #dadce0;
 border-radius: 4px;
 padding: 30px;
-box-shadow: 0 0 20px rgba(0,0,0,0.15);
+box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+width: 45%;
 }
 #wrapper h3{
 text-align: center;
@@ -382,13 +384,14 @@ margin-bottom: 15px;
 }
 #wrapper input{
 height: 50px;
-width: 300px;
+width: 100%;
 outline: none;
 border: 1px solid #dadce0;
 padding: 10px;
 border-radius: 4px;
 font-size: inherit;
 color: #202114;
+background-color: #dddddd;
 }
 #wrapper input[type="text"]:focus,
 #wrapper input[type="password"]:focus,
