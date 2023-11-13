@@ -7,7 +7,16 @@
   <title>Siêu thị trực tuyến</title>
   <link rel="stylesheet" href="css/style.css">
   
- 
+ <style>
+ .mb-3{
+  width: 400px;
+ }
+ .form-label{
+  float: left;
+  margin-top: 10px;
+  margin-bottom: 5px;
+ }
+ </style>
 </head>
 <body>
   <div style="height: 700px;">
@@ -21,7 +30,7 @@
           extract($_SESSION['user']);
         }
         ?>
-        <form action="index.php?act=edit_taikhoan" method="post">
+        <form class="form-edit" action="index.php?act=edit_taikhoan" method="post">
       
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email</label>
@@ -44,7 +53,8 @@
             <input type="text" name="tel" class="form-control" value="<?= $tel ?>" />
           </div>
           <input type="hidden" name="id" value="<?= $id ?>">
-          <input type="submit" name="capnhat" class="btn btn-primary" value="Cập nhật"></input>
+         
+          <button type="submit" name="capnhat" value="Đăng nhập">Cập nhật</button>
         </form>
         <br>
         <div class="tb">
