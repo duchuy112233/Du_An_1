@@ -10,63 +10,90 @@
    margin: 0 auto;
 }
 /* header */
-.top-header{
-height: 30px;
-background-color: #009B48;
+.top-header {
+    height: 30px;
+    background-color: #009B48;
 }
+
 .bottom-header {
     border-bottom: 1px solid gainsboro;
-    padding: 20px 60px;
-    font-size: 20px;
+    padding: 10px 25px 10px 50px;
     margin-bottom: 15px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .bottom-header img {
     width: 140px;
 }
-.timkiem-header{
+
+.timkiem-header {
+    display: flex;
+}
+
+.search-box {
+    border: 1px solid #202114;
+    margin-left: 5px;
     display: flex;
     justify-content: space-between;
-}
-.timkiem input[type="text"]{
+    align-items: center;
+    border-radius: 30px;
     height: 45px;
-    width: 500px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    margin-left: 200px;
-    padding-left: 5px;
+    margin-right: 210px;
+    margin-left: -1000px;
+}
+
+.search-box input[type="text"] {
     outline: none;
-}
-.timkiem input[type="submit"]{
-    height: 45px;
     border: none;
-    background-color: #dddddd;
-    border-radius: 4px;
-    padding: 0px 10px;
+    background: none;
+    padding: 10px 15px;
+    min-width: 500px;
+    font-style: italic;
+}
+
+.search-box .search-btn {
+    background-color: #fff;
+    border: none;
+    padding: 12px;
     cursor: pointer;
+    border-radius: 50%;
 }
-.timkiem input[type="submit"]:hover{
-background-color: #cccccc;
-}
-  /* dangky/dangnhap phần header */
+
+/* dangky/dangnhap phần header */
 .form-menu {
     margin-top: 10px;
-    margin-left: 150px;
     display: flex;
+    justify-content: space-between;
     gap: 20px;
 }
-.form-menu a{
+
+.form-menu a {
     text-decoration: none;
     color: #575757;
 }
-.form-menu a i{
-border-radius: 30px;
-border: 1px solid #cccccc;
-padding: 8px;
+
+.form-menu a i {
+    border-radius: 30px;
+    border: 1px solid #cccccc;
+    padding: 8px;
 }
-.form-menu a:hover i{
-background-color: #cccccc;
+
+.form-menu a:hover i {
+    background-color: #cccccc;
+}
+
+.form-menu .dn-header li {
+    list-style-type: none;
+}
+
+.header-tk a {
+    color: #575757;
+}
+
+.header-tk a:hover {
+    color: #17d570;
 }
 /* MENU */
 .menu {

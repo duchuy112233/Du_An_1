@@ -7,69 +7,56 @@
     <title>Dự án 01</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="../css/view.css">
-</head>
+    <style>
+        .nav-item {
+            list-style: none;
+        }
 
+        .header-tk a {
+            font-size: 16px;
+            color: black;
+        }
+
+        .header-tk a:hover {
+
+            color: red;
+        }
+    </style>
+</head>
 <body>
     <div class="container">
         <div class="top-header"></div>
         <div class="bottom-header">
             <a href="index.php"><img src="../image/logoweb.jpg"></a>
             <div class="timkiem-header">
-                <form class="timkiem" method="post" action="index.php?act=sanpham">
-                    <input type="text" name="kyw" class="form-control" placeholder="Nhập tên sản phẩm" />
-                    <input type="submit" name="timkiem" value="Tìm Kiếm">
-                    <style>
-                        .nav-item {
-                            list-style: none;
-                        }
-                        .header-tk a{
-                            font-size: 16px;
-                            color: black;
-                        }
-                        .header-tk a:hover{
-                           
-                            color: red;
-                        }
-                    </style>
+                <form class="search-box" method="post" action="#">
+                    <input type="text" name="kyw" placeholder="Nhập tên sản phẩm...">
+                    <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i></button>
                 </form>
                 <div class="form-menu">
-                    <div>
-                        <?php
-
-
-                        if (isset($_POST['dangnhap']) && $_POST['dangnhap']) {
-                            $user = $_POST['user'];
-                            $pass = $_POST['pass'];
-                        } else {
-                            if (isset($_SESSION['user'])) {
-                                echo '<div>';
-                                echo ' <li class="nav-item">
-                                <a href="index.php?act=dn"><i class="fa-solid fa-user"></i>
-                                <ul class = "submenu" >
-
-                                    <li class="header-tk"> <a  href="#">Quên mật khẩu </a></li>
-                                    <li class="header-tk"> <a  href="#">Cập nhật tài khoản </a></li>
-                                    <li class="header-tk"> <a  href="../admin/index.php">Đăng nhập vào ADMIN</a></li>
-
+                    <div class="dn-header">
+                        <?php if (isset($_SESSION['user'])) { ?>
+                            <li class="nav-item"><a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> <?php echo $_SESSION['user']['user'] ?> </i></a>
+                                <ul class="submenu">
+                                    <li class="header-tk"> <a href="#">Quên mật khẩu </a></li>
+                                    <li class="header-tk"> <a href="#">Cập nhật tài khoản </a></li>
+                                    <?php if ($_SESSION['user']['role'] == 1) { ?>
+                                        <li class="header-tk"> <a href="../admin/index.php">Đăng nhập vào ADMIN</a></li>
+                                    <?php } ?>
+                                    <li class="header-tk"> <a href="index.php?act=dangxuat">Đăng xuất</a></li>
                                 </ul>
-                                
-                                
-                                </a> </li>';
-                                echo '</div>';
-                            } else {
-                                echo '<div >';
-                                echo '<a href="index.php?act=dn"><i class="fa-solid fa-user" style="color: #000000;"></i> Đăng nhập </i></a>';
-                                echo '</div>';
-                            }
-                        }
-                        ?>
+                            </li>
+                        <?php } else { ?>
+                            <a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> Đăng nhập </i></a>
+                        <?php } ?>
                     </div>
                     <div class="giohang-icon">
-                        <a href="index.php?act=addtocart"> <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i></a>
+                        <a href="index.php?act=addtocart"> <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i> Giỏ hàng </a>
                     </div>
                 </div>
             </div>
         </div>
+
 
         <div class="menu">
             <ul class="menu-row">
