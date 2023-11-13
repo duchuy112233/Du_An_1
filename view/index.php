@@ -52,6 +52,16 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 }
                 include "taikhoan/dangnhap.php";
             break;
+        case 'doimk':
+            include "taikhoan/doimk.php";
+            break;
+        case 'quenmk':
+            if(isset($_POST['quenmk'])){
+                $email=$_POST['email'];
+                $sendMail=sendMail($email);
+                }
+            include "taikhoan/quenmk.php";
+            break;
         case 'dangxuat':
             session_unset();
             header("location: index.php");
