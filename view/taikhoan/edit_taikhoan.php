@@ -10,11 +10,12 @@
  
 </head>
 <body>
-  <div style="height: 900px;">
+  <div style="height: 700px;">
     <!-- header -->
-    <div class="row mt-4">
-      <div class="col-md-4 offset-md-4">
-        <h5 class="text-center">CẬP NHẬT TÀI KHOẢN</h5>
+    <div class="body">
+      <h2 class="text-center">CẬP NHẬT TÀI KHOẢN</h2>
+    <div class="container-sign" id="container-sign">
+        
         <?php
         if (isset($_SESSION['user']) && (is_array($_SESSION['user']))) {
           extract($_SESSION['user']);
