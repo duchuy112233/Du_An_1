@@ -13,7 +13,7 @@
   <div style="height: 700px;">
     <!-- header -->
     <div class="body">
-      <h2 class="text-center">CẬP NHẬT TÀI KHOẢN</h2>
+      <h2 class="text-center">CẬP NHẬT TÀI KHOẢN</h2><br>
     <div class="container-sign" id="container-sign">
         
         <?php
