@@ -25,20 +25,20 @@ function insert_taikhoan($email, $user, $pass)
     values ('$email','$user','$pass')";
     pdo_execute($sql);
 }
-function check_user($user, $pass)
-{
-    $sql = "select * from tai_khoan 
-     where user = '" . $user . "' AND pass = '" . $pass . "' ";
-    $sp = pdo_query_one($sql);
-    return $sp;
+
+function check_email($email,$pass) {
+    $sql="SELECT * FROM tai_khoan WHERE email='$email' and pass='$pass'";
+    $taikhoan = pdo_query_one($sql);
+    return $taikhoan;
 }
-function check_email($email)
+function check_email_mk($email)
 {
     $sql = "select * from 
     tai_khoan where email = '" . $email . "' ";
     $sp = pdo_query_one($sql);
     return $sp;
 }
+
 
 function update_taikhoanAD($id, $user, $pass, $email, $address, $tel, $role)
 {
@@ -62,12 +62,3 @@ function loadone_taikhoan($id)
     return $sp;
 }
 
-function load_tentk($id){
-    if($id>0){
- $sql = "select * from tai_khoan 
- where id = ".$id;
-    $ten = pdo_query_one($sql);
-    extract ($ten);
-    return $name;
-    }else {return "";}
-}

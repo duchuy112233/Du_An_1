@@ -3,16 +3,18 @@
     <!-- sign in  -->
     <!-- Dang nhap -->
     <?php
-    if (isset($_SESSION['user'])) {
+    if (isset($_SESSION['user'])  ) {
         extract($_SESSION['user']);
     ?>
         <h2>Thông tin tài khoản</h2><br>
         <div class="container-sign" id="container-sign">
+
             <div style="font-size: 20px; padding: 10px 20px;">
                 Xin chào
                 <strong style="color: green;"><?= $user ?></strong> !
-
+                <img src="" alt="">
             </div>
+        
             <div style="padding: 0px 20px;">
                 <li>
                     <a href="index.php?act=quenmk">Quên mật khẩu</a>
@@ -49,7 +51,7 @@
                         <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                     <span>Sử dụng phương thức đăng nhập khác</span>
-                    <input name="user" type="text" placeholder="Tên Đăng nhập" />
+                    <input name="email" type="text" placeholder="Email" />
                     <input name="pass" type="password" placeholder="Password" />
                     <div style="color: red; font-size: 12px; font-weight: 500;">
                         <?php
