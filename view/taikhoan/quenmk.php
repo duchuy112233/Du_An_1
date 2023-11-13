@@ -6,52 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .tb{
+        .tb {
             font-weight: bold;
             color: green;
         }
-     
-        .form-mk .guimk{
+    
+        .form-mk .guimk {
             border-radius: 10px;
             background-color: blue;
             width: 50px;
-             padding: 10px 10px;
+            padding: 10px 10px;
             color: #fff;
-           
+
         }
-        .form-mk .guimk:hover
-        {
+
+        .form-mk .guimk:hover {
             background-color: aqua;
             color: black;
-           
+
         }
-        .form-mk .social-container input{
+
+        .form-mk .social-container input {
             width: 500px;
             border-radius: 10px;
             background-color: #fff;
             border: 1px solid black;
         }
-     
+
+        .form-label {
+            float: left;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        .quenmk-gui:hover{
+            background-color: red;
+        }
     </style>
 </head>
 
-<body >
+<body>
 
-        <div class="body">
+    <div class="body">
         <h2>QUÊN MẬT KHẨU</h2><br>
-            <div id="container-sign">
-                <form class="form-mk" action="index.php?act=quenmk" method="post">
-                    <div class="social-container">
-                        <label for="exampleInputEmail1" class="form-label">Email</label> <br>
-                        <input type="text" class="form-control" id="exampleInputEmail1" name="email" />
-                    </div>
-                    <div class="">
-                        <span>Đã có tài khoản? </span>
-                        <a href="index.php">Đăng nhập!</a>
-                    </div>
-                    <input class = "guimk" type="submit" name="guiemail" value="Gửi"></input>
-                </form>
-                <br>
+        <div class="container-sign">
+            <form class="form-mk" action="index.php?act=quenmk" method="post">
+         
                 <div class="tb">
                     <?php
                     if (isset($thongbao) && ($thongbao != "")) {
@@ -59,9 +58,23 @@
                     }
                     ?>
                 </div>
-            </div>
+                <div class="social-container">
+                    <label for="exampleInputEmail1" class="form-label">Email</label> <br>
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="email" />
+                </div>
+                <div class="">
+                    <span>Đã có tài khoản? </span>
+                    <a href="index.php">Đăng nhập!</a>
+                </div>
+                <br>
+                <button class="quenmk-gui" type="submit" name="guiemail" value="Gửi">Gửi</button>
+
+              
+            </form>
+
         </div>
-   
+    </div>
+
 </body>
 
 </html>
