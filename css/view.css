@@ -140,7 +140,7 @@
     list-style-type: none;
     z-index: 1;
     min-width: 130px;
-    min-height: 100px;
+    min-height: 50px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
         0 10px 10px rgba(0, 0, 0, 0.22);
 }
@@ -563,7 +563,65 @@ text-decoration: none;
     text-decoration: underline;
 }
 /* Form đổi mật khẩu */
+#wrapper-2 {
+    background-color: #fff;
+    color: #575757;
+}
+#wrapper-2 form {
+    border-radius: 3px;
+    padding: 30px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+    width: 45%;
+    margin: auto;
+}
 
+#wrapper-2 h3 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+}
+#wrapper-2 input[type="password"]{
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 12px 15px;
+    color: #202114;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-top: 6px;
+}
+#wrapper-2 input[type="password"]:focus {
+    border: 1px solid #202114;
+    color: #222;
+    outline: none;
+}
+#wrapper-2 form input[type="submit"] {
+    border-radius: 20px;
+    border: 1px solid #009B48;
+    background-color: #009B48;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+}
+
+#wrapper-2 form input[type="submit"]:hover {
+    opacity: 0.85;
+}
+#wrapper-2 a {
+text-decoration: none;
+}
+#wrapper-2 .dk {
+    color: #1a73e8;
+}
+
+#wrapper-2 .dk:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+/* Thông tin tài khoản */
 /* Footer */
 .footer {
     width: 100%;

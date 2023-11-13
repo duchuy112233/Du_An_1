@@ -21,16 +21,21 @@
                     <div class="dn-header">
                         <?php if(isset($_SESSION['user'])) { ?>
                             <li class="nav-item"><a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> <?php echo $_SESSION['user']['user'] ?> </i></a>
-                            <ul class = "submenu" >
-                                <li class="header-tk"> <a  href="#">Quên mật khẩu </a></li>
-                                <li class="header-tk"> <a  href="#">Cập nhật tài khoản </a></li>
+                            <ul class = "submenu">
+                                <li class="header-tk"> <a  href="index.php?act=taikhoan">Thông tin tài khoản </a></li>
+                                <li class="header-tk"> <a  href="index.php?act=doimk">Đổi mật khẩu </a></li>
                                 <?php if($_SESSION['user']['role']==1){ ?>
                                 <li class="header-tk"> <a  href="../admin/index.php">Đăng nhập vào ADMIN</a></li>
                                 <?php } ?>
                                 <li class="header-tk"> <a  href="index.php?act=dangxuat">Đăng xuất</a></li>
                             </ul></li>
                         <?php } else { ?>
-                            <a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> Đăng nhập </i></a>
+                            <li class="nav-item"><a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> Đăng nhập </i></a>
+                            <ul class = "submenu">
+                                <li class="header-tk"> <a  href="index.php?act=dangky">Đăng ký </a></li>
+                                <li class="header-tk"> <a  href="index.php?act=quenmk">Quên mật khẩu </a></li>
+                            </ul>
+                            </li>
                         <?php } ?> 
                     </div>
                     <div class="giohang-icon">
@@ -55,13 +60,13 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="index.php?act=lienhe">LIÊN HỆ</a>
+                    <a href="#">LIÊN HỆ</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.php?act=gopy">GÓP Ý</a>
+                    <a href="#">GÓP Ý</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.php?act=hoidap">HỎI ĐÁP</a>
+                    <a href="#">HỎI ĐÁP</a>
                 </li>
             </ul>
         </div>

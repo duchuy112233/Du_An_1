@@ -52,7 +52,30 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 }
                 include "taikhoan/dangnhap.php";
             break;
+        case 'taikhoan':
+            include "taikhoan/taikhoan.php";
+            break;
         case 'doimk':
+            if(isset($_POST['doimk'])){
+                $pass_csdl=$_SESSION['user']['pass'];
+                if(empty($_POST['pass']) || empty($_POST['newpass']) || empty($_POST['repass'])){
+                $thongbao4="Vui lòng nhập đầy đủ!";
+                }
+                else if($_POST['pass'] != $pass_csdl){
+                    $thongbao4="Mật khẩu cũ không chính xác!";
+                }
+                else if($_POST['repass'] != $_POST['newpass']){
+                    $thongbao4="Mật khẩu mới không trùng khớp!";
+                }
+                else{
+                    $newpass=$_POST['newpass'];
+                    $idtk=$_POST['idtk'];
+                    update_matkhau($idtk,$newpass);
+                    $thongbao4="Đổi mật khẩu thành công";
+                    //session_unset();
+                    // header("location: index.php?act=dangnhap");
+                }
+                }
             include "taikhoan/doimk.php";
             break;
         case 'quenmk':

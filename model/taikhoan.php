@@ -8,10 +8,10 @@ function dangnhap($email,$pass) {
     $taikhoan = pdo_query_one($sql);
     return $taikhoan;
 }
-//Hàm ramdom mật khẩu ngẫu nhiên
+//Ramdom mật khẩu ngẫu nhiên
 function RandomPassword() {
     $length = 8;
-    $char = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $char = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';//Chuỗi kí tự để ramdom
     $pass = '';
     
     for ($i = 0; $i < $length; $i++) {
@@ -77,7 +77,7 @@ try {
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->CharSet = 'UTF-8';                             // Set character encoding to UTF-8
-$mail->Encoding = 'base64';                               // Set the encoding type to base64 (optional, but recommended)
+    $mail->Encoding = 'base64';                           // Set the encoding type to base64 (optional, but recommended)
     $mail->Subject = 'Mật khẩu mới';
     $mail->Body    = 'Mật khẩu mới của bạn là: '.$pass;
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
@@ -88,5 +88,9 @@ $mail->Encoding = 'base64';                               // Set the encoding ty
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 }
-
+//Đổi mật khẩu của người dùng
+function update_matkhau($id,$pass){
+    $sql="UPDATE tai_khoan SET pass='$pass' where id= '$id'";
+    pdo_execute($sql);
+}
 ?>
