@@ -4,18 +4,16 @@
     font-family: 'Tahoma', Geneva, Verdana, sans-serif;
 }
 .container{
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 }
 .headeradmin {
     background-color: #009879;
     color: #fff;
     border-radius: 4px;
-    padding: 5px 20px;
+    padding: 3px;
     margin-bottom: 10px;
-}
-.headeradmin h1{
-    font-size: 2vw;
+    text-align: center;
 }
 .menu_admin {
     background-color: #ccc;
@@ -121,13 +119,4 @@ input[type="file"]:focus{
 	box-shadow: 0 0 0 3px -moz-mac-focusring;
 	color: #222; 
 	outline: none; 
-}
-/* Footer */
-.footeradmin {
-    background-color: #009879;
-    color: #fff;
-    border-radius: 4px;
-    text-align: center;
-    padding: 5px 0;
-    margin-top: 50px;
 }

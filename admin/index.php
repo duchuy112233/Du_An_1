@@ -74,6 +74,4 @@ if(isset($_GET['act']) && !empty($_GET['act'])){
     else{
     include "home.php";
     }
-
-include "footer.php";
 ?>

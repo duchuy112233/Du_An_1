@@ -1,5 +1,5 @@
 <div class="mb10">
-    <h2>THÊM MỚI DANH MỤC</h2>
+    <h3>THÊM MỚI DANH MỤC</h3>
 </div>
 <div class="formcontent">
     <form action="index.php?act=adddm" method="post">

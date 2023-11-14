@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <div class="headeradmin">
-            <h1>ADMIN</h1>
+            <h2>LAPTOPIA</h2>
         </div>
         <div class="menu_admin">
             <ul>
