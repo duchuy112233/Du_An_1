@@ -93,4 +93,45 @@ function update_matkhau($id,$pass){
     $sql="UPDATE tai_khoan SET pass='$pass' where id= '$id'";
     pdo_execute($sql);
 }
+
+function loadall_taikhoan(){
+    $sql = "SELECT * FROM tai_khoan order by id desc";
+    $result = pdo_query($sql);
+    return $result;
+}
+
+function loadone_taikhoan($idtk){
+    $sql = "select * from tai_khoan where id = $idtk";
+    $result = pdo_query_one($sql);
+    return $result;
+}
+
+function update_taikhoan($id,$user,$pass,$img,$email,$address,$tel,$role){
+    $taikhoan = loadone_taikhoan($id);
+    if($img != ""){
+        if($taikhoan['img'] != null && $taikhoan['img'] != ""){
+            $imglink = "../upload/" . $taikhoan['img'];
+            unlink($imglink);
+        }
+        $sql = "UPDATE tai_khoan SET user ='$user', pass ='$pass', img ='$img', email ='$email', address ='$address', tel ='$tel', role ='$role' WHERE id = $id";
+    }else{
+        $sql = "UPDATE tai_khoan SET user ='$user', pass ='$pass', email ='$email', address ='$address', tel ='$tel', role ='$role' WHERE id = $id";
+    }
+    pdo_execute($sql);
+}
+
+function delete_taikhoan($id){
+    $taikhoan = loadone_taikhoan($id);
+    if($taikhoan['img'] != null && $taikhoan['img'] != ""){
+        $imglink = "../upload/" . $taikhoan['img'];
+        unlink($imglink);
+    }
+    $sql = "DELETE FROM tai_khoan where id = $id";
+    pdo_execute($sql);
+}
+
+function add_taikhoan_admin($user,$pass,$img,$email,$address,$tel,$role){
+    $sql = "INSERT INTO tai_khoan (user, pass, img, email, address, tel, role) VALUES ('$user', '$pass', '$img', '$email', '$address', '$tel', '$role')";
+    pdo_execute($sql);
+}
 ?>
