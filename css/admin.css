@@ -8,7 +8,7 @@
     margin: 0 auto;
 }
 .headeradmin {
-    background-color: #ffd700;
+    background-color: #009879;
     color: #fff;
     border-radius: 4px;
     padding: 10px 20px;
@@ -18,7 +18,7 @@
     font-size: 2vw;
 }
 .menu_admin {
-    background-color: #009879;
+    background-color: #ccc;
     border-radius: 4px;
     display: flex;
     justify-content: space-between;
@@ -36,19 +36,19 @@
 
 .menu_admin ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #000000;
 }
 
 .menu_admin ul li a:hover {
-    color: #00cc99;
+    color: #009879;
 }
 .home{
     text-decoration: none;
-    color: #fff;
+    color: #000000;
     padding-right: 10px;
 }
 .home:hover{
-    color: #00cc99;
+    color: #009879;
 }
 /* Main */
 .mb10 {
@@ -124,7 +124,7 @@ input[type="file"]:focus{
 }
 /* Footer */
 .footeradmin {
-    background-color: #ffd700;
+    background-color: #009879;
     color: #fff;
     border-radius: 4px;
     text-align: center;
