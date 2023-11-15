@@ -81,6 +81,9 @@ background-color: #f3f3f3;
 .content-table tbody tr:last-of-type{
 border-bottom: 2px solid #009879;
 }
+.content-table .mota{
+max-width: 500px;
+}
 .formcontent input[type="submit"],
 .formcontent input[type="reset"],
 .formcontent input[type="button"] {

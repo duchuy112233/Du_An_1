@@ -18,11 +18,11 @@
                 <thead>
                 <tr>
                     <th>Chọn nhanh</th>
-                    <th>Mã sản phẩm</th>
+                    <th>Mã sp</th>
                     <th>Hình ảnh</th>
                     <th>Tên sp</th>
-                    <th>Giá</th>
-                    <th>Giảm giá</th>
+                    <th>Price</th>
+                    <th>Sale</th>
                     <th>Mô tả</th>
                     <th>Lượt xem</th>
                     <th>Chức năng</th>
@@ -32,7 +32,7 @@
                 <?php foreach ($listsp as $key => $sp) : ?>
                 <tr>
                     <td><input type="checkbox" name=""></td>
-                    <td>DA1-<?php echo $sp['id'] ?></td>
+                    <td>SP<?php echo $sp['id'] ?></td>
                     <td>
                         <?php $img=$image_path.$sp['img']; if(is_file($img)) : ?>
                             <!-- Nếu đường dẫn ảnh đúng thì in ra if -->
@@ -43,12 +43,12 @@
                         <?php endif ?>
                     </td>
                     <td><?php echo $sp['name'] ?></td>
-                    <td><?php echo $sp['price'] ?></td>
+                    <td><?php echo number_format($sp['price']) ?></td>
                     <td><?php echo $sp['giamgia'] ?></td>
-                    <td><?php echo $sp['mota'] ?></td>
+                    <td class="mota"><?php echo $sp['mota'] ?></td>
                     <td><?php echo $sp['luotxem'] ?></td>
                     <td>
-                        <a href="?act=editsp&idsp=<?php echo $sp['id'] ?>"><input type="button" value="Sửa"></a>
+                        <a href="?act=editsp&idsp=<?php echo $sp['id'] ?>"><input type="button" value="Sửa"></a><br><br>
                         <a onclick="return confirm('Bạn có chắc chắn muốn xóa')" href="?act=deletesp&idsp=<?php echo $sp['id'] ?>"><input type="button" value="Xóa"></a>
                     </td>
                 </tr>

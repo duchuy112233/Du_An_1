@@ -23,7 +23,7 @@
                 <?php foreach ($listtk as $key => $tk) : ?>
                 <tr>
                     <td><input type="checkbox" name=""></td>
-                    <td>DA1-<?php echo $tk['id'] ?></td>
+                    <td>TK<?php echo $tk['id'] ?></td>
                     <td>
                         <?php $img=$image_path.$tk['img']; if(is_file($img)) : ?>
                             <!-- Nếu đường dẫn ảnh đúng thì in ra if -->

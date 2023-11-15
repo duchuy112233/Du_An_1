@@ -17,7 +17,7 @@
                 <?php foreach ($listdm as $key => $dm) : ?>
                 <tr>
                     <td><input type="checkbox" name=""></td>
-                    <td>DA1-<?php echo $dm['id'] ?></td>
+                    <td>DM<?php echo $dm['id'] ?></td>
                     <td><?php echo $dm['name'] ?></td>
                     <td>
                         <a href="?act=editdm&iddm=<?php echo $dm['id'] ?>"><input type="button" value="Sửa"></a>

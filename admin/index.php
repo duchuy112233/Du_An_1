@@ -28,7 +28,7 @@ if(isset($_GET['act']) && !empty($_GET['act'])){
                 else{
                     $tendm=$_POST['tendm'];
                     add_danhmuc($tendm);
-                    $thongbao1="Thêm thành công";
+                    header("location: index.php?act=listdm");
                 }
             }
             include "danhmuc/add.php";
@@ -76,7 +76,7 @@ if(isset($_GET['act']) && !empty($_GET['act'])){
                     $target_file=$image_path.basename($_FILES['img']['name']);
                     move_uploaded_file($_FILES['img']['tmp_name'],$target_file);
                     add_taikhoan_admin($user,$pass,$img,$email,$address,$tel,$role);
-                    $thongbao5="Thêm thành công";
+                    header("location: index.php?act=listtk");
                 }
             }
             include "taikhoan/add.php";
@@ -146,7 +146,7 @@ if(isset($_GET['act']) && !empty($_GET['act'])){
                 $target_file=$image_path.basename($_FILES['img']['name']);
                 move_uploaded_file($_FILES['img']['tmp_name'],$target_file);
                 add_sanpham($name,$mota,$price,$cpu,$ram,$ocung,$carddohoa,$manhinh,$img,$giamgia,$iddm);
-                $thongbao6="Thêm thành công";
+                header("location: index.php?act=listsp");
                 }
             }
             include "sanpham/add.php";
@@ -179,6 +179,10 @@ if(isset($_GET['act']) && !empty($_GET['act'])){
             break;
          //Xóa sản phẩm
         case 'deletesp':
+            if(isset($_GET['idsp']) && $_GET['idsp'] > 0){
+                delete_sanpham($_GET['idsp']);
+                header("location: index?act=listsp");
+                }
             break;
         //Phần bình luận
          //Danh sách bình luận

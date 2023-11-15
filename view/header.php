@@ -31,12 +31,7 @@
                                 <li class="header-tk"> <a  href="index.php?act=dangxuat">Đăng xuất</a></li>
                             </ul></li>
                         <?php } else { ?>
-                            <li class="nav-item"><a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> Đăng nhập </i></a>
-                            <ul class = "submenu">
-                                <li class="header-tk"> <a  href="index.php?act=dangky">Đăng ký </a></li>
-                                <li class="header-tk"> <a  href="index.php?act=quenmk">Quên mật khẩu </a></li>
-                            </ul>
-                            </li>
+                            <li class="nav-item"><a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> Đăng nhập </i></a></li>
                         <?php } ?> 
                     </div>
                     <div class="giohang-icon">
