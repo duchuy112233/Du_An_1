@@ -72,8 +72,6 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                     $idtk=$_POST['idtk'];
                     update_matkhau($idtk,$newpass);
                     $thongbao4="Đổi mật khẩu thành công";
-                    //session_unset();
-                    // header("location: index.php?act=dangnhap");
                 }
                 }
             include "taikhoan/doimk.php";
