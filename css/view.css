@@ -19,7 +19,7 @@
 
 .bottom-header {
     border-bottom: 1px solid gainsboro;
-    padding: 10px 25px 10px 50px;
+    padding: 10px 25px 10px 30px;
     margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
@@ -43,7 +43,6 @@
     border-radius: 30px;
     height: 45px;
     margin-right: 210px;
-    margin-left: -1000px;
 }
 
 .search-box input[type="text"] {
@@ -51,7 +50,7 @@
     border: none;
     background: none;
     padding: 10px 15px;
-    min-width: 500px;
+    width: 500px;
     font-style: italic;
 }
 
@@ -665,20 +664,87 @@ text-decoration: none;
     text-decoration: none;
 }
 
-.footer .box form input {
-    width: 294px;
-    height: 42px;
-    background: transparent;
-    padding-left: 20px;
-    color: #fff;
-    margin-top: 30px;
-}
+@media (max-width: 767px) {
+    .container {
+      margin: 0;
+      padding: 0;
+    }
+  
+    .bottom-header {
+      padding: 10px 15px;
+      margin-bottom: 10px;
+    }
+  
+    .search-box {
+      margin-right: 15px;
+      margin-left: -15px;
+    }
+  
+    .search-box input[type="text"] {
+      min-width: auto;
+    }
+  
+    .form-menu {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .menu {
+      padding: 10px 0;
+    }
+  
+    .mr-banner {
+      margin: 0 15px;
+    }
+  
+    .row {
+      margin: 15px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .top-home {
+      margin-left: 15px;
+      margin-right: 15px;
+      flex-direction: column;
+    }
+  
+    .chitiet-tong {
+      padding: 30px 15px;
+    }
+  
+    .footer {
+      padding: 0 15px;
+    }
+  }
 
-.footer .box form button {
-    background: #362f2f;
-    box-shadow: 5px 5px 4px rgba(0, 0, 0.25);
-    width: 163px;
-    height: 38px;
-    margin-top: 29px;
-    color: #fff;
-}
+  @media (min-width: 768px) and (max-width: 991px) {
+    .container {
+      width: 100%;
+    }
+  
+    .search-box {
+      margin-right: 110px;
+    }
+  
+    .menu .menu-row {
+      flex-wrap: wrap;
+    }
+  
+    .menu .menu-row .nav-item {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  
+    .top-home {
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+  
+    .chitiet-tong {
+      padding: 50px 100px;
+    }
+  
+    .footer {
+      padding: 50px;
+    }
+  }

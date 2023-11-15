@@ -126,7 +126,7 @@ if(isset($_GET['act']) && !empty($_GET['act'])){
         case 'deletebl':
             if(isset($_GET['idbl']) && $_GET['idbl'] > 0){
                 delete_binhluan($_GET['idbl']);
-                header("location: index.php?act=ctbl");
+                header("location: index.php?act=listbl");
             }
             break;
         default:

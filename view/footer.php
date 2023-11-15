@@ -40,13 +40,6 @@
             </div>
         </ul>
     </div>
-    <div class="box">
-        <h3>LIÊN HỆ</h3>
-        <form action="">
-            <input type="text" placeholder="Địa chỉ email" required>
-            <button>Nhận tin</button>
-        </form>
-    </div>
 </div>
 </div>
 <script src="../main.js"></script>
