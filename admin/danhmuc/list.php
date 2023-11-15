@@ -1,5 +1,9 @@
 <div class="mb10">
+<<<<<<< HEAD
     <h3>DANH SÁCH DANH MỤC</h3>
+=======
+    <h2>DANH SÁCH DANH MỤC</h2>
+>>>>>>> 8910cf87419942b3a37132e1b1a399d3b86bc890
 </div>
 <div class="formcontent">
     <form action="index.php?act=adddm" method="post">

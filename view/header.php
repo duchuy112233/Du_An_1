@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="../css/view.css">
 </head>
+
 <body>
     <div class="container">
         <div class="top-header"></div>
@@ -18,6 +20,7 @@
                     <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i></button>
                 </form>
                 <div class="form-menu">
+<<<<<<< HEAD
                     <div class="dn-header">
                         <?php if(isset($_SESSION['user'])) { ?>
                             <li class="nav-item"><a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> <?php echo $_SESSION['user']['user'] ?> </i></a>
@@ -37,6 +40,10 @@
                             </ul>
                             </li>
                         <?php } ?> 
+=======
+                    <div class="dn">
+                        <a href="index.php?act=signinup"><i class="fa-solid fa-user" style="color: #000000;"></i> Tài khoản </i></a>
+>>>>>>> 8910cf87419942b3a37132e1b1a399d3b86bc890
                     </div>
                     <div class="giohang-icon">
                         <a href="index.php?act=addtocart"> <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i> Giỏ hàng </a>
@@ -54,6 +61,7 @@
                     <a class="nav-link" href="#">DANH MỤC</a>
                     <ul class="submenu">
                         <!-- Danh mục -->
+<<<<<<< HEAD
                         <?php foreach($listdm as $dm) : ?>
                             <li><a href=""><?php echo $dm['name'] ?></a></li>
                         <?php endforeach ?>
@@ -67,6 +75,26 @@
                 </li>
                 <li class="nav-item">
                     <a href="#">HỎI ĐÁP</a>
+=======
+                        <?php
+                        $dsdm = loadall_danhmuc();
+                        foreach ($dsdm as $dm) {
+                            extract($dm);
+                            $linkdm = "index.php?act=sanpham&iddm=" . $id;
+                            echo '<li><a  href="' . $linkdm . '">' . $name . '</a></li>';
+                        }
+                        ?>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?act=lienhe">LIÊN HỆ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?act=gopy">GÓP Ý</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?act=hoidap">HỎI ĐÁP</a>
+>>>>>>> 8910cf87419942b3a37132e1b1a399d3b86bc890
                 </li>
             </ul>
         </div>

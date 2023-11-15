@@ -39,10 +39,17 @@ if(isset($_GET['act']) && !empty($_GET['act'])){
                 $onedm = loadone_danhmuc($_GET['iddm']);
             }
             if(isset($_POST['editdm'])){
+<<<<<<< HEAD
                 $iddm = $_POST['iddm'];
                 $tendm = $_POST['tendm'];
                 update_danhmuc($iddm, $tendm);
                 header("location: index.php?act=listdm");
+=======
+                    $iddm = $_POST['iddm'];
+                    $tendm = $_POST['tendm'];
+                    update_danhmuc($iddm, $tendm);
+                    header("location: index.php?act=listdm");
+>>>>>>> 8910cf87419942b3a37132e1b1a399d3b86bc890
             }
             include "danhmuc/edit.php";
             break;
@@ -53,6 +60,7 @@ if(isset($_GET['act']) && !empty($_GET['act'])){
                 header("location: index.php?act=listdm");
             }
             break;
+<<<<<<< HEAD
         //Phần tài khoản
          //Danh sách tài khoản
         case 'listtk':
@@ -129,6 +137,8 @@ if(isset($_GET['act']) && !empty($_GET['act'])){
                 header("location: index.php?act=ctbl");
             }
             break;
+=======
+>>>>>>> 8910cf87419942b3a37132e1b1a399d3b86bc890
         default:
         include "home.php";
             break;
@@ -137,4 +147,9 @@ if(isset($_GET['act']) && !empty($_GET['act'])){
     else{
     include "home.php";
     }
+<<<<<<< HEAD
+=======
+
+include "footer.php";
+>>>>>>> 8910cf87419942b3a37132e1b1a399d3b86bc890
 ?>

@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 session_start();
+=======
+>>>>>>> 8910cf87419942b3a37132e1b1a399d3b86bc890
 include "../model/pdo.php";
 include "../model/danhmuc.php";
 include "../model/sanpham.php";
@@ -9,8 +12,11 @@ include "../model/thongke.php";
 include "../model/cart.php";
 include "../global.php";
 
+<<<<<<< HEAD
 $listdm=loadall_danhmuc();
 
+=======
+>>>>>>> 8910cf87419942b3a37132e1b1a399d3b86bc890
 include "header.php";
 
 if (isset($_GET['act']) && ($_GET['act']) != "") {
@@ -19,6 +25,7 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
         case 'sanphamct':
             include "sanphamct.php";
             break;
+<<<<<<< HEAD
         case 'dangky':
             if(isset($_POST['dangky'])){
                 if(empty($_POST['email']) || empty($_POST['user']) || empty($_POST['pass'])){
@@ -88,6 +95,10 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
         case 'dangxuat':
             session_unset();
             header("location: index.php");
+=======
+        case 'signinup':
+            include "signinup.php";
+>>>>>>> 8910cf87419942b3a37132e1b1a399d3b86bc890
             break;
         default:
             include "home.php";

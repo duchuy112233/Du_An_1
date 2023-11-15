@@ -4,6 +4,7 @@
     font-family: 'Tahoma', Geneva, Verdana, sans-serif;
 }
 .container{
+<<<<<<< HEAD
     width: 100%;
     margin: 0 auto;
 }
@@ -24,6 +25,27 @@
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
+=======
+    width: 90%;
+    margin: 0 auto;
+}
+.headeradmin {
+    background-color: #ffd700;
+    color: #fff;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+.headeradmin h1{
+    font-size: 2vw;
+}
+.menu_admin {
+    background-color: #009879;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+>>>>>>> 8910cf87419942b3a37132e1b1a399d3b86bc890
 }
 
 .menu_admin ul {
@@ -37,6 +59,7 @@
 
 .menu_admin ul li a {
     text-decoration: none;
+<<<<<<< HEAD
     color: #575757;
 }
 
@@ -50,6 +73,21 @@
 }
 .home:hover{
     color: #009879;
+=======
+    color: #fff;
+}
+
+.menu_admin ul li a:hover {
+    color: #00cc99;
+}
+.home{
+    text-decoration: none;
+    color: #fff;
+    padding-right: 10px;
+}
+.home:hover{
+    color: #00cc99;
+>>>>>>> 8910cf87419942b3a37132e1b1a399d3b86bc890
 }
 /* Main */
 .mb10 {
@@ -104,6 +142,7 @@ border-bottom: 2px solid #009879;
     border: 1px solid #009879;
     padding: 5px 10px;
     border-radius: 4px;
+<<<<<<< HEAD
     margin-top: 6px;
 }
 .formcontent label{
@@ -115,6 +154,14 @@ select{
     border-radius: 4px;
     border: 1px solid #009879;
     margin-top: 6px;
+=======
+}
+select{
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 4px;
+>>>>>>> 8910cf87419942b3a37132e1b1a399d3b86bc890
 }
 select:focus,
 input[type="text"]:focus,
@@ -122,7 +169,24 @@ input[type="password"]:focus,
 input[type="email"]:focus,
 input[type="number"]:focus,
 input[type="file"]:focus{
+<<<<<<< HEAD
 	border: 2px solid #009879;
 	color: #222; 
 	outline: none; 
+=======
+    border: #008979;
+	box-shadow: 0 0 1px 1.5px #00CC99;
+	box-shadow: 0 0 0 3px -moz-mac-focusring;
+	color: #222; 
+	outline: none; 
+}
+/* Footer */
+.footeradmin {
+    background-color: #ffd700;
+    color: #fff;
+    border-radius: 4px;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 50px;
+>>>>>>> 8910cf87419942b3a37132e1b1a399d3b86bc890
 }

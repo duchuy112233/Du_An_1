@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 function delete_binhluan($id){
     $sql = "DELETE FROM binh_luan WHERE id = $id";
     pdo_execute($sql);
@@ -20,4 +21,7 @@ function loadall_binhluan($id){
     $result = pdo_query($sql);
     return $result;
 }
+=======
+
+>>>>>>> 8910cf87419942b3a37132e1b1a399d3b86bc890
 ?>
