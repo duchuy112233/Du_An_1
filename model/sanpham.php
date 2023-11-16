@@ -1,4 +1,15 @@
 <?php
+function loadall_sanpham_dm1(){
+    $sql="SELECT * FROM sanpham where 1 order by id desc limit 0,4";
+    $listsanpham = pdo_query($sql);
+    return $listsanpham;
+}
+function loadall_sanpham_dm2(){
+    $sql="SELECT * FROM sanpham where 1 order by luotxem desc limit 0,4";
+    $listsanpham = pdo_query($sql);
+    return $listsanpham;
+}
+
 function loadall_sanpham($keyw="",$iddm=0){
     $sql="SELECT * from san_pham where 1";
     if($keyw!=""){

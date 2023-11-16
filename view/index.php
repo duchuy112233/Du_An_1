@@ -10,12 +10,28 @@ include "../model/cart.php";
 include "../global.php";
 
 $listdm=loadall_danhmuc();
+$dm1=loadall_sanpham_dm1();
+$dm2=loadall_sanpham_dm2();
 
 include "header.php";
 
 if (isset($_GET['act']) && ($_GET['act']) != "") {
     $act = ($_GET['act']);
     switch ($act) {
+        case "danhmucsp":
+            if(isset($_POST['keyword']) &&  $_POST['keyword'] != 0 ){
+            $kyw = $_POST['keyword'];
+            }else{
+            $kyw = "";
+            }
+            if(isset($_GET['iddm']) && $_GET['iddm']>0){
+            $iddm=$_GET['iddm'];
+            }else{
+            $iddm=0;
+            }
+            $dssp=loadall_sanpham($kyw,$iddm);
+            include "danhmuc.php";
+            break;
         case 'sanphamct':
             include "sanphamct.php";
             break;

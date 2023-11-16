@@ -15,7 +15,7 @@
             <a href="index.php"><img src="../image/logo1.png"></a>
             <div class="timkiem-header">
                 <form class="search-box" method="post" action="#">
-                    <input type="text" name="kyw" placeholder="Nhập tên sản phẩm...">
+                    <input type="text" name="keyword" placeholder="Nhập tên sản phẩm...">
                     <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i></button>
                 </form>
                 <div class="form-menu">
@@ -51,7 +51,7 @@
                     <ul class="submenu">
                         <!-- Danh mục -->
                         <?php foreach($listdm as $dm) : ?>
-                            <li><a href=""><?php echo $dm['name'] ?></a></li>
+                            <li><a href="index.php?act=danhmucsp&iddm=<?php echo $dm['id'] ?>"><?php echo $dm['name'] ?></a></li>
                         <?php endforeach ?>
                     </ul>
                 </li>
