@@ -134,4 +134,6 @@ function add_taikhoan_admin($user,$pass,$img,$email,$address,$tel,$role){
     $sql = "INSERT INTO tai_khoan (user, pass, img, email, address, tel, role) VALUES ('$user', '$pass', '$img', '$email', '$address', '$tel', '$role')";
     pdo_execute($sql);
 }
+
+
 ?>

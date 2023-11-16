@@ -75,6 +75,15 @@
 
         <hr>
 
+        <!-- FORM BÌNH LUẬN -->
+     
+      
+        <?php
+
+        include "binhluan/binhluan.php";
+        ?>
+
+
 
     </div>
 </div>

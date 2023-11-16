@@ -20,4 +20,6 @@ function loadall_binhluan($id){
     $result = pdo_query($sql);
     return $result;
 }
+
+
 ?>
