@@ -75,7 +75,7 @@
 }
 
 .form-menu a i {
-    border-radius: 30px;
+    border-radius: 50%;
     border: 1px solid #cccccc;
     padding: 8px;
 }
@@ -94,6 +94,7 @@
 
 .header-tk a:hover {
     color: #17d570;
+    background-color: #eee;
 }
 
 /* MENU */
@@ -123,6 +124,7 @@
 
 .menu .menu-row .nav-item a:hover {
     color: #17d570;
+    background-color: #eee;
 }
 
 /* Hiển thị danh sách con khi hover vào mục cha */
@@ -132,7 +134,6 @@
 
 .submenu {
     display: none;
-    border-radius: 8px;
     background-color: #ffffff;
     position: absolute;
     list-style-type: none;
@@ -395,6 +396,76 @@ margin-bottom: 8px;
 .formbinhluan .nut-gui:hover {
     background-color: red;
 }
+/* Cập nhật thông tin tài khoản */
+.boxtaikhoan{
+display: flex;
+justify-content: center;
+gap:25px;
+margin-top: 25px;
+}
+.boxtrai{
+margin-top: 20px;
+}
+.boxtrai-img{
+display: flex;
+gap: 10px;
+padding-bottom: 15px;
+border-bottom: 1px solid #ccc;
+}
+.boxtrai img{
+border-radius: 50%;
+width: 50px;
+height: 50px;
+}
+.boxtrai-img p{
+margin-bottom: 5px;
+}
+.boxtrai .boxdm p{
+margin-top: 15px;
+}
+.boxphai{
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+background: #fff;
+padding: 20px;
+}
+.boxphai .boxphai-title{
+padding-bottom: 20px;
+border-bottom: 1px solid #ccc;
+margin-bottom: 10px;
+}
+.boxphai .boxphai-title .tieude{
+margin-bottom: 5px;
+}
+.boxtaikhoan input[type="text"],
+.boxtaikhoan input[type="file"]{
+width: 500px;
+padding: 7px 10px;
+background:#fff;
+border: 1px solid #ccc;
+outline: none;
+}
+.boxphai .form-group{
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap:30px;
+}
+.boxtaikhoan input[type="submit"] {
+    border-radius: 20px;
+    border: 1px solid #009B48;
+    background-color: #009B48;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+}
+
+.boxtaikhoan input[type="submit"]:hover {
+    opacity: 0.85;
+}
+
+
 
 /* Form đăng nhâp/đăng ký */
 #wrapper {

@@ -134,4 +134,18 @@ function add_taikhoan_admin($user,$pass,$img,$email,$address,$tel,$role){
     $sql = "INSERT INTO tai_khoan (user, pass, img, email, address, tel, role) VALUES ('$user', '$pass', '$img', '$email', '$address', '$tel', '$role')";
     pdo_execute($sql);
 }
+
+function edit_taikhoan($id,$user,$img,$address,$tel){
+    $taikhoan = loadone_taikhoan($id);
+    if($img != ""){
+        if($taikhoan['img'] != null && $taikhoan['img'] != ""){
+            $imglink = "../upload/" . $taikhoan['img'];
+            unlink($imglink);
+        }
+        $sql = "UPDATE tai_khoan SET user ='$user', img ='$img', address ='$address', tel ='$tel' WHERE id = $id";
+    }else{
+        $sql = "UPDATE tai_khoan SET user ='$user', address ='$address', tel ='$tel' WHERE id = $id";
+    }
+    pdo_execute($sql);
+}
 ?>
