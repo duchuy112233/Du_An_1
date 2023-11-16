@@ -1,23 +1,27 @@
 <div class="boxtaikhoan">
     <div class="boxtrai">
         <div class="boxtrai-img">
-            <img src="../upload/<?php echo $_SESSION['user']['img'] ?>" alt="Ảnh đại diện">
+        <?php $first_letter = strtoupper(substr($_SESSION['user']['email'], 0, 1)) ?>
+            <?php if($_SESSION['user']['img'] != "") : ?>
+                <img src="../upload/<?php echo $_SESSION['user']['img'] ?>" alt="Ảnh đại diện">
+            <?php else : ?>
+                <div class="avatar"><?php echo $first_letter; ?></div>
+            <?php endif ?>
             <div>
                 <p><?php echo $_SESSION['user']['email'] ?></p>
-                <a href=""><i class="fa-solid fa-pencil" style="color: #000000;"></i> Sửa Hồ Sơ</a>
+                <a href=""><i class="fa-solid fa-pencil" style="color: #575757;"></i> Sửa Hồ Sơ</a>
             </div>
         </div>
         <div class="boxdm">
-            <p><a href="">Hồ sơ</a></p>
-            <p><a href="index.php?act=doimk">Đổi mật khẩu</a></p>
-            <p><a href="index.php?act=quenmk">Quên mật khẩu</a></p>
-            <p><a href="#">Đơn hàng của tôi</a></p>
+            <p><a href="index.php?act=doimk"><i class="fa-solid fa-key" style="color: #575757;"></i> Đổi mật khẩu</a></p>
+            <p><a href="index.php?act=quenmk"><i class="fa-solid fa-passport" style="color: #575757;"></i> Quên mật khẩu</a></p>
+            <p><a href="#"><i class="fa-solid fa-calendar" style="color: #575757;"></i> Đơn hàng của tôi</a></p>
         </div>
     </div>
     <div class="boxphai">
         <div class="boxphai-title">
-            <p class="tieude">Hồ Sơ Của Tôi</p>
-            <p>Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
+            <p class="tieude1">Hồ Sơ Của Tôi <i class="fa-solid fa-user-secret" style="color: #000000;"></i></p>
+            <p class="tieude2">Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
         </div>
         <div class="form-tk">
             <form action="index.php?act=taikhoan" method="post" enctype="multipart/form-data">
@@ -29,7 +33,11 @@
                     <label for="">Ảnh đại diện</label>
                     <input type="file" name="img">
                 </div>
-                <img src="../upload/<?php echo $_SESSION['user']['img'] ?>" alt="Ảnh đại diện" width="70px" height="50px"><br><br>
+                <?php if($_SESSION['user']['img'] != "") : ?>
+                    <img src="../upload/<?php echo $_SESSION['user']['img'] ?>" alt="Ảnh đại diện" width="70px" height="50px">
+                <?php else : ?>
+                    <span style="color: red; font-size: 14px;">Chưa có ảnh!</span>
+                <?php endif ?><br><br>
                 <div class="form-group">
                     <label for="">Địa chỉ</label>
                     <input type="text" name="address" value="<?php echo $_SESSION['user']['address'] ?>">

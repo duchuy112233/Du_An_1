@@ -124,7 +124,6 @@
 
 .menu .menu-row .nav-item a:hover {
     color: #17d570;
-    background-color: #eee;
 }
 
 /* Hiển thị danh sách con khi hover vào mục cha */
@@ -148,6 +147,9 @@
     padding: 10px;
     text-decoration: none;
     display: block;
+}
+.submenu a:hover{
+background-color: #eee;
 }
 
 /* HOME */
@@ -403,6 +405,10 @@ justify-content: center;
 gap:25px;
 margin-top: 25px;
 }
+.boxtaikhoan a{
+text-decoration: none;
+color: #575757;
+}
 .boxtrai{
 margin-top: 20px;
 }
@@ -423,6 +429,20 @@ margin-bottom: 5px;
 .boxtrai .boxdm p{
 margin-top: 15px;
 }
+.boxtrai a:hover{
+color: #009B48;
+}
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; 
+    background-color: #1a73e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #fff;
+  }
 .boxphai{
 box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 background: #fff;
@@ -433,8 +453,13 @@ padding-bottom: 20px;
 border-bottom: 1px solid #ccc;
 margin-bottom: 10px;
 }
-.boxphai .boxphai-title .tieude{
+.boxphai .boxphai-title .tieude1{
 margin-bottom: 5px;
+font-size: 18px;
+}
+.boxphai .boxphai-title .tieude2{
+    font-size: 14px;
+    color: #575757;
 }
 .boxtaikhoan input[type="text"],
 .boxtaikhoan input[type="file"]{
@@ -464,9 +489,10 @@ gap:30px;
 .boxtaikhoan input[type="submit"]:hover {
     opacity: 0.85;
 }
-
-
-
+.boxphai label{
+color: #575757;
+font-size: 14px;
+}
 /* Form đăng nhâp/đăng ký */
 #wrapper {
     background-color: #fff;
@@ -696,7 +722,6 @@ text-decoration: none;
     cursor: pointer;
     text-decoration: underline;
 }
-/* Thông tin tài khoản */
 /* Footer */
 .footer {
     width: 100%;
@@ -720,7 +745,6 @@ text-decoration: none;
 
 .footer .box .sdt {
     margin-top: 10px;
-    color: #009B48;
     font-weight: bold;
 }
 
