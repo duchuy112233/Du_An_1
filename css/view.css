@@ -148,11 +148,10 @@
     padding: 10px;
     text-decoration: none;
     display: block;
-    /* Làm cho các mục menu con trở thành khối, để tạo khoảng cách giữa chúng */
 }
 
 /* HOME */
-.mr-banner {
+.mlr{
     margin: 0 20px;
 }
 
@@ -199,14 +198,53 @@
     left: 0;
     border-radius: 0 3px 3px 0;
 }
-
-/* end banner */
-.row {
+/* phần giới thiệu dưới banner */
+.top-home {
+    margin-left: 250px;
+    margin-right: 250px;
+    text-align: center;
+    border: 1px solid #ddd;
     display: flex;
-    margin-top: 30px;
-    margin-bottom: 40px;
+    justify-content: space-between;
+    padding: 15px;
+    gap: 15px;
+}
+
+.top-home .icon-top {
+    border-right: 1px solid gray;
+    font-size: 30px;
+}
+
+.top-home .icon-top p {
+    padding-top: 20px;
+    font-size: 14px;
+    color: #009B48;
+}
+
+.top-home .nd {
+    font-weight: bold;
+}
+
+.top-home .icon2,
+.top-home .icon3 {
+    padding-right: 20px;
+}
+
+.top-home .icon4 {
+    border: none;
+}
+
+.top-home .icon-top i {
+    padding: 0px 90px;
+}
+/* box sản phẩm trang chủ */
+.tieude {
+    margin-top: 50px;
+}
+.row {
+    margin: 30px 100px 40px 100px;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
 }
 
@@ -262,50 +300,6 @@
 
 .card-body .themgio:hover {
     color: red;
-}
-
-/* end sản phẩm */
-.top-home {
-    margin-left: 250px;
-    margin-right: 250px;
-    text-align: center;
-    border: 1px solid #ddd;
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
-    gap: 15px;
-}
-
-.top-home .icon-top {
-    border-right: 1px solid gray;
-    font-size: 30px;
-}
-
-.top-home .icon-top p {
-    padding-top: 20px;
-    font-size: 14px;
-    color: #009B48;
-}
-
-.top-home .nd {
-    font-weight: bold;
-}
-
-.top-home .icon2,
-.top-home .icon3 {
-    padding-right: 20px;
-}
-
-.top-home .icon4 {
-    border: none;
-}
-
-.top-home .icon-top i {
-    padding: 0px 90px;
-}
-
-.tieude {
-    margin-top: 50px;
 }
 
 /* Sản phẩm chi tiết */

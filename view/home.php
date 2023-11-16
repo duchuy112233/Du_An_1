@@ -1,4 +1,4 @@
-<div class="mr-banner">
+<div class="mlr">
     <div class="banner">
         <img id="banner" src="../image/anh1.jpg">
         <button class="pre" onclick="pre()">&#10094;</button>
@@ -29,114 +29,91 @@
     </div>
 </div>
 
-<div class="mr-banner">
+<div class="mlr">
     <div class="tieude">
-        <h4>SẢN PHẨM NỔI BẬT</h4><hr>
+        <h4>SẢN PHẨM NỔI BẬT</h4>
+        <hr>
     </div>
-    <div class="col-md-8">
-        <div class="container-fuild">
-            <div class="row">
-                <!-- SP1 -->
-                <div class="card">
-                    <a href="index.php?act=sanphamct"> <img src="../image/sp1.jpg" class="imagesp" /></a>
+    <div class="row">
+        <!-- SP1 -->
+        <div class="card">
+            <a href="index.php?act=sanphamct"> <img src="../image/sp1.jpg" class="imagesp" /></a>
 
-                    <div class="card-body">
+            <div class="card-body">
 
-                        <div class="tensp">
-                            <a href="index.php?act=sanphamct">iPhone 15 Pro Max 1T Titan </a>
-                        </div>
-
-                        <p class="card-price">
-                            <span> 600,000,000 VNĐ</span>
-                            <del>700,000,000 VNĐ</del>
-                        </p>
-
-
-                        <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
-                        <i class="fa-solid fa-cart-shopping"></i>
-
-                    </div>
+                <div class="tensp">
+                    <a href="index.php?act=sanphamct">iPhone 15 Pro Max 1T Titan </a>
                 </div>
-                <!-- SP2 -->
-                <div class="card">
-                    <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
 
-                    <div class="card-body">
+                <p class="card-price">
+                    <span> 600,000,000 VNĐ</span>
+                    <del>700,000,000 VNĐ</del>
+                </p>
 
-                        <div class="tensp">
-                            <a href="#">iPhone 15 Pro Max Pro Max 1T Titan </a>
-                        </div>
 
-                        <p class="card-price">
-                            <span> 600,000,000 VNĐ</span>
-                            <del>700,000,000 VNĐ</del>
-                        </p>
+                <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
+                <i class="fa-solid fa-cart-shopping"></i>
 
-                        <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
-                        <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+        </div>
+        <!-- SP2 -->
+        <div class="card">
+            <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
 
-                    </div>
+            <div class="card-body">
+
+                <div class="tensp">
+                    <a href="#">iPhone 15 Pro Max Pro Max 1T Titan </a>
                 </div>
-                <!-- SP3 -->
-                <div class="card">
-                    <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
 
-                    <div class="card-body">
+                <p class="card-price">
+                    <span> 600,000,000 VNĐ</span>
+                    <del>700,000,000 VNĐ</del>
+                </p>
 
-                        <div class="tensp">
-                            <a href="#">iPhone 15 Pro Max 1T Titan </a>
-                        </div>
+                <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
+                <i class="fa-solid fa-cart-shopping"></i>
 
-                        <p class="card-price">
-                            <span> 600,000,000 VNĐ</span>
-                            <del>700,000,000 VNĐ</del>
-                        </p>
+            </div>
+        </div>
+        <!-- SP3 -->
+        <div class="card">
+            <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
 
-                        <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
-                        <i class="fa-solid fa-cart-shopping"></i>
+            <div class="card-body">
 
-                    </div>
+                <div class="tensp">
+                    <a href="#">iPhone 15 Pro Max 1T Titan </a>
                 </div>
-                <!-- SP4 -->
-                <div class="card">
-                    <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
 
-                    <div class="card-body">
+                <p class="card-price">
+                    <span> 600,000,000 VNĐ</span>
+                    <del>700,000,000 VNĐ</del>
+                </p>
 
-                        <div class="tensp">
-                            <a href="#">iPhone 15 Pro Max 1T Titan </a>
-                        </div>
+                <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
+                <i class="fa-solid fa-cart-shopping"></i>
 
-                        <p class="card-price">
-                            <span> 600,000,000 VNĐ</span>
-                            <del>700,000,000 VNĐ</del>
-                        </p>
+            </div>
+        </div>
+        <!-- SP4 -->
+        <div class="card">
+            <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
 
-                        <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
-                        <i class="fa-solid fa-cart-shopping"></i>
+            <div class="card-body">
 
-                    </div>
+                <div class="tensp">
+                    <a href="#">iPhone 15 Pro Max 1T Titan </a>
                 </div>
-                <!-- SP5 -->
-                <div class="card">
-                    <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
 
-                    <div class="card-body">
+                <p class="card-price">
+                    <span> 600,000,000 VNĐ</span>
+                    <del>700,000,000 VNĐ</del>
+                </p>
 
-                        <div class="tensp">
-                            <a href="#">iPhone 15 Pro Max 1T Titan </a>
-                        </div>
+                <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
+                <i class="fa-solid fa-cart-shopping"></i>
 
-                        <p class="card-price">
-                            <span> 600,000,000 VNĐ</span>
-                            <del>700,000,000 VNĐ</del>
-                        </p>
-
-                        <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
-                        <i class="fa-solid fa-cart-shopping"></i>
-
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -144,109 +121,85 @@
         <h4>SẢN PHẨM MỚI NHẤT</h4>
         <hr>
     </div>
-    <div class="col-md-8">
-        <div class="container-fuild">
-            <div class="row">
-                <!-- SP1 -->
-                <div class="card">
-                    <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
+    <div class="row">
+        <!-- SP1 -->
+        <div class="card">
+            <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
 
-                    <div class="card-body">
+            <div class="card-body">
 
-                        <div class="tensp">
-                            <a href="#">iPhone 15 Pro Max 1T Titan iPhone 15 Pro Max 1T Titan iPhone 15 Pro Max 1T Titan </a>
-                        </div>
-
-                        <p class="card-price">
-                            <span> 600,000,000 VNĐ</span>
-                            <del>700,000,000 VNĐ</del>
-                        </p>
-
-                        <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
-                        <i class="fa-solid fa-cart-shopping"></i>
-
-                    </div>
+                <div class="tensp">
+                    <a href="#">iPhone 15 Pro Max 1T Titan iPhone 15 Pro Max 1T Titan iPhone 15 Pro Max 1T Titan </a>
                 </div>
-                <!-- SP2 -->
-                <div class="card">
-                    <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
 
-                    <div class="card-body">
+                <p class="card-price">
+                    <span> 600,000,000 VNĐ</span>
+                    <del>700,000,000 VNĐ</del>
+                </p>
 
-                        <div class="tensp">
-                            <a href="#">iPhone 15 Pro Max Pro Max 1T Titan </a>
-                        </div>
+                <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
+                <i class="fa-solid fa-cart-shopping"></i>
 
-                        <p class="card-price">
-                            <span> 600,000,000 VNĐ</span>
-                            <del>700,000,000 VNĐ</del>
-                        </p>
+            </div>
+        </div>
+        <!-- SP2 -->
+        <div class="card">
+            <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
 
-                        <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
-                        <i class="fa-solid fa-cart-shopping"></i>
+            <div class="card-body">
 
-                    </div>
+                <div class="tensp">
+                    <a href="#">iPhone 15 Pro Max Pro Max 1T Titan </a>
                 </div>
-                <!-- SP3 -->
-                <div class="card">
-                    <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
 
-                    <div class="card-body">
+                <p class="card-price">
+                    <span> 600,000,000 VNĐ</span>
+                    <del>700,000,000 VNĐ</del>
+                </p>
 
-                        <div class="tensp">
-                            <a href="#">iPhone 15 Pro Max 1T Titan iPhone 15 Pro Max 1T Titan iPhone 15 Pro Max 1T Titan </a>
-                        </div>
+                <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
+                <i class="fa-solid fa-cart-shopping"></i>
 
-                        <p class="card-price">
-                            <span> 600,000,000 VNĐ</span>
-                            <del>700,000,000 VNĐ</del>
-                        </p>
+            </div>
+        </div>
+        <!-- SP3 -->
+        <div class="card">
+            <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
 
-                        <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
-                        <i class="fa-solid fa-cart-shopping"></i>
+            <div class="card-body">
 
-                    </div>
+                <div class="tensp">
+                    <a href="#">iPhone 15 Pro Max 1T Titan iPhone 15 Pro Max 1T Titan iPhone 15 Pro Max 1T Titan </a>
                 </div>
-                <!-- SP4 -->
-                <div class="card">
-                    <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
 
-                    <div class="card-body">
+                <p class="card-price">
+                    <span> 600,000,000 VNĐ</span>
+                    <del>700,000,000 VNĐ</del>
+                </p>
 
-                        <div class="tensp">
-                            <a href="#">iPhone 15 Pro Max 1T Titan iPhone 15 Pro Max 1T Titan iPhone 15 Pro Max 1T Titan </a>
-                        </div>
+                <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
+                <i class="fa-solid fa-cart-shopping"></i>
 
-                        <p class="card-price">
-                            <span> 600,000,000 VNĐ</span>
-                            <del>700,000,000 VNĐ</del>
-                        </p>
+            </div>
+        </div>
+        <!-- SP4 -->
+        <div class="card">
+            <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
 
-                        <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
-                        <i class="fa-solid fa-cart-shopping"></i>
+            <div class="card-body">
 
-                    </div>
+                <div class="tensp">
+                    <a href="#">iPhone 15 Pro Max 1T Titan iPhone 15 Pro Max 1T Titan iPhone 15 Pro Max 1T Titan </a>
                 </div>
-                <!-- SP5 -->
-                <div class="card">
-                    <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
 
-                    <div class="card-body">
+                <p class="card-price">
+                    <span> 600,000,000 VNĐ</span>
+                    <del>700,000,000 VNĐ</del>
+                </p>
 
-                        <div class="tensp">
-                            <a href="#">iPhone 15 Pro Max 1T Titan iPhone 15 Pro Max 1T Titan iPhone 15 Pro Max 1T Titan </a>
-                        </div>
+                <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
+                <i class="fa-solid fa-cart-shopping"></i>
 
-                        <p class="card-price">
-                            <span> 600,000,000 VNĐ</span>
-                            <del>700,000,000 VNĐ</del>
-                        </p>
-
-                        <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
-                        <i class="fa-solid fa-cart-shopping"></i>
-
-                    </div>
-                </div>
             </div>
         </div>
     </div>
