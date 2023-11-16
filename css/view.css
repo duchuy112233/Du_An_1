@@ -51,7 +51,6 @@
     background: none;
     padding: 10px 15px;
     width: 500px;
-    font-style: italic;
 }
 
 .search-box .search-btn {
@@ -208,6 +207,7 @@
     justify-content: space-between;
     padding: 15px;
     gap: 15px;
+    margin-bottom: 50px;
 }
 
 .top-home .icon-top {
@@ -238,70 +238,81 @@
     padding: 0px 90px;
 }
 /* box sản phẩm trang chủ */
-.tieude {
-    margin-top: 50px;
+.title {
+    width: 1100px;
+    margin: 0 auto;
+}
+.title h4{
+    padding-bottom: 3px;
+    color: #575757;
 }
 .row {
-    margin: 30px 100px 40px 100px;
+    width: 1100px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
+    margin: 20px auto;
 }
-
-.card {
-    min-height: 200px;
-    margin-top: 5px;
-    border: 1px solid black;
-    text-align: center;
-    padding: 20px 0px;
-    border-radius: 7px;
-
+.boxsp{
+background:#fff;
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+text-align: center;
+padding: 10px;
+transition: box-shadow 0.3s ease-in-out;
+margin-bottom: 5px;
 }
-
-.card:hover {
-    border: 3px solid #009B48;
-    border-radius: 7px;
+.boxsp:hover{
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
-
-.card img {
-    width: 60%;
-    height: 60%;
+.boxsp a{
+color: #202114;
+text-decoration: none;
 }
-
-.card-body .tensp {
-    margin: 10px 0;
+.boxsp img{
+width: 140px;
+margin-bottom: 3px;
 }
-
-.card-body .tensp a {
-    text-decoration: none;
-    color: black;
+.boxsp .box-title a:hover{
+color: #009B48;
 }
-
-.card-body .card-price {
-    margin: 10px 0;
+.boxsp .boxsp-content{
+text-align: left;
+font-size: 14px;
+color: #575757;
+margin-top: 15px;
+} 
+.boxsp .boxsp-content p{
+margin-bottom: 15px;
 }
-
-.card-body .card-price span {
-    color: #009B48;
-    font-weight: bold;
+.boxsp .money span{
+background-color: #009B48;
+border-radius: 4px;
+padding: 3px;
+color: #fff;
+font-size: 12px;
+font-weight: 500;
 }
-
-.card-body .card-price del {
-    color: black;
-    font-size: 13px;
+.boxsp .money p{
+margin: 12px 50px 20px 50px;
+background-color: #009B48;
+color: #fff;
+border-radius: 20px;
+padding: 8px;
+font-weight: 800;
 }
-
-.card-body .themgio {
-    border: 0px solid;
-    background-color: white;
-    color: #009B48;
-    font-size: 14px;
+.boxsp .add{
+margin-bottom: 8px;
 }
-
-.card-body .themgio:hover {
-    color: red;
+.btn-shop:hover {
+    color: #575757;
 }
-
+.btn-shop-text {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: inherit;
+    cursor: pointer;
+}
 /* Sản phẩm chi tiết */
 .chitiet-tong {
     padding: 50px 300px;

@@ -29,178 +29,68 @@
     </div>
 </div>
 
-<div class="mlr">
-    <div class="tieude">
-        <h4>SẢN PHẨM NỔI BẬT</h4>
-        <hr>
-    </div>
-    <div class="row">
-        <!-- SP1 -->
-        <div class="card">
-            <a href="index.php?act=sanphamct"> <img src="../image/sp1.jpg" class="imagesp" /></a>
-
+<div class="title">
+    <h4>SẢN PHẨM NỔI BẬT</h4>
+    <hr>
+</div>
+<div class="row">
+    <?php foreach ($dm1 as $key => $sp) : ?>
+        <div class="boxsp">
+            <a href="index.php?act=sanphamct"><img src="../upload/<?php echo $sp['img'] ?>" alt=""></a>
             <div class="card-body">
-
-                <div class="tensp">
-                    <a href="index.php?act=sanphamct">iPhone 15 Pro Max 1T Titan </a>
+                <div class="box-title">
+                    <a href="index.php?act=sanphamct"><?php echo $sp['name'] ?></a>
                 </div>
-
-                <p class="card-price">
-                    <span> 600,000,000 VNĐ</span>
-                    <del>700,000,000 VNĐ</del>
-                </p>
-
-
-                <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
-                <i class="fa-solid fa-cart-shopping"></i>
-
+                <div class="boxsp-content">
+                    <p>CPU <?php echo $sp['cpu'] ?></p>
+                    <p>RAM <?php echo $sp['ram'] ?></p>
+                    <p>Ổ cứng <?php echo $sp['ocung'] ?></p>
+                    <p>Card <?php echo $sp['card_do_hoa'] ?></p>
+                    <p>M.Hình <?php echo $sp['man_hinh'] ?></p>
+                </div>
+                <div class="money">
+                    <del><?php echo number_format($sp['price']) ?> VND</del>
+                    <span>-<?php echo number_format($sp['giamgia']) ?>%</span>
+                    <p><?php echo number_format($sp['price'] - $sp['price'] * ($sp['giamgia'] / 100)) ?> Đ</p>
+                </div>
+                <div class="add">
+                    <a href="" class="btn-shop"><input type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="btn-shop-text">
+                        <i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
             </div>
         </div>
-        <!-- SP2 -->
-        <div class="card">
-            <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
-
+    <?php endforeach ?>
+</div>
+<!-- Danh mục 2 -->
+<div class="title">
+    <h4>SẢN PHẨM MỚI</h4>
+    <hr>
+</div>
+<div class="row">
+    <?php foreach ($dm2 as $key => $sp) : ?>
+        <div class="boxsp">
+            <a href="index.php?act=sanphamct"><img src="../upload/<?php echo $sp['img'] ?>" alt=""></a>
             <div class="card-body">
-
-                <div class="tensp">
-                    <a href="#">iPhone 15 Pro Max Pro Max 1T Titan </a>
+                <div class="box-title">
+                    <a href="index.php?act=sanphamct"><?php echo $sp['name'] ?></a>
                 </div>
-
-                <p class="card-price">
-                    <span> 600,000,000 VNĐ</span>
-                    <del>700,000,000 VNĐ</del>
-                </p>
-
-                <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
-                <i class="fa-solid fa-cart-shopping"></i>
-
+                <div class="boxsp-content">
+                    <p>CPU <?php echo $sp['cpu'] ?></p>
+                    <p>RAM <?php echo $sp['ram'] ?></p>
+                    <p>Ổ cứng <?php echo $sp['ocung'] ?></p>
+                    <p>Card <?php echo $sp['card_do_hoa'] ?></p>
+                    <p>M.Hình <?php echo $sp['man_hinh'] ?></p>
+                </div>
+                <div class="money">
+                    <del><?php echo number_format($sp['price']) ?> VND</del>
+                    <span>-<?php echo number_format($sp['giamgia']) ?>%</span>
+                    <p><?php echo number_format($sp['price'] - $sp['price'] * ($sp['giamgia'] / 100)) ?> Đ</p>
+                </div>
+                <div class="add">
+                    <a href="" class="btn-shop"><input type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="btn-shop-text">
+                        <i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
             </div>
         </div>
-        <!-- SP3 -->
-        <div class="card">
-            <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
-
-            <div class="card-body">
-
-                <div class="tensp">
-                    <a href="#">iPhone 15 Pro Max 1T Titan </a>
-                </div>
-
-                <p class="card-price">
-                    <span> 600,000,000 VNĐ</span>
-                    <del>700,000,000 VNĐ</del>
-                </p>
-
-                <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
-                <i class="fa-solid fa-cart-shopping"></i>
-
-            </div>
-        </div>
-        <!-- SP4 -->
-        <div class="card">
-            <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
-
-            <div class="card-body">
-
-                <div class="tensp">
-                    <a href="#">iPhone 15 Pro Max 1T Titan </a>
-                </div>
-
-                <p class="card-price">
-                    <span> 600,000,000 VNĐ</span>
-                    <del>700,000,000 VNĐ</del>
-                </p>
-
-                <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
-                <i class="fa-solid fa-cart-shopping"></i>
-
-            </div>
-        </div>
-    </div>
-    <div class="tieude">
-        <h4>SẢN PHẨM MỚI NHẤT</h4>
-        <hr>
-    </div>
-    <div class="row">
-        <!-- SP1 -->
-        <div class="card">
-            <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
-
-            <div class="card-body">
-
-                <div class="tensp">
-                    <a href="#">iPhone 15 Pro Max 1T Titan iPhone 15 Pro Max 1T Titan iPhone 15 Pro Max 1T Titan </a>
-                </div>
-
-                <p class="card-price">
-                    <span> 600,000,000 VNĐ</span>
-                    <del>700,000,000 VNĐ</del>
-                </p>
-
-                <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
-                <i class="fa-solid fa-cart-shopping"></i>
-
-            </div>
-        </div>
-        <!-- SP2 -->
-        <div class="card">
-            <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
-
-            <div class="card-body">
-
-                <div class="tensp">
-                    <a href="#">iPhone 15 Pro Max Pro Max 1T Titan </a>
-                </div>
-
-                <p class="card-price">
-                    <span> 600,000,000 VNĐ</span>
-                    <del>700,000,000 VNĐ</del>
-                </p>
-
-                <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
-                <i class="fa-solid fa-cart-shopping"></i>
-
-            </div>
-        </div>
-        <!-- SP3 -->
-        <div class="card">
-            <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
-
-            <div class="card-body">
-
-                <div class="tensp">
-                    <a href="#">iPhone 15 Pro Max 1T Titan iPhone 15 Pro Max 1T Titan iPhone 15 Pro Max 1T Titan </a>
-                </div>
-
-                <p class="card-price">
-                    <span> 600,000,000 VNĐ</span>
-                    <del>700,000,000 VNĐ</del>
-                </p>
-
-                <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
-                <i class="fa-solid fa-cart-shopping"></i>
-
-            </div>
-        </div>
-        <!-- SP4 -->
-        <div class="card">
-            <a href="#"> <img src="image/sp1.jpg" class="imagesp" /></a>
-
-            <div class="card-body">
-
-                <div class="tensp">
-                    <a href="#">iPhone 15 Pro Max 1T Titan iPhone 15 Pro Max 1T Titan iPhone 15 Pro Max 1T Titan </a>
-                </div>
-
-                <p class="card-price">
-                    <span> 600,000,000 VNĐ</span>
-                    <del>700,000,000 VNĐ</del>
-                </p>
-
-                <input id="them" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
-                <i class="fa-solid fa-cart-shopping"></i>
-
-            </div>
-        </div>
-    </div>
+    <?php endforeach ?>
 </div>

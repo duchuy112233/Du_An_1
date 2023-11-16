@@ -14,7 +14,7 @@
         <div class="bottom-header">
             <a href="index.php"><img src="../image/logo1.png"></a>
             <div class="timkiem-header">
-                <form class="search-box" method="post" action="#">
+                <form class="search-box" method="post" action="index.php?act=danhmucsp">
                     <input type="text" name="keyword" placeholder="Nhập tên sản phẩm...">
                     <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i></button>
                 </form>
