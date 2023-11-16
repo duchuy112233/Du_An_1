@@ -1,14 +1,16 @@
-/* Header */
+/* Kích thước */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Tahoma', Geneva, Verdana, sans-serif;
 }
+
 .container {
-   width: 100%; 
-   margin: 0 auto;
+    width: 100%;
+    margin: 0 auto;
 }
+
 /* header */
 .top-header {
     height: 30px;
@@ -17,7 +19,7 @@
 
 .bottom-header {
     border-bottom: 1px solid gainsboro;
-    padding: 10px 25px 10px 50px;
+    padding: 10px 25px 10px 30px;
     margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
@@ -41,7 +43,6 @@
     border-radius: 30px;
     height: 45px;
     margin-right: 210px;
-    margin-left: -1000px;
 }
 
 .search-box input[type="text"] {
@@ -49,7 +50,7 @@
     border: none;
     background: none;
     padding: 10px 15px;
-    min-width: 500px;
+    width: 500px;
     font-style: italic;
 }
 
@@ -95,6 +96,7 @@
 .header-tk a:hover {
     color: #17d570;
 }
+
 /* MENU */
 .menu {
     padding: 20px 0;
@@ -103,26 +105,32 @@
     justify-content: center;
     margin-bottom: 20px;
 }
+
 .menu .menu-row {
     display: flex;
     list-style: none;
 }
+
 .menu .menu-row .nav-item {
     padding-left: 20px;
     padding-right: 20px;
 }
+
 .menu .menu-row .nav-item a {
     text-decoration: none;
     font-size: 16px;
     color: #575757;
 }
+
 .menu .menu-row .nav-item a:hover {
     color: #17d570;
 }
+
 /* Hiển thị danh sách con khi hover vào mục cha */
 .nav-item:hover .submenu {
     display: block;
 }
+
 .submenu {
     display: none;
     border-radius: 8px;
@@ -131,17 +139,23 @@
     list-style-type: none;
     z-index: 1;
     min-width: 130px;
-    min-height: 100px;
+    min-height: 50px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
 }
-  .submenu a {
+
+.submenu a {
     padding: 10px;
     text-decoration: none;
-    display: block; /* Làm cho các mục menu con trở thành khối, để tạo khoảng cách giữa chúng */
-  }
+    display: block;
+    /* Làm cho các mục menu con trở thành khối, để tạo khoảng cách giữa chúng */
+}
+
 /* HOME */
-.mr-banner{
+.mr-banner {
     margin: 0 20px;
 }
+
 .banner {
     width: 100%;
     min-width: 300px;
@@ -149,11 +163,13 @@
     position: relative;
     margin-bottom: 30px;
 }
+
 .banner img {
     width: 100%;
     height: 400px;
     border-radius: 4px;
 }
+
 .pre,
 .next {
     cursor: pointer;
@@ -168,18 +184,22 @@
     border-radius: 0 3px 3px 0;
     border: none;
 }
+
 .pre:hover,
 .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
+
 .pre {
     left: 0;
     border-radius: 0 3px 3px 0;
 }
+
 /* end banner */
 .row {
     display: flex;
@@ -187,7 +207,7 @@
     margin-bottom: 40px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-gap:10px;
+    grid-gap: 10px;
 }
 
 .card {
@@ -197,14 +217,15 @@
     text-align: center;
     padding: 20px 0px;
     border-radius: 7px;
-    
-}
-.card:hover{
-    border: 3px solid #009B48;
-    border-radius: 7px; 
+
 }
 
-.card img{
+.card:hover {
+    border: 3px solid #009B48;
+    border-radius: 7px;
+}
+
+.card img {
     width: 60%;
     height: 60%;
 }
@@ -242,6 +263,7 @@
 .card-body .themgio:hover {
     color: red;
 }
+
 /* end sản phẩm */
 .top-home {
     margin-left: 250px;
@@ -249,9 +271,9 @@
     text-align: center;
     border: 1px solid #ddd;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     padding: 15px;
-    gap:15px;
+    gap: 15px;
 }
 
 .top-home .icon-top {
@@ -264,16 +286,20 @@
     font-size: 14px;
     color: #009B48;
 }
-.top-home .nd{
-font-weight: bold;
+
+.top-home .nd {
+    font-weight: bold;
 }
+
 .top-home .icon2,
-.top-home .icon3{
-padding-right: 20px;
+.top-home .icon3 {
+    padding-right: 20px;
 }
-.top-home .icon4{
-border: none;
+
+.top-home .icon4 {
+    border: none;
 }
+
 .top-home .icon-top i {
     padding: 0px 90px;
 }
@@ -281,6 +307,7 @@ border: none;
 .tieude {
     margin-top: 50px;
 }
+
 /* Sản phẩm chi tiết */
 .chitiet-tong {
     padding: 50px 300px;
@@ -331,6 +358,7 @@ border: none;
     color: white;
 
 }
+
 .binhluan {
     border: 1px solid gray;
     height: 400px;
@@ -358,52 +386,76 @@ border: none;
     color: white;
     font-weight: bold;
 }
+
 .formbinhluan .nut-gui:hover {
-    background-color: red;  
-}
-/* Sign in/ Sign up */
-.body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'Tahoma', Geneva, Verdana, sans-serif;
-    height: 100vh;
-    margin: -50px 0 -200px;
+    background-color: red;
 }
 
-.body .form-container h1 {
-    font-weight: bold;
-    margin: 0;
+/* Form đăng nhâp/đăng ký */
+#wrapper {
+    background-color: #fff;
     color: #575757;
 }
 
-.body h2 {
+#wrapper form {
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+    width: 45%;
+    margin: auto;
+}
+
+#wrapper h3 {
     text-align: center;
-    color: #575757;
-    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 500;
 }
 
-.body p {
-    font-size: 14px;
-    font-weight: 100;
-    line-height: 20px;
-    letter-spacing: 0.5px;
-    margin: 20px 0 30px;
+#wrapper .dk {
+    color: #1a73e8;
 }
 
-.body span {
-    font-size: 12px;
+#wrapper .dk:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
-.body a {
-    color: #333;
-    font-size: 14px;
+#wrapper a {
     text-decoration: none;
-    margin: 15px 0;
+    color: black;
 }
 
-.body button {
+#wrapper .span {
+    font-size: 13px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+#wrapper input[type="text"],
+#wrapper input[type="email"],
+#wrapper input[type="password"] {
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 12px 15px;
+    color: #202114;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-top: 6px;
+}
+
+#wrapper input[type="text"]:focus,
+#wrapper input[type="password"]:focus,
+#wrapper input[type="email"]:focus {
+    border: 1px solid #202114;
+    color: #222;
+    outline: none;
+}
+
+#wrapper form input[type="submit"] {
     border-radius: 20px;
     border: 1px solid #009B48;
     background-color: #009B48;
@@ -412,169 +464,16 @@ border: none;
     font-weight: bold;
     padding: 12px 45px;
     letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: transform 80ms ease-in;
+}
+#wrapper .center{
+text-align: center;
+}
+#wrapper form input[type="submit"]:hover {
+    opacity: 0.85;
 }
 
-.body button:active {
-    transform: scale(0.95);
-}
-
-.body button:focus {
-    outline: none;
-}
-
-.body button.ghost {
-    background-color: #009B48;
-    border-color: #009B48;
-}
-
-.body form {
-    background-color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 50px;
-    height: 100%;
-    text-align: center;
-}
-
-.body input {
-    background-color: #eee;
-    border: none;
-    padding: 12px 15px;
-    margin: 8px 0;
-    width: 100%;
-}
-
-.container-sign {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-        0 10px 10px rgba(0, 0, 0, 0.22);
-    position: relative;
-    overflow: hidden;
-    width: 768px;
-    max-width: 100%;
-    min-height: 480px;
-}
-
-.form-container {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    transition: all 0.6s ease-in-out;
-}
-
-.sign-in-container {
-    left: 0;
-    width: 50%;
-    z-index: 2;
-}
-
-.container-sign.right-panel-active .sign-in-container {
-    transform: translateX(100%);
-}
-
-.sign-up-container {
-    left: 0;
-    width: 50%;
-    opacity: 0;
-    z-index: 1;
-}
-
-.container-sign.right-panel-active .sign-up-container {
-    transform: translateX(100%);
-    opacity: 1;
-    z-index: 5;
-    animation: show 0.6s;
-}
-
-@keyframes show {
-
-    0%,
-    49.99% {
-        opacity: 0;
-        z-index: 1;
-    }
-
-    50%,
-    100% {
-        opacity: 1;
-        z-index: 5;
-    }
-}
-
-.overlay-container {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    transition: transform 0.6s ease-in-out;
-    z-index: 100;
-}
-
-.container-sign.right-panel-active .overlay-container {
-    transform: translateX(-100%);
-}
-
-.overlay {
-    background: #009B48;
-    background: -webkit-linear-gradient(to right, #01b756, #21fa86);
-    background: linear-gradient(to right, #1cff86, #19ff84);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0 0;
-    color: #FFFFFF;
-    position: relative;
-    left: -100%;
-    height: 100%;
-    width: 200%;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
-}
-
-.container-sign.right-panel-active .overlay {
-    transform: translateX(50%);
-}
-
-.overlay-panel {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
-    text-align: center;
-    top: 0;
-    height: 100%;
-    width: 50%;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
-}
-/* left  */
-.overlay-left {
-    transform: translateX(-20%);
-}
-
-.container-sign.right-panel-active .overlay-left {
-    transform: translateX(0);
-}
-/* end  */
-/* right  */
-.overlay-right {
-    right: 0;
-    transform: translateX(0);
-}
-.container-sign.right-panel-active .overlay-right {
-    transform: translateX(20%);
-}
-/* end  */
 .social-container {
-    margin: 20px 0;
+    margin: 20px 0 5px 0;
 }
 
 .social-container a {
@@ -586,56 +485,181 @@ border: none;
     margin: 0 5px;
     height: 40px;
     width: 40px;
+    text-decoration: none;
 }
+
+.social-container a:hover {
+    background-color: #dddddd;
+}
+
+#wrapper .mk {
+    text-align: right;
+    font-size: 14px;
+    color: #1a73e8;
+}
+
+#wrapper .mk:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+/* Form quên mật khẩu */
+#wrapper-1 {
+    background-color: #fff;
+    color: #575757;
+}
+#wrapper-1 form {
+    border-radius: 3px;
+    padding: 30px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+    width: 45%;
+    margin: auto;
+}
+
+#wrapper-1 h3 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+}
+#wrapper-1 input[type="email"]{
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 12px 15px;
+    color: #202114;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-top: 6px;
+}
+#wrapper-1 input[type="email"]:focus {
+    border: 1px solid #202114;
+    color: #222;
+    outline: none;
+}
+#wrapper-1 form input[type="submit"] {
+    border-radius: 20px;
+    border: 1px solid #009B48;
+    background-color: #009B48;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+}
+
+#wrapper-1 form input[type="submit"]:hover {
+    opacity: 0.85;
+}
+#wrapper-1 a {
+text-decoration: none;
+}
+#wrapper-1 .dk {
+    color: #1a73e8;
+}
+
+#wrapper-1 .dk:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+/* Form đổi mật khẩu */
+#wrapper-2 {
+    background-color: #fff;
+    color: #575757;
+}
+#wrapper-2 form {
+    border-radius: 3px;
+    padding: 30px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+    width: 45%;
+    margin: auto;
+}
+
+#wrapper-2 h3 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+}
+#wrapper-2 input[type="password"]{
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 12px 15px;
+    color: #202114;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-top: 6px;
+}
+#wrapper-2 input[type="password"]:focus {
+    border: 1px solid #202114;
+    color: #222;
+    outline: none;
+}
+#wrapper-2 form input[type="submit"] {
+    border-radius: 20px;
+    border: 1px solid #009B48;
+    background-color: #009B48;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+}
+
+#wrapper-2 form input[type="submit"]:hover {
+    opacity: 0.85;
+}
+#wrapper-2 a {
+text-decoration: none;
+}
+#wrapper-2 .dk {
+    color: #1a73e8;
+}
+
+#wrapper-2 .dk:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+/* Thông tin tài khoản */
 /* Footer */
 .footer {
     width: 100%;
     background: rgb(0, 0, 0, 0.79);
     height: 322px;
-    margin-top: 200px;
+    margin-top: 150px;
     padding: 0px 63px;
     padding-top: 57px;
     display: flex;
     justify-content: space-around;
 }
-.footer img{
-width: 140px;
+
+.footer img {
+    width: 140px;
 }
+
 .footer .box {
     width: 250px;
     color: #fff;
 }
-.footer .box .sdt{
-margin-top: 10px;
-color: #009B48;
-font-weight: bold;
+
+.footer .box .sdt {
+    margin-top: 10px;
+    color: #009B48;
+    font-weight: bold;
 }
+
 .footer .box .quick-menu {
     margin-top: 25px;
 
 }
+
 .footer .box .quick-menu .item {
     margin-bottom: 12px;
 
 }
+
 .footer .box .quick-menu,
 .item a {
     color: #fff;
     text-decoration: none;
-}
-.footer .box form input {
-    width: 294px;
-    height: 42px;
-    background: transparent;
-    padding-left: 20px;
-    color: #fff;
-    margin-top: 30px;
-}
-.footer .box form button {
-    background: #362f2f;
-    box-shadow: 5px 5px 4px rgba(0, 0, 0.25);
-    width: 163px;
-    height: 38px;
-    margin-top: 29px;
-    color: #fff;
 }

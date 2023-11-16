@@ -1,67 +1,49 @@
 <?php
-
-function loadall_taikhoan()
-{
-    $sql = "select * from tai_khoan 
-    order by id desc ";
-    $listtaikhoan = pdo_query($sql);
-    return $listtaikhoan;
-}
-function delete_taikhoan($id)
-{
-    $sql = "delete from 
-    tai_khoan  where id = " . $id;
-    pdo_query($sql);
-}
-function insert_taikhoan2($user, $pass, $email, $address, $tel, $role)
-{
-    $sql = "insert into tai_khoan(user,pass,email,address,tel,role) values ('$user','$pass','$email','$address','$tel','$role')";
+function add_taikhoan($email,$user,$pass){
+    $sql="INSERT INTO tai_khoan ( email, user, pass) VALUES ( '$email', '$user','$pass')";
     pdo_execute($sql);
 }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function insert_taikhoan($email, $user, $pass)
-{
-    $sql = "insert into tai_khoan (email,user,pass) 
-    values ('$email','$user','$pass')";
-    pdo_execute($sql);
-}
-
-function check_email($email,$pass) {
+function dangnhap($email,$pass) {
     $sql="SELECT * FROM tai_khoan WHERE email='$email' and pass='$pass'";
     $taikhoan = pdo_query_one($sql);
     return $taikhoan;
 }
-function check_email_mk($email)
-{
-    $sql = "select * from 
-    tai_khoan where email = '" . $email . "' ";
-    $sp = pdo_query_one($sql);
-    return $sp;
+//Ramdom mật khẩu ngẫu nhiên
+function RandomPassword() {
+    $length = 8;
+    $char = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';//Chuỗi kí tự để ramdom
+    $pass = '';
+    
+    for ($i = 0; $i < $length; $i++) {
+        $pass .= $char[rand(0, strlen($char) - 1)];
+    }
+    
+    return $pass;
 }
+//Kiểm tra thông tin email có trong csdl hay không
+function sendMail($email) {
+    $sql="SELECT * FROM tai_khoan WHERE email='$email'";
+    $taikhoan = pdo_query_one($sql);
 
+    if (empty($email)) {
+        return "Bạn chưa nhập email!";
+    }
+    
+    if ($taikhoan != false) {
+        $newPass = RandomPassword();
 
-function update_taikhoanAD($id, $user, $pass, $email, $address, $tel, $role)
-{
-    $sql = "update tai_khoan 
-    set user='" . $user . "',pass='" . $pass . "',
-    email='" . $email . "',address='" . $address . "',
-    tel='" . $tel . "',role='" . $role . "'where id=" . $id;
-    pdo_execute($sql);
-}
-function update_taikhoan($id, $user, $pass, $email, $address, $tel)
-{
-    $sql = "update tai_khoan set user='" . $user . "',
-    pass='" . $pass . "',email='" . $email . "',
-    address='" . $address . "',tel='" . $tel . "' where id =" . $id;
-    pdo_execute($sql);
-}
-function loadone_taikhoan($id)
-{
-    $sql = "select * from tai_khoan where id = " . $id;
-    $sp = pdo_query_one($sql);
-    return $sp;
-}
+        // $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT); //cái này tăng bảo mật
+        $sql = "UPDATE tai_khoan SET pass='$newPass' WHERE email='$email'";
+        pdo_execute($sql);
 
+        sendMailPass($email, $taikhoan['user'], $newPass);
+        return "Gửi email thành công";
+    }
+    else {
+        return "Email bạn nhập ko có trong hệ thống!";
+    }
+}
+//PHPMailer - Gửi email kiểu php
 function sendMailPass($email, $username, $pass) {
     require '../PHPMailer/src/Exception.php';
     require '../PHPMailer/src/PHPMailer.php';
@@ -111,3 +93,45 @@ function update_matkhau($id,$pass){
     $sql="UPDATE tai_khoan SET pass='$pass' where id= '$id'";
     pdo_execute($sql);
 }
+
+function loadall_taikhoan(){
+    $sql = "SELECT * FROM tai_khoan order by id desc";
+    $result = pdo_query($sql);
+    return $result;
+}
+
+function loadone_taikhoan($idtk){
+    $sql = "select * from tai_khoan where id = $idtk";
+    $result = pdo_query_one($sql);
+    return $result;
+}
+
+function update_taikhoan($id,$user,$pass,$img,$email,$address,$tel,$role){
+    $taikhoan = loadone_taikhoan($id);
+    if($img != ""){
+        if($taikhoan['img'] != null && $taikhoan['img'] != ""){
+            $imglink = "../upload/" . $taikhoan['img'];
+            unlink($imglink);
+        }
+        $sql = "UPDATE tai_khoan SET user ='$user', pass ='$pass', img ='$img', email ='$email', address ='$address', tel ='$tel', role ='$role' WHERE id = $id";
+    }else{
+        $sql = "UPDATE tai_khoan SET user ='$user', pass ='$pass', email ='$email', address ='$address', tel ='$tel', role ='$role' WHERE id = $id";
+    }
+    pdo_execute($sql);
+}
+
+function delete_taikhoan($id){
+    $taikhoan = loadone_taikhoan($id);
+    if($taikhoan['img'] != null && $taikhoan['img'] != ""){
+        $imglink = "../upload/" . $taikhoan['img'];
+        unlink($imglink);
+    }
+    $sql = "DELETE FROM tai_khoan where id = $id";
+    pdo_execute($sql);
+}
+
+function add_taikhoan_admin($user,$pass,$img,$email,$address,$tel,$role){
+    $sql = "INSERT INTO tai_khoan (user, pass, img, email, address, tel, role) VALUES ('$user', '$pass', '$img', '$email', '$address', '$tel', '$role')";
+    pdo_execute($sql);
+}
+?>

@@ -1,45 +1,34 @@
-<div class="body">
-    <h2>Đăng ký</h2><br>
-    <div class="container-sign" id="container-sign">
-   
-            <div class="">
-                <form action="index.php?act=dangky" method="post">
-                <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <span>Sử dụng phương thức đăng ký khác</span>
-                <input name="user" type="text" placeholder="Tên đăng nhập" required/>
-                <input name="email" type="email" placeholder="Email" required/>
-                <input name="pass" type="password" placeholder="Mặt khẩu" required />
-                <br>
-                <p>Bạn đã có tài khoản? <a href="index.php?act=dangnhap">Đăng nhập ngay</a></p>
-                <br>
-               
-                <input type="submit" name="dangky" class="btn btn-primary" value="Đăng ký"></input>
-
-                <div style="color: red; font-size: 12px; font-weight: 500;">
-                        <?php
-                         if (isset($thongbao) && ($thongbao != "")) {
-                            echo $thongbao;
-                          }
-                        ?>
-                    </div>
-            </form>
-
-            </div>
-
-
-           
-    
-       
-
-
-
-
-
-
-
-    </div>
+<div id="wrapper">
+<h3>Đăng ký</h3><br>
+    <form action="index.php?act=dangky" method="post">
+        <div class="form-group">
+            <label for="">Tên người dùng</label>
+            <input type="text" name="user" placeholder="Tên người dùng">
+        </div>
+        <div class="form-group">
+            <label for="">Email</label>
+            <input type="email" name="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label for="">Mật khẩu</label>
+            <input type="password" name="pass" placeholder="Mật khẩu">
+        </div>
+        <a href="index.php?act=quenmk"><p class="mk">Quên mật khẩu?</p></a><br>
+        <div class="center">
+        <input type="submit" name="dangky" value="Đăng ký"><br><br>
+        <p style="color: red;">
+        <?php 
+            if (isset($thongbao2) && !empty($thongbao2)) {
+            echo $thongbao2;
+            }?>
+        </p><br>
+        <p>Bạn đã có tài khoản? <a href="index.php?act=dangnhap"><span class="dk">Đăng nhập!</span></a></p><br>
+        <span class="span">Hoặc sử dụng phương pháp đăng ký khác</span>
+        <div class="social-container">
+                <a href="#" class="social"><i class="fa-brands fa-facebook" style="color: #000000;"></i></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g" style="color: #000000;"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in" style="color: #000000;"></i></a>
+        </div>
+        </div>
+    </form>
 </div>

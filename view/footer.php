@@ -1,7 +1,7 @@
 <div class="footer">
     <div class="box">
         <div class="logo">
-            <img src="../image/logoweb.jpg" alt="">
+            <img src="../image/logo1.png" alt="">
         </div>
         <p class="sdt">Hotline: 1900 96 96 01</p><br>
         <span>Công ty TNHH Laptopia Việt Nam</span>
@@ -39,13 +39,6 @@
                 <a href="">Hỏi đáp</a>
             </div>
         </ul>
-    </div>
-    <div class="box">
-        <h3>LIÊN HỆ</h3>
-        <form action="">
-            <input type="text" placeholder="Địa chỉ email" required>
-            <button>Nhận tin</button>
-        </form>
     </div>
 </div>
 </div>

@@ -12,16 +12,19 @@
         }
 
         .tttk-dangxuat a {
-          font-size: 13px;
+            font-size: 13px;
             color: white;
 
         }
-        .mb-tk li{
-             margin-bottom: 5px; 
+
+        .mb-tk li {
+            margin-bottom: 5px;
         }
-        .mb-tk li a{
+
+        .mb-tk li a {
             font-size: 17px;
         }
+
         .tttk-dangxuat {
             margin-right: 70px;
             margin-top: 200px;
@@ -77,34 +80,45 @@
         <?php
         } else {
         ?>
-            <div class="">
-                <h2>Đăng nhập</h2><br>
-                <div class="container-sign" id="container-sign">
-                    <form action="index.php?act=dangnhap" method="post">
+            <div class="body">
 
-                        <div class="social-container">
-                            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                        <span>Sử dụng phương thức đăng nhập khác</span>
-                        <input name="email" type="text" placeholder="Email" />
-                        <input name="pass" type="password" placeholder="Password" />
-                        <div style="color: red; font-size: 12px; font-weight: 500;">
-                            <?php
-                            if (isset($thongbao) && ($thongbao != "")) {
-                                echo $thongbao;
-                            }
-                            ?>
-                        </div>
-                        <br>
-                        <a href="#">Quên mật khẩu</a>
-                        <p>Bạn chưa có tài khoản? <a href="index.php?act=dk"><span class="dk">Đăng kí ngay</span></a></p>
-                        <br>
-                        <button type="submit" name="dangnhap" value="Đăng nhập">Đăng nhập</button>
-                    </form>
+
+                <div class="container-sign" id="container-sign">
+                    <div id="wrapper">
+                        <h3>Đăng nhập</h3><br>
+                        <form action="index.php?act=dangnhap" method="post">
+                            <div class="form-group">
+                                <label for="">Email</label>
+                                <input type="email" name="email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Mật khẩu</label>
+                                <input type="password" name="pass" placeholder="Mật khẩu">
+                            </div>
+                            <a href="index.php?act=quenmk">
+                                <p class="mk">Quên mật khẩu?</p>
+                            </a><br>
+                            <div class="center">
+                                <input type="submit" name="dangnhap" value="Đăng nhập"><br><br>
+                                <p style="color: red;">
+                                    <?php
+                                    if (isset($thongbao3) && !empty($thongbao3)) {
+                                        echo $thongbao3;
+                                    } ?>
+                                </p><br>
+                                <p>Bạn chưa có tài khoản? <a href="index.php?act=dangky"><span class="dk">Đăng ký!</span></a></p><br>
+                                <span class="span">Hoặc sử dụng phương pháp đăng nhập</span>
+                                <div class="social-container">
+                                    <a href="#" class="social"><i class="fa-brands fa-facebook" style="color: #000000;"></i></i></a>
+                                    <a href="#" class="social"><i class="fab fa-google-plus-g" style="color: #000000;"></i></a>
+                                    <a href="#" class="social"><i class="fab fa-linkedin-in" style="color: #000000;"></i></a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
+
         <?php } ?>
     </div>
     </div>

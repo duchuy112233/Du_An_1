@@ -1,5 +1,5 @@
 <div class="mb10">
-    <h2>DANH SÁCH DANH MỤC</h2>
+    <h3>DANH SÁCH DANH MỤC</h3>
 </div>
 <div class="formcontent">
     <form action="index.php?act=adddm" method="post">
@@ -17,7 +17,7 @@
                 <?php foreach ($listdm as $key => $dm) : ?>
                 <tr>
                     <td><input type="checkbox" name=""></td>
-                    <td>DA1-<?php echo $dm['id'] ?></td>
+                    <td>DM<?php echo $dm['id'] ?></td>
                     <td><?php echo $dm['name'] ?></td>
                     <td>
                         <a href="?act=editdm&iddm=<?php echo $dm['id'] ?>"><input type="button" value="Sửa"></a>
