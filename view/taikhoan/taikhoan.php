@@ -9,9 +9,9 @@
         </div>
         <div class="boxdm">
             <p><a href="">Hồ sơ</a></p>
-            <p><a href="">Đổi mật khẩu</a></p>
-            <p><a href="">Quên mật khẩu</a></p>
-            <p><a href="">Đơn hàng của tôi</a></p>
+            <p><a href="index.php?act=doimk">Đổi mật khẩu</a></p>
+            <p><a href="index.php?act=quenmk">Quên mật khẩu</a></p>
+            <p><a href="#">Đơn hàng của tôi</a></p>
         </div>
     </div>
     <div class="boxphai">
@@ -38,8 +38,8 @@
                     <label for="">Số điện thoại</label>
                     <input type="text" name="tel" value="<?php echo $_SESSION['user']['tel'] ?>">
                 </div><br><br>
-                <input type="hidden" name="pass" value="<?php echo $_SESSION['user']['email'] ?>">
-                <input type="hidden" name="email" value="<?php echo $_SESSION['user']['pass'] ?>">
+                <input type="hidden" name="pass" value="<?php echo $_SESSION['user']['pass'] ?>">
+                <input type="hidden" name="email" value="<?php echo $_SESSION['user']['email'] ?>">
                 <input type="hidden" name="id" value="<?php echo $_SESSION['user']['id'] ?>">
                 <input type="submit" name="capnhat" value="Cập nhật">
                 <p style="color:red;">
