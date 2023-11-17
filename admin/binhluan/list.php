@@ -19,9 +19,9 @@
                 <?php foreach ($listbl as $key => $bl) : ?>
                 <tr>
                     <td><input type="checkbox" name=""></td>
-                    <td>BL<?php echo $bl['id'] ?></td>
+                    <td>SP<?php echo $bl['id'] ?></td>
                     <td><?php echo $bl['name'] ?></td>
-                    <td><?php echo $bl['img'] ?></td>
+                    <td><img src="../upload/<?php echo $bl['img'] ?>" alt="" width="70px" height="50px"></td>
                     <td><?php echo $bl['sobl'] ?></td>
                     <td>
                         <a href="?act=ctbl&idctbl=<?php echo $bl['id'] ?>"><input type="button" value="Xem chi tiết"></a>

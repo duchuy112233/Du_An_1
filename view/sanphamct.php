@@ -1,5 +1,5 @@
 <div class="chitietsp">
-    <h3 class="title"><?php echo $onesp['name'] ?></h3>
+    <h3 class="title-sp"><?php echo $onesp['name'] ?></h3>
     <div class="boxctsp">
         <div class="box-left">
             <div class="">
@@ -9,6 +9,7 @@
                 <h3 style="color: #009B48;"><?php echo number_format($onesp['price'] - $onesp['price'] * ($onesp['giamgia'] / 100)) ?> Đ</h3>
                 <p>Giá gốc : <del><?php echo number_format($onesp['price']) ?> Đ</del></p>
                 <p>Giảm giá: -<?php echo number_format($onesp['giamgia']) ?>%</p>
+                <p>Lượt xem: <?php echo $onesp['luotxem'] ?></p>
                 <input type="submit" value="Mua hàng" class="btn-mua">
             </div>
         </div>
@@ -22,7 +23,7 @@
                     <p><span>Card</span><span><?php echo $onesp['card_do_hoa'] ?></span></p>
                     <p><span>M.Hình</span><span><?php echo $onesp['man_hinh'] ?></span></p>
                 </div>
-                <h4>Thông tin sản phẩm</h4>
+                <h4>Thông tin bảo hành</h4>
                 <div class="content-ctsp">
                     <p>Bảo hành pin 12 tháng</p>
                     <p>Giá sản phẩm đã bao gồm VAT</p>
@@ -35,18 +36,17 @@
     <hr>
     <p><?php echo $onesp['mota'] ?></p>
 
-
     <div class="title">
-        <h4>SẢN CÙNG LOẠI</h4>
+        <h4 style="color: black;">SẢN CÙNG LOẠI</h4>
         <hr>
     </div>
     <div class="row">
         <?php foreach ($sp_cungloai as $key => $sp) : ?>
             <div class="boxsp">
-                <a href="index.php?act=sanphamct"><img src="../upload/<?php echo $sp['img'] ?>" alt=""></a>
+                <a href="index.php?act=sanphamct&idsp=<?php echo $sp['id'] ?>"><img src="../upload/<?php echo $sp['img'] ?>" alt=""></a>
                 <div class="card-body">
                     <div class="box-title">
-                        <a href="index.php?act=sanphamct"><?php echo $sp['name'] ?></a>
+                        <a href="index.php?act=sanphamct&idsp=<?php echo $sp['id'] ?>"><?php echo $sp['name'] ?></a>
                     </div>
                     <div class="boxsp-content">
                         <p>CPU <?php echo $sp['cpu'] ?></p>
@@ -70,13 +70,38 @@
     </div>
 
     <div class="binhluan">
-        <h4 class="binhluan-title">BÌNH LUẬN</h4>
-
-        <div class="">
-            <form class="formbinhluan" action="" method="post">
-                <input type="text" id="nhap">
-                <input class="nut-gui" type="submit" name="guibinhluan" value="Gửi">
-            </form>
+        <h4 class="binhluan-title">Bình Luận</h4>
+        <div class="add-bl">
+            <?php if (isset($_SESSION['user'])) : ?>
+                <form action="index.php?act=sanphamct&idsp=<?php echo $onesp['id'] ?>" method="post">
+                    <input type="text" name="noidung">
+                    <input type="hidden" name="idsp" value="<?php echo $onesp['id'] ?>">
+                    <span><i class="fa-solid fa-paper-plane" style="color: #fff;"></i><input type="submit" name="guibinhluan" value="Gửi"></span><br><br>
+                    <p style="color:red;">
+                        <?php
+                        if (isset($thongbao8) && !empty($thongbao8)) {
+                            echo $thongbao8;
+                        }
+                        ?>
+                    </p>
+                </form>
+            <?php else : ?>
+                <p style="color: red;">Bạn cần đăng nhập để bình luận</p>
+            <?php endif ?>
+        </div>
+        <div class="form-bl">
+            <?php foreach ($binhluan as $key => $bl) : ?>
+                <div class="avatar-bl">
+                    <img src="../upload/<?php echo $bl['img'] ?>" alt="">
+                    <p><?php echo $bl['user'] ?></p>
+                </div>
+                <div class="comment">
+                    <div class="noidung"><?php echo $bl['noidung'] ?></div>
+                    <div class="ngaybl"><?php echo date("d/m/Y", strtotime($bl['ngaybl'])) ?></div>
+                </div>
+            <?php endforeach ?>
         </div>
     </div>
+
+
 </div>

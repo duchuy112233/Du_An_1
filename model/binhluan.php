@@ -1,7 +1,7 @@
 <?php
 function load_binhluan($idsp)
 {
-    $sql = "SELECT binh_luan.id, binh_luan.noidung, tai_khoan.user, binh_luan.ngaybl FROM `binh_luan` 
+    $sql = "SELECT binh_luan.id, binh_luan.noidung, tai_khoan.user, tai_khoan.img, binh_luan.ngaybl FROM binh_luan
     JOIN tai_khoan ON binh_luan.iduser = tai_khoan.id
     JOIN san_pham ON binh_luan.idsp = san_pham.id
     WHERE san_pham.id = $idsp";
@@ -9,11 +9,11 @@ function load_binhluan($idsp)
     return $result;
 }
 
-function insert_binhluan($idpro, $noidung, $iduser)
+function insert_binhluan($idsp, $noidung, $iduser)
 {
     $date = date('Y-m-d');
-    $sql = "INSERT INTO `binhluan`(`noidung`, `iduser`, `idpro`, `ngaybinhluan`) 
-        VALUES ('$noidung','$iduser','$idpro','$date')";
+    $sql = "INSERT INTO binh_luan (noidung, iduser, idsp, ngaybl) 
+        VALUES ('$noidung','$iduser','$idsp','$date')";
     pdo_execute($sql);
     header("location:" . $_SERVER['HTTP_REFERER']);
 }

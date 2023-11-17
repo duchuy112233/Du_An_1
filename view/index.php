@@ -34,8 +34,13 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             break;
         case 'sanphamct':
             if(isset($_POST['guibinhluan'])){
-                $iduser=$_SESSION['user']['id'];
-                insert_binhluan($_POST['idpro'], $_POST['noidung'],$iduser);
+                if(empty($_POST['noidung'])){
+                $thongbao8="Vui lòng nhập nội dung bình luận!";
+                }
+                else{
+                    $iduser=$_SESSION['user']['id'];
+                    insert_binhluan($_POST['idsp'], $_POST['noidung'],$iduser);
+                }
             }
             if(isset($_GET['idsp']) && $_GET['idsp'] > 0 ){
                 tangluotxem($_GET['idsp']);
