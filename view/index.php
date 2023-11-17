@@ -42,7 +42,6 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 $onesp=loadone_sanpham($_GET['idsp']);
                 $sp_cungloai=load_sanpham_cungloai($_GET['idsp'],$onesp['iddm']);
                 $binhluan=load_binhluan($_GET['idsp']);
-                include "chitietsanpham.php";
             }
             include "sanphamct.php";
             break;

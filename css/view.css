@@ -337,87 +337,48 @@ margin-bottom: 8px;
     cursor: pointer;
 }
 /* Sản phẩm chi tiết */
-.chitiet-tong {
-    padding: 50px 300px;
-    margin-bottom: 50px;
-
+.chitietsp{
+width: 1100px;
+margin: 0 auto;
 }
-
-.chitiet-row {
-    display: flex;
-    gap: 50px;
+.boxctsp{
+display: flex;
+justify-content:space-between;
+margin-bottom: 10px;
 }
-
-.chitiet-img {
-    border: 1px solid gray;
-    margin-bottom: 30px;
+.box-left{
+display: flex;
+gap:30px;
 }
-
-.chitiet-img img {
-    width: 300px;
-    padding: 20px 0px;
+.box-left img{
+width: 300px;
+border: 1px solid #ccc;
 }
-
-.chitiet-thongso li {
-    list-style: none;
-    padding: 5px 0px;
+.chitietsp .title{
+margin-top: 30px;
 }
-
-.chitiet-mota {
-    width: 700px;
+.boxctsp-money h3,
+.boxctsp-money p{
+margin-bottom: 5px;
 }
-
-.chitiet-muahang {
-    padding: 15px 20px;
+.boxctsp-money .btn-mua{
     background-color: #009B48;
-    text-align: center;
-    margin-top: 110px;
-    border-radius: 10px;
+    color: #fff;
+    border-radius: 20px;
+    padding: 8px;
+    font-weight: 800;
+    outline: none;
+    border: none;
+    width: 100%;
+}
+.box-right{
 
 }
 
-.chitiet-muahang:hover {
-    background-color: red;
 
-}
 
-.chitiet-muahang a {
-    text-decoration: none;
-    color: white;
 
-}
 
-.binhluan {
-    border: 1px solid gray;
-    height: 400px;
-    margin-top: 10px;
-    margin-bottom: 50px;
-}
-
-.binhluan-name {
-    margin-top: 100px;
-}
-
-.formbinhluan {
-    padding: 20px 50px;
-    float: right;
-}
-
-#nhap {
-    height: 40px;
-    width: 1300px;
-}
-
-.formbinhluan .nut-gui {
-    background-color: #009B48;
-    padding: 10px 10px;
-    color: white;
-    font-weight: bold;
-}
-
-.formbinhluan .nut-gui:hover {
-    background-color: red;
-}
 /* Cập nhật thông tin tài khoản */
 .boxtaikhoan{
 display: flex;

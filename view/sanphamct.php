@@ -1,98 +1,70 @@
-<div class="mrlr">
-    <div class="">
-        <div class="chitiet-tong">
-            <div class="chitiet-row">
-                <div class="chitiet-img">
-                    <img class="img-detail" src="image/sp2.jpg" />
-                </div>
-                <div class="chitiet-thongso">
-                    <ul>
-                        <h2><?php echo $onesp['name'] ?></h2>
-                        <br>
-                        <li>
-                            Đơn giá:
-                            <span class="line-through">18.000.000 VNĐ</span>
-                            <del class="badge bg-danger">27.000.000 VNĐ</del>
-                        </li>
-                        <li>Nhà cung cấp: Apple</li>
-                        <li>Hàng mới nhập</li>
-                        <li>
-                            Số lượng còn:
-                            <span class="badge bg-warning">5</span> chiếc
-                        </li>
-                        <li>
-                            Giảm giá:
-                            <span class="badge bg-danger">5%</span>
-                        </li>
-                    </ul>
-                    <div class="chitiet-muahang">
-                        <a href="#"> Mua hàng </a>
-                    </div>
-
-                </div>
-            </div>
+<div class="chitietsp">
+<h3><?php echo $onesp['name'] ?></h3><br><br>
+    <div class="boxctsp">
+        <div class="box-left">
             <div class="">
-                <div class="chitiet-mota">
-                    <h4 class="mota">MÔ TẢ SẢN PHẨM</h4>
-                    <hr />
-                    <br>
-                    <span>
-                        iPhone 14 Pro được trang bị viên pin cho thời lượng sử dụng
-                        lên tới 29 giờ, tương đương 2 ngày sử dụng bình thường. Thời
-                        lượng sử dụng đủ dài để bạn có thể sử dụng thoải mái mà không
-                        lo hết pin. Ngoài ra, máy cũng hỗ trợ sạc nhanh 20W, nhờ vậy
-                        máy có thể sạc tới 50% trong khoảng 30 phút.
-                    </span>
-                </div>
+                <img src="../upload/<?php echo $onesp['img'] ?>" alt="">
+            </div>
+            <div class="boxctsp-money">
+                <h3 style="color: #009B48;"><?php echo number_format($onesp['price'] - $onesp['price'] * ($onesp['giamgia'] / 100)) ?> Đ</h3>
+                <p>Giá gốc : <del><?php echo number_format($onesp['price']) ?> Đ</del></p>
+                <p>Giảm giá: -<?php echo number_format($onesp['giamgia']) ?>%</p>
+                <input type="submit" value="Mua hàng" class="btn-mua">
             </div>
         </div>
-
-
-        <div class="title">
-            <h4>SẢN PHẨM MỚI</h4><hr>
+        <div class="box-right">
+            <p>CPU <?php echo $onesp['cpu'] ?></p>
+            <p>RAM <?php echo $onesp['ram'] ?></p>
+            <p>Ổ cứng <?php echo $onesp['ocung'] ?></p>
+            <p>Card <?php echo $onesp['card_do_hoa'] ?></p>
+            <p>M.Hình <?php echo $onesp['man_hinh'] ?></p>
         </div>
-        <div class="row">
-            <?php foreach ($dm2 as $key => $sp) : ?>
-                <div class="boxsp">
-                    <a href="index.php?act=sanphamct"><img src="../upload/<?php echo $sp['img'] ?>" alt=""></a>
-                    <div class="card-body">
-                        <div class="box-title">
-                            <a href="index.php?act=sanphamct"><?php echo $sp['name'] ?></a>
-                        </div>
-                        <div class="boxsp-content">
-                            <p>CPU <?php echo $sp['cpu'] ?></p>
-                            <p>RAM <?php echo $sp['ram'] ?></p>
-                            <p>Ổ cứng <?php echo $sp['ocung'] ?></p>
-                            <p>Card <?php echo $sp['card_do_hoa'] ?></p>
-                            <p>M.Hình <?php echo $sp['man_hinh'] ?></p>
-                        </div>
-                        <div class="money">
-                            <del><?php echo number_format($sp['price']) ?> VND</del>
-                            <span>-<?php echo number_format($sp['giamgia']) ?>%</span>
-                            <p><?php echo number_format($sp['price'] - $sp['price'] * ($sp['giamgia'] / 100)) ?> Đ</p>
-                        </div>
-                        <div class="add">
-                            <a href="" class="btn-shop"><input type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="btn-shop-text">
-                                <i class="fa-solid fa-cart-shopping"></i></a>
-                        </div>
+    </div>
+    <h4>Mô tả</h4><hr>
+    <p><?php echo $onesp['mota'] ?></p>
+
+
+    <div class="title">
+        <h4>SẢN CÙNG LOẠI</h4>
+        <hr>
+    </div>
+    <div class="row">
+        <?php foreach ($sp_cungloai as $key => $sp) : ?>
+            <div class="boxsp">
+                <a href="index.php?act=sanphamct"><img src="../upload/<?php echo $sp['img'] ?>" alt=""></a>
+                <div class="card-body">
+                    <div class="box-title">
+                        <a href="index.php?act=sanphamct"><?php echo $sp['name'] ?></a>
+                    </div>
+                    <div class="boxsp-content">
+                        <p>CPU <?php echo $sp['cpu'] ?></p>
+                        <p>RAM <?php echo $sp['ram'] ?></p>
+                        <p>Ổ cứng <?php echo $sp['ocung'] ?></p>
+                        <p>Card <?php echo $sp['card_do_hoa'] ?></p>
+                        <p>M.Hình <?php echo $sp['man_hinh'] ?></p>
+                    </div>
+                    <div class="money">
+                        <del><?php echo number_format($sp['price']) ?> VND</del>
+                        <span>-<?php echo number_format($sp['giamgia']) ?>%</span>
+                        <p><?php echo number_format($sp['price'] - $sp['price'] * ($sp['giamgia'] / 100)) ?> Đ</p>
+                    </div>
+                    <div class="add">
+                        <a href="" class="btn-shop"><input type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="btn-shop-text">
+                            <i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
                 </div>
-            <?php endforeach ?>
-        </div><hr>
+            </div>
+        <?php endforeach ?>
+    </div>
 
-        <h4 class="binhluan-name">BÌNH LUẬN</h4>
+    <div class="binhluan">
+        <h4 class="binhluan-title">BÌNH LUẬN</h4>
 
-
-        <div class="binhluan">
+        <div class="">
             <form class="formbinhluan" action="" method="post">
                 <input type="text" id="nhap">
                 <input class="nut-gui" type="submit" name="guibinhluan" value="Gửi">
-
             </form>
         </div>
     </div>
-</div>
-
-
-
 </div>

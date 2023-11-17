@@ -1,10 +1,10 @@
 <?php
 function load_binhluan($idsp)
 {
-    $sql = "SELECT binhluan.id, binhluan.noidung, taikhoan.user, binhluan.ngaybinhluan FROM `binhluan` 
-    JOIN taikhoan ON binhluan.iduser = taikhoan.id
-    JOIN sanpham ON binhluan.idpro = sanpham.id
-    WHERE sanpham.id = $idsp";
+    $sql = "SELECT binh_luan.id, binh_luan.noidung, tai_khoan.user, binh_luan.ngaybl FROM `binh_luan` 
+    JOIN tai_khoan ON binh_luan.iduser = tai_khoan.id
+    JOIN san_pham ON binh_luan.idsp = san_pham.id
+    WHERE san_pham.id = $idsp";
     $result = pdo_query($sql);
     return $result;
 }
