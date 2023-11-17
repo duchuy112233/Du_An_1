@@ -20,13 +20,7 @@
                 </form>
                 <div class="form-menu">
                     <div class="dn-header">
-                    <?php $first_letter = strtoupper(substr($_SESSION['user']['email'], 0, 1)) ?>
                         <?php if(isset($_SESSION['user'])) { ?>
-                            <!-- <?php if($_SESSION['user']['img'] != "") : ?>
-                                <img src="../upload/<?php echo $_SESSION['user']['img'] ?>" alt="Ảnh đại diện">
-                            <?php else : ?>
-                                <div class="avatar"><?php echo $first_letter; ?></div>
-                            <?php endif ?> -->
                             <li class="nav-item"><a href="#"><i class="fa-solid fa-user" style="color: #000000;"></i> <?php echo $_SESSION['user']['user'] ?> </i></a>
                             <ul class = "submenu">
                                 <li class="header-tk"> <a  href="index.php?act=taikhoan">Thông tin tài khoản </a></li>
