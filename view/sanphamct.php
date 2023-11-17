@@ -1,5 +1,5 @@
 <div class="chitietsp">
-<h3><?php echo $onesp['name'] ?></h3><br><br>
+    <h3 class="title"><?php echo $onesp['name'] ?></h3>
     <div class="boxctsp">
         <div class="box-left">
             <div class="">
@@ -13,14 +13,26 @@
             </div>
         </div>
         <div class="box-right">
-            <p>CPU <?php echo $onesp['cpu'] ?></p>
-            <p>RAM <?php echo $onesp['ram'] ?></p>
-            <p>Ổ cứng <?php echo $onesp['ocung'] ?></p>
-            <p>Card <?php echo $onesp['card_do_hoa'] ?></p>
-            <p>M.Hình <?php echo $onesp['man_hinh'] ?></p>
+            <div>
+                <h4>Thông số kĩ thuật</h4>
+                <div class="content-ctsp">
+                    <p><span>CPU</span><span><?php echo $onesp['cpu'] ?></span></p>
+                    <p><span>RAM</span><span><?php echo $onesp['ram'] ?></span></p>
+                    <p><span>Ổ cứng</span><span><?php echo $onesp['ocung'] ?></span></p>
+                    <p><span>Card</span><span><?php echo $onesp['card_do_hoa'] ?></span></p>
+                    <p><span>M.Hình</span><span><?php echo $onesp['man_hinh'] ?></span></p>
+                </div>
+                <h4>Thông tin sản phẩm</h4>
+                <div class="content-ctsp">
+                    <p>Bảo hành pin 12 tháng</p>
+                    <p>Giá sản phẩm đã bao gồm VAT</p>
+                    <p>1 đổi 1 trong 30 ngày nếu có lỗi</p>
+                </div>
+            </div>
         </div>
     </div>
-    <h4>Mô tả</h4><hr>
+    <h4>Mô tả</h4>
+    <hr>
     <p><?php echo $onesp['mota'] ?></p>
 
 
