@@ -61,11 +61,8 @@
             $tt = $price  - (($price * $giamgia) / 100);
             echo '<div class=" ' . $mr . '">              
                             <div class="boxsp">
-                               <a href="' . $linksp . '"> <img src="' . $hinh . '" class="imagesp" /></a>
-                                   
-                                    <div class="card-body">
-                                                               
-                                                                
+                               <a href="' . $linksp . '"> <img src="' . $hinh . '" class="imagesp" /></a>                         
+                                    <div class="card-body">                                                                                                                
                                             <div class="box-title">
                                                 <a href="' . $linksp . '">' . $name . '</a>
                                             </div>
@@ -77,7 +74,7 @@
                                             <p class ="money2">                                                    
                                                 <b>' . number_format($tt) . ' VNĐ</b>
                                             </p>
-                                            
+
                                             <div class="boxsp-content">
                                             <p>CPU ' . $cpu . '</p>
                                             <p>RAM ' . $ram . '</p>
@@ -90,10 +87,11 @@
                                                 <input type="hidden" name="name" value="' . $name . '">
                                                 <input type="hidden" name="img" value="' . $img . '">
                                                 <input type="hidden" name="price" value="' .  $tt = $price  - (($price * $giamgia) / 100) . '">
-                                               <input  type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
-                                                <i class="fa-solid fa-cart-shopping"></i>
+                                             <input  type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
+                                              
 
-                                                                  
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                                
                                             </form>
                                         </div>
                                     </div>
@@ -101,6 +99,29 @@
                         ';
         }
         ?>
-
     </div>
 </div>
+
+
+<!-- <script>
+    function addToCart(event) {
+        // Prevent the form from submitting and refreshing the page
+        event.preventDefault();
+
+        // Các dòng mã để thêm sản phẩm vào giỏ hàng ở đây
+
+        // Cập nhật số lượng trên icon giỏ hàng
+        updateCartCount();
+    }
+
+    function updateCartCount() {
+        // Lấy số lượng hiện tại từ phía client (nếu có)
+        let currentCount = parseInt(document.getElementById("cart-count").textContent) || 0;
+
+        // Tăng số lượng
+        currentCount++;
+
+        // Cập nhật số lượng trên trang
+        document.getElementById("cart-count").textContent = currentCount.toString();
+    }
+</script> -->

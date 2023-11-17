@@ -35,6 +35,7 @@
 }
 
 .search-box {
+
     border: 1px solid #202114;
     margin-left: 5px;
     display: flex;
@@ -311,7 +312,7 @@
 }
 
 .boxsp .money span {
-    background-color: #009B48;
+    background-color: red;
     border-radius: 4px;
     padding: 3px;
     color: #fff;
@@ -380,16 +381,19 @@
     width: 700px;
 }
 
-.chitiet-muahang {
+.chitiet-muahang1 {
     padding: 15px 20px;
     background-color: #009B48;
     text-align: center;
     margin-top: 110px;
     border-radius: 10px;
+    color: white;
+    font-weight: bold;
 
 }
 
-.chitiet-muahang:hover {
+
+.chitiet-muahang1:hover {
     background-color: red;
 
 }

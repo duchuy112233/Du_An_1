@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,8 +8,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="../css/view.css">
-  
+    <style>
+        #cart-icon-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        #cart-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        #cart-count {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 4px 8px;
+            font-size: 12px;
+          
+            margin-right: 70px;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
         <div class="top-header"></div>
@@ -21,22 +46,25 @@
                 </form>
                 <div class="form-menu">
                     <div class="dn-header">
-                        <?php if(isset($_SESSION['user'])) { ?>
+                        <?php if (isset($_SESSION['user'])) { ?>
                             <li class="nav-item"><a class="anhdaidien" href="#"> <img src="../upload/<?php echo $_SESSION['user']['img'] ?>" alt="Ảnh đại diện"> <?php echo $_SESSION['user']['user'] ?></a>
-                            <ul class = "submenu">
-                                <li class="header-tk"> <a  href="index.php?act=taikhoan">Thông tin tài khoản </a></li>
-                                <li class="header-tk"> <a  href="index.php?act=doimk">Đổi mật khẩu </a></li>
-                                <?php if($_SESSION['user']['role']==1){ ?>
-                                <li class="header-tk"> <a  href="../admin/index.php">Đăng nhập vào ADMIN</a></li>
-                                <?php } ?>
-                                <li class="header-tk"> <a  href="index.php?act=dangxuat">Đăng xuất</a></li>
-                            </ul></li>
+                                <ul class="submenu">
+                                    <li class="header-tk"> <a href="index.php?act=taikhoan">Thông tin tài khoản </a></li>
+                                    <li class="header-tk"> <a href="index.php?act=doimk">Đổi mật khẩu </a></li>
+                                    <?php if ($_SESSION['user']['role'] == 1) { ?>
+                                        <li class="header-tk"> <a href="../admin/index.php">Đăng nhập vào ADMIN</a></li>
+                                    <?php } ?>
+                                    <li class="header-tk"> <a href="index.php?act=dangxuat">Đăng xuất</a></li>
+                                </ul>
+                            </li>
                         <?php } else { ?>
                             <li class="nav-item"><a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000; padding: 12px 12px;"></i> Đăng nhập </i></a></li>
-                        <?php } ?> 
+                        <?php } ?>
                     </div>
-                    <div class="giohang-icon">
-                        <a href="index.php?act=addtocart"> <i class="fa-solid fa-cart-shopping" style="color: #000000; padding: 12px 12px;"></i> Giỏ hàng </a>
+                    <div class="giohang-icon" id="cart-icon-container">
+
+                        <a href="index.php?act=addtocart"> <i id="cart-icon" class="fa-solid fa-cart-shopping" style="color: #000000; padding: 12px 12px;"></i> Giỏ hàng </a>
+                        <div id="cart-count">0</div>
                     </div>
                 </div>
             </div>
@@ -73,4 +101,5 @@
             </ul>
         </div>
     </div>
+
 </body>

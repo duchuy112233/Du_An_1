@@ -40,8 +40,17 @@
                             <span><?= $luotxem ?></span>
                         </li>
                     </ul>
-                    <div class="chitiet-muahang">
-                        <a href="#"> Mua hàng </a>
+                    <div class="">
+                        <?php
+                        echo '
+                            <form style="margin-top: 20px;" action="index.php?act=addtocart" method="post">
+                                <input type="hidden" name="id" value="' . $id . '">
+                                <input type="hidden" name="name" value="' . $name . '">
+                                <input type="hidden" name="img" value="' . $img . '">
+                                <input type="hidden" name="price" value="' .  $tt = $price  - (($price * $giamgia) / 100)  . '">          
+                               <input style="background-color: green;" type="submit" name="addtocart" value="Mua hàng" class="chitiet-muahang1">               
+                            </form>';
+                        ?>
                     </div>
 
                 </div>
@@ -76,8 +85,8 @@
         <hr>
 
         <!-- FORM BÌNH LUẬN -->
-     
-      
+
+
         <?php
 
         include "binhluan/binhluan.php";

@@ -61,7 +61,7 @@
                                     <input type="hidden" name="name" value="' . $name . '">
                                     <input type="hidden" name="img" value="' . $img . '">
                                     <input type="hidden" name="price" value="' .  $tt = $price  - (($price * $giamgia) / 100) . '">
-                                   <input  type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
+                                   <input onclick="addToCart(event)" type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="themgio">
                                     <i class="fa-solid fa-cart-shopping"></i>
 
                                                       
