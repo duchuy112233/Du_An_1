@@ -61,7 +61,7 @@
         </div>
 
 
-        <div class="tieude">
+        <div class="title">
             <h4>SẢN PHẨM LIÊN QUAN</h4>
             <hr>
         </div>

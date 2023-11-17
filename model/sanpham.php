@@ -50,7 +50,7 @@ function delete_sanpham($id){
 
 function loadall_sanpham_home(){
     $sql = "select * from san_pham 
-    where 1 order by id desc limit 0,5";
+    where 1 order by id desc limit 0,4";
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
@@ -77,7 +77,7 @@ function tangluotxem($idsp){
 }
 function loadall_sanpham_viewcao(){
     $sql = "select * from san_pham 
-    where 1 order by luotxem desc limit 0,5";
+    where 1 order by luotxem desc limit 0,4";
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
