@@ -32,7 +32,7 @@
                                 <li class="header-tk"> <a  href="index.php?act=dangxuat">Đăng xuất</a></li>
                             </ul></li>
                         <?php } else { ?>
-                            <li class="nav-item"><a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> Đăng nhập </i></a></li>
+                            <li class="nav-item"><a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000; padding: 12px 12px;"></i> Đăng nhập </i></a></li>
                         <?php } ?> 
                     </div>
                     <div class="giohang-icon">
