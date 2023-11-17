@@ -84,9 +84,23 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 }
                 include "taikhoan/dangnhap.php";
             break;
-        case 'taikhoan':
-            include "taikhoan/taikhoan.php";
-            break;
+            case 'taikhoan':
+                if(isset($_POST['capnhat'])){
+                    $user=$_POST['user'];
+                    $email=$_POST['email'];
+                    $pass=$_POST['pass'];
+                    $address=$_POST['address'];
+                    $tel=$_POST['tel'];
+                    $id=$_POST['id'];
+                    $img=$_FILES['img']['name'];
+                    $target_file=$image_path.basename($_FILES['img']['name']);
+                    move_uploaded_file($_FILES['img']['tmp_name'],$target_file);
+                    edit_taikhoan($id,$user,$img,$address,$tel); 
+                    $_SESSION['user']=dangnhap($email,$pass);
+                    $thongbao7="Cập nhật thành công";
+                }
+                include "taikhoan/taikhoan.php";
+                break;
         case 'doimk':
             if(isset($_POST['doimk'])){
                 $pass_csdl=$_SESSION['user']['pass'];

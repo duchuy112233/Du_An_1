@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="../css/view.css">
+  
 </head>
 <body>
     <div class="container">
@@ -14,34 +15,28 @@
         <div class="bottom-header">
             <a href="index.php"><img src="../image/logo1.png"></a>
             <div class="timkiem-header">
-                <form class="search-box" method="post" action="#">
-                    <input type="text" name="kyw" placeholder="Nhập tên sản phẩm...">
+                <form class="search-box" method="post" action="index.php?act=danhmucsp">
+                    <input type="text" name="keyword" placeholder="Nhập tên sản phẩm...">
                     <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i></button>
                 </form>
                 <div class="form-menu">
                     <div class="dn-header">
-                        <?php if (isset($_SESSION['user'])) { ?>
-                            <li class="nav-item"><a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> <?php echo $_SESSION['user']['user'] ?> </i></a>
-                                <ul class="submenu">
-                                    <li class="header-tk"> <a href="index.php?act=taikhoan">Thông tin tài khoản </a></li>
-                                    <li class="header-tk"> <a href="index.php?act=doimk">Đổi mật khẩu </a></li>
-                                    <?php if ($_SESSION['user']['role'] == 1) { ?>
-                                        <li class="header-tk"> <a href="../admin/index.php">Đăng nhập vào ADMIN</a></li>
-                                    <?php } ?>
-                                    <li class="header-tk"> <a href="index.php?act=dangxuat">Đăng xuất</a></li>
-                                </ul>
-                            </li>
+                        <?php if(isset($_SESSION['user'])) { ?>
+                            <li class="nav-item"><a class="anhdaidien" href="#"> <img src="../upload/<?php echo $_SESSION['user']['img'] ?>" alt="Ảnh đại diện"> <?php echo $_SESSION['user']['user'] ?></a>
+                            <ul class = "submenu">
+                                <li class="header-tk"> <a  href="index.php?act=taikhoan">Thông tin tài khoản </a></li>
+                                <li class="header-tk"> <a  href="index.php?act=doimk">Đổi mật khẩu </a></li>
+                                <?php if($_SESSION['user']['role']==1){ ?>
+                                <li class="header-tk"> <a  href="../admin/index.php">Đăng nhập vào ADMIN</a></li>
+                                <?php } ?>
+                                <li class="header-tk"> <a  href="index.php?act=dangxuat">Đăng xuất</a></li>
+                            </ul></li>
                         <?php } else { ?>
-                            <li class="nav-item"><a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> Đăng nhập </i></a>
-                                <ul class="submenu">
-                                    <li class="header-tk"> <a href="index.php?act=dangky">Đăng ký </a></li>
-                                    <li class="header-tk"> <a href="index.php?act=quenmk">Quên mật khẩu </a></li>
-                                </ul>
-                            </li>
-                        <?php } ?>
+                            <li class="nav-item"><a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> Đăng nhập </i></a></li>
+                        <?php } ?> 
                     </div>
                     <div class="giohang-icon">
-                        <a href="index.php?act=addtocart"> <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i> Giỏ hàng </a>
+                        <a href="index.php?act=addtocart"> <i class="fa-solid fa-cart-shopping" style="color: #000000; padding: 12px 12px;"></i> Giỏ hàng </a>
                     </div>
                 </div>
             </div>
