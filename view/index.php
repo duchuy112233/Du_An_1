@@ -33,6 +33,17 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             include "danhmuc.php";
             break;
         case 'sanphamct':
+            if(isset($_POST['guibinhluan'])){
+                $iduser=$_SESSION['user']['id'];
+                insert_binhluan($_POST['idpro'], $_POST['noidung'],$iduser);
+            }
+            if(isset($_GET['idsp']) && $_GET['idsp'] > 0 ){
+                tangluotxem($_GET['idsp']);
+                $onesp=loadone_sanpham($_GET['idsp']);
+                $sp_cungloai=load_sanpham_cungloai($_GET['idsp'],$onesp['iddm']);
+                $binhluan=load_binhluan($_GET['idsp']);
+                include "chitietsanpham.php";
+            }
             include "sanphamct.php";
             break;
         case 'dangky':

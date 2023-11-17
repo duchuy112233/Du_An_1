@@ -69,10 +69,10 @@
 <div class="row">
     <?php foreach ($dm2 as $key => $sp) : ?>
         <div class="boxsp">
-            <a href="index.php?act=sanphamct"><img src="../upload/<?php echo $sp['img'] ?>" alt=""></a>
+            <a href="index.php?act=sanphamct&idsp=<?php echo $sp['id'] ?>"><img src="../upload/<?php echo $sp['img'] ?>" alt=""></a>
             <div class="card-body">
                 <div class="box-title">
-                    <a href="index.php?act=sanphamct"><?php echo $sp['name'] ?></a>
+                    <a href="index.php?act=sanphamct&idsp=<?php echo $sp['id'] ?>"><?php echo $sp['name'] ?></a>
                 </div>
                 <div class="boxsp-content">
                     <p>CPU <?php echo $sp['cpu'] ?></p>

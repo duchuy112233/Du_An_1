@@ -29,6 +29,12 @@ function loadone_sanpham($id){
     return $result;
 }
 
+function load_sanpham_cungloai($id, $iddm){
+    $sql = "SELECT * FROM san_pham where iddm = $iddm and id <> $id";
+    $result = pdo_query($sql);
+    return $result;
+}
+
 function add_sanpham($name,$mota,$price,$cpu,$ram,$ocung,$carddohoa,$manhinh,$img,$giamgia,$iddm){
     $sql = "INSERT INTO san_pham (name, mota, price, cpu, ram, ocung, card_do_hoa, man_hinh, img, giamgia, iddm) VALUES ('$name', '$mota', '$price', '$cpu', '$ram', '$ocung', '$carddohoa', '$manhinh', '$img', '$giamgia', '$iddm')";
     pdo_execute($sql);
@@ -55,6 +61,13 @@ function delete_sanpham($id){
         unlink($imglink);
     }
     $sql = "DELETE FROM san_pham where id = $id";
+    pdo_execute($sql);
+}
+
+function tangluotxem($idsp){
+    $sanpham = loadone_sanpham($idsp);
+    $luotxem = $sanpham['luotxem'] + 1;
+    $sql = "UPDATE san_pham set luotxem = $luotxem where id = $idsp";
     pdo_execute($sql);
 }
 ?>
