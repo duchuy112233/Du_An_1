@@ -21,7 +21,12 @@
                 <div class="form-menu">
                     <div class="dn-header">
                         <?php if(isset($_SESSION['user'])) { ?>
-                            <li class="nav-item"><a href="#"><i class="fa-solid fa-user" style="color: #000000;"></i> <?php echo $_SESSION['user']['user'] ?> </i></a>
+                            <?php $first_letter = strtoupper(substr($_SESSION['user']['email'], 0, 1)) ?>
+                            <?php if($_SESSION['user']['img'] != "") : ?>
+                                <li class="nav-item"><a class="acc" href="#"><img class="avata-img" src="../upload/<?php echo $_SESSION['user']['img'] ?>" alt="Ảnh đại diện"> <p><?php echo $_SESSION['user']['user'] ?></p></a>
+                            <?php else : ?>
+                                <li class="nav-item"><a class="acc" href="#"><p class="avatar-header"><?php echo $first_letter; ?></p> <p><?php echo $_SESSION['user']['user'] ?></p></a>
+                            <?php endif ?>
                             <ul class = "submenu">
                                 <li class="header-tk"> <a  href="index.php?act=taikhoan">Thông tin tài khoản </a></li>
                                 <li class="header-tk"> <a  href="index.php?act=doimk">Đổi mật khẩu </a></li>
@@ -31,7 +36,7 @@
                                 <li class="header-tk"> <a  href="index.php?act=dangxuat">Đăng xuất</a></li>
                             </ul></li>
                         <?php } else { ?>
-                            <li class="nav-item"><a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> Đăng nhập </i></a></li>
+                            <li class="nav-item"><a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> Đăng nhập</a></li>
                         <?php } ?> 
                     </div>
                     <div class="giohang-icon">

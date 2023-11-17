@@ -96,7 +96,27 @@
     color: #17d570;
     background-color: #eee;
 }
-
+.dn-header img{
+width: 33px;
+height: 33px;
+border-radius: 50%;
+}
+.avatar-header {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    background-color: #1a73e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: #fff;
+}
+.acc{
+display: flex;
+align-items: center;
+gap:8px;
+}
 /* MENU */
 .menu {
     padding: 20px 0;

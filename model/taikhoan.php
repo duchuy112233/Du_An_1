@@ -147,5 +147,6 @@ function edit_taikhoan($id,$user,$img,$address,$tel){
         $sql = "UPDATE tai_khoan SET user ='$user', address ='$address', tel ='$tel' WHERE id = $id";
     }
     pdo_execute($sql);
+    header("location:".$_SERVER['HTTP_REFERER']);
 }
 ?>

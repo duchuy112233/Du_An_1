@@ -70,18 +70,23 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             break;
         case 'taikhoan':
             if(isset($_POST['capnhat'])){
-                $user=$_POST['user'];
-                $email=$_POST['email'];
-                $pass=$_POST['pass'];
-                $address=$_POST['address'];
-                $tel=$_POST['tel'];
-                $id=$_POST['id'];
-                $img=$_FILES['img']['name'];
-                $target_file=$image_path.basename($_FILES['img']['name']);
-                move_uploaded_file($_FILES['img']['tmp_name'],$target_file);
-                edit_taikhoan($id,$user,$img,$address,$tel);
-                $_SESSION['user']=dangnhap($email,$pass);
-                $thongbao7="Cập nhật thành công";
+                if(empty($_POST['user'])){
+                    $thongbao7="Tên đăng nhập không được để trống!";
+                }
+                else{
+                    $user=$_POST['user'];
+                    $email=$_POST['email'];
+                    $pass=$_POST['pass'];
+                    $address=$_POST['address'];
+                    $tel=$_POST['tel'];
+                    $id=$_POST['id'];
+                    $img=$_FILES['img']['name'];
+                    $target_file=$image_path.basename($_FILES['img']['name']);
+                    move_uploaded_file($_FILES['img']['tmp_name'],$target_file);
+                    edit_taikhoan($id,$user,$img,$address,$tel);
+                    $_SESSION['user']=dangnhap($email,$pass);
+                    // $thongbao7="Cập nhật thành công. Xin hãy đăng nhập lại!";
+                }
             }
             include "taikhoan/taikhoan.php";
             break;
