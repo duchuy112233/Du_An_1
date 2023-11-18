@@ -12,6 +12,9 @@ include "../global.php";
 $listdm=loadall_danhmuc();
 $dm1=loadall_sanpham_dm1();
 $dm2=loadall_sanpham_dm2();
+if(!isset($_SESSION['mycart'])){
+   $_SESSION['mycart']=[];
+}
 
 include "header.php";
 
@@ -130,12 +133,36 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             if(isset($_POST['quenmk'])){
                 $email=$_POST['email'];
                 $sendMail=sendMail($email);
-                }
+            }
             include "taikhoan/quenmk.php";
             break;
         case 'dangxuat':
             session_unset();
             header("location: index.php");
+            break;
+        case 'addtocart':
+            if(isset($_POST['addtocart'])){
+                $id=$_POST['id'];
+                $name=$_POST['name'];
+                $hinh=$_POST['hinh'];
+                $price=$_POST['price'];
+                $soluong=1;
+                $tongtien=$soluong*$price;
+                $spadd=[$id,$name,$hinh,$price,$soluong,$tongtien];
+                array_push($_SESSION['mycart'],$spadd);
+            }
+            include "cart/viewcart.php";
+            break;
+        case 'deletecar':
+            if(isset($_GET['idcart'])){
+                array_splice($_SESSION['mycart'],$_GET['idcart'],1);
+            }
+            else{
+                $_SESSION['mycart']=[];
+            }
+                header("location: index.php?act=viewcart");
+            break;
+        case 'viewcart':
             break;
         default:
             include "home.php";

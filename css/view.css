@@ -792,6 +792,60 @@ text-decoration: none;
     cursor: pointer;
     text-decoration: underline;
 }
+/* Giỏ hàng */
+.form-giohang{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.table {
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+
+}
+.table th{
+    padding: 20px 0px;
+      border: 1px solid gainsboro;
+}
+.table td{
+    padding: 10px 0px;
+      border-bottom: 1px solid gainsboro;
+}
+.xoa-giohang{
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    border: 1px solid white;
+    background-color: red;
+}
+.xoa-giohang:hover{
+    background-color: rgb(168, 45, 45);
+}
+.dong-y-dathang{
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    border: 1px solid white;
+    background-color: #009B48;
+}
+.dong-y-dathang:hover{
+    background: #0d8244;
+}
+.thungrac{
+    border: 1px solid white;
+    background-color: white;
+    color: red;
+    padding: 10px 10px;
+   
+}
+.thungrac:hover{
+    background-color: red;
+    color: white;
+}
+
+
+
+
 /* Footer */
 .footer {
     width: 100%;
