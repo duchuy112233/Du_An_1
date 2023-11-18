@@ -22,7 +22,7 @@
                     <td><?php echo $bl['user'] ?></td>
                     <td><?php echo $bl['name'] ?></td>
                     <td><?php echo $bl['noidung'] ?></td>
-                    <td><?php echo $bl['ngaybl'] ?></td>
+                    <td><?php echo date("d/m/Y", strtotime($bl['ngaybl'])) ?></td>
                     <td>
                         <a onclick="return confirm('Bạn có chắc chắn muốn xóa')" href="?act=deletebl&idbl=<?php echo $bl['id'] ?>"><input type="button" value="Xóa"></a>
                     </td>

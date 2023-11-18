@@ -92,7 +92,12 @@
         <div class="form-bl">
             <?php foreach ($binhluan as $key => $bl) : ?>
                 <div class="avatar-bl">
-                    <img src="../upload/<?php echo $bl['img'] ?>" alt="">
+                    <?php if ($bl['img'] != "") : ?>
+                        <img src="../upload/<?php echo $bl['img'] ?>" alt="Ảnh đại diện">
+                    <?php else : ?>
+                        <?php $first_letter = strtoupper(substr($_SESSION['user']['email'], 0, 1)) ?>
+                        <div class="avatar-name"><?php echo $first_letter; ?></div>
+                    <?php endif ?>
                     <p><?php echo $bl['user'] ?></p>
                 </div>
                 <div class="comment">
