@@ -794,53 +794,46 @@ text-decoration: none;
 }
 /* Giỏ hàng */
 .form-giohang{
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: auto 30px;
 }
-.table {
+.form-giohang .title-giohang{
+display: flex;
+justify-content: space-between;
+margin: 20px 0;
+}
+.form-giohang .title-giohang a{
+text-decoration: none;
+color: #202114;
+}
+.form-giohang table {
     text-align: center;
     width: 100%;
     border-collapse: collapse;
-
+    margin-bottom: 20px;
 }
-.table th{
-    padding: 20px 0px;
-      border: 1px solid gainsboro;
+.form-giohang th,
+.form-giohang td{
+padding: 10px 0;
 }
-.table td{
-    padding: 10px 0px;
-      border-bottom: 1px solid gainsboro;
+.btn-mua{
+padding: 8px 15px;
+background-color: #009B48;
+color: #fff;
+border: none;
+font-weight: bold;
 }
-.xoa-giohang{
-    padding: 10px 20px;
-    color: white;
-    font-weight: bold;
-    border: 1px solid white;
-    background-color: red;
-}
-.xoa-giohang:hover{
-    background-color: rgb(168, 45, 45);
-}
-.dong-y-dathang{
-    padding: 10px 20px;
-    color: white;
-    font-weight: bold;
-    border: 1px solid white;
-    background-color: #009B48;
-}
-.dong-y-dathang:hover{
+.btn-mua:hover{
     background: #0d8244;
 }
-.thungrac{
-    border: 1px solid white;
-    background-color: white;
-    color: red;
-    padding: 10px 10px;
-   
-}
-.thungrac:hover{
+.btn-del{
+    padding: 8px 15px;
     background-color: red;
-    color: white;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+}
+.btn-del:hover{
+    background-color: rgb(237, 39, 39);
 }
 
 

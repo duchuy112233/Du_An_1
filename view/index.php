@@ -153,7 +153,7 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             }
             include "cart/viewcart.php";
             break;
-        case 'deletecar':
+        case 'deletecart':
             if(isset($_GET['idcart'])){
                 array_splice($_SESSION['mycart'],$_GET['idcart'],1);
             }
@@ -163,6 +163,7 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 header("location: index.php?act=viewcart");
             break;
         case 'viewcart':
+            include "cart/viewcart.php";
             break;
         default:
             include "home.php";
