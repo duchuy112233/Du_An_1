@@ -41,7 +41,7 @@
         <?php if (isset($_SESSION['user'])) : ?>
             <a href="index.php?act=bill"><input type="button" value="Đồng ý đặt hàng" class="btn-mua"></a>
         <?php else : ?>
-            <p style="color:red;">Vui lòng đăng nhập để đặt hàng</p>
+            <p style="color:red;">Vui lòng đăng nhập để đặt hàng</p><br>
         <?php endif ?>
         <a onclick="return confirm('Bạn có chắc chắn muốn xóa hết')" href="index.php?act=deletecart"><input type="button" value="Xóa giỏ hàng" class="btn-del"></a>
     </div>
