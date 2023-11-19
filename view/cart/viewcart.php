@@ -26,7 +26,7 @@
                     <p><?php echo $cart[1] ?></p>
                 </td>
                 <td><?php echo number_format($cart[3]) ?> VND</td>
-                <td><?php echo $cart[4] ?></td>
+                <td class="quantity"><a onclick="giam(this)">-</a> <span><?php echo $cart[4] ?></span> <a onclick="tang(this)">+</a></td>
                 <td><?php echo number_format($tongtien) ?> VND</td>
                 <td><a onclick="return confirm('Bạn có chắc chắn muốn xóa')" href="index.php?act=deletecart&idcart=<?php echo $i ?>"><i class="fa-solid fa-trash-can" style="color: #f52424;"></i></a></td>
             </tr>

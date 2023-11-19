@@ -27,3 +27,23 @@ function pre() {
     }
     document.getElementById("banner").src = album[index].src;
 }
+//tăng giảm số lượng giỏ hàng
+function tang(x){
+var cha= x.parentElement;
+var soluongcu=cha.children[1];
+var soluongmoi=parseInt(soluongcu.innerHTML)+1;
+soluongcu.innerHTML=soluongmoi;
+
+
+}
+function giam(x){
+    var cha= x.parentElement;
+    var soluongcu=cha.children[1];
+    if(parseInt(soluongcu.innerHTML) > 1){
+        var soluongmoi=parseInt(soluongcu.innerHTML)-1;
+        soluongcu.innerHTML=soluongmoi;
+    }
+    else{
+    alert("Tối thiếu là 1");
+    }
+}

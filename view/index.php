@@ -147,9 +147,21 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 $hinh=$_POST['hinh'];
                 $price=$_POST['price'];
                 $soluong=1;
-                $tongtien=$soluong*$price;
-                $spadd=[$id,$name,$hinh,$price,$soluong,$tongtien];
-                array_push($_SESSION['mycart'],$spadd);
+                $fg=0;
+                $i=0;
+                foreach ($_SESSION['mycart'] as $item) {
+                    if($item[1]==$name){
+                        $slnew=$soluong+$item[4];
+                        $_SESSION['mycart'][$i][4]=$slnew;
+                        $fg=1;
+                        break;
+                    }
+                    $i++;
+                }
+                if($fg==0){
+                    $spadd=[$id,$name,$hinh,$price,$soluong];
+                    array_push($_SESSION['mycart'],$spadd);
+                }
             }
             include "cart/viewcart.php";
             break;

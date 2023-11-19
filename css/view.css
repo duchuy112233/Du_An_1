@@ -815,6 +815,12 @@ color: #202114;
 .form-giohang td{
 padding: 10px 0;
 }
+.form-giohang table .quantity span{
+    margin: 0 20px;
+}
+.form-giohang table .quantity a:hover{
+cursor: pointer;
+}
 .btn-mua{
 padding: 8px 15px;
 background-color: #009B48;
