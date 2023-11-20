@@ -62,7 +62,6 @@
                         <?php } ?>
                     </div>
                     <div class="giohang-icon" id="cart-icon-container">
-
                         <a href="index.php?act=addtocart"> <i id="cart-icon" class="fa-solid fa-cart-shopping" style="color: #000000; padding: 12px 12px;"></i> Giỏ hàng </a>
                         <div id="cart-count">0</div>
                     </div>

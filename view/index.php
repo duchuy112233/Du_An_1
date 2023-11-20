@@ -8,12 +8,13 @@ include "../model/binhluan.php";
 include "../model/thongke.php";
 include "../model/cart.php";
 include "../global.php";
+ob_start(); // bắt đầu bộ đệm đầu ra tạm thời
 if (!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
 $spnew = loadall_sanpham_home();
 $listdm = loadall_danhmuc();
 $spviewcao = loadall_sanpham_viewcao();
 include "header.php";
-ob_start(); // bắt đầu bộ đệm đầu ra tạm thời
+
 if (isset($_GET['act']) && ($_GET['act']) != "") {
     $act = ($_GET['act']);
     switch ($act) {

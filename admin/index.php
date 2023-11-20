@@ -206,6 +206,15 @@ if(isset($_GET['act']) && !empty($_GET['act'])){
                 header("location: index.php?act=listbl");
             }
             break;
+            // thống kê
+            case 'thongke':
+                $listtk = loadall_thongke();
+                include "thongke/list.php";
+                break;
+            case 'bieudo':
+                $listtk = loadall_thongke();
+                include "thongke/bieudo.php";
+                break;
         default:
         include "home.php";
             break;

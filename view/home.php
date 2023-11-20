@@ -102,9 +102,8 @@
     </div>
 </div>
 
-<!-- onclick="addToCart(event)"
 
-<script> 
+<!-- <script> onclick="addToCart(event)"
     function addToCart(event) {
         // Prevent the form from submitting and refreshing the page
         event.preventDefault();

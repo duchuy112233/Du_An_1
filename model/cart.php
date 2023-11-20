@@ -73,14 +73,14 @@ function insert_bill($name, $email, $address, $tel, $ngaydathang, $tongdonhang)
 
 function loadall_thongke()
 {
-    $sql = "SELECT danhmuc.id as madm,
-    danhmuc.name as tendm, 
-    count(sanpham.id) as soluong, 
-    min(sanpham.price) as giathap,
-    max(sanpham.price) as giacao,
-    avg(sanpham.price) as giatb";
-    $sql .= " from sanpham left join danhmuc on danhmuc.id = sanpham.iddm";
-    $sql .= " group by danhmuc.id order by danhmuc.id desc";
+    $sql = "SELECT danh_muc.id as madm,
+    danh_muc.name as tendm, 
+    count(san_pham.id) as soluong, 
+    min(san_pham.price) as giathap,
+    max(san_pham.price) as giacao,
+    avg(san_pham.price) as giatb";
+    $sql .= " from san_pham left join danh_muc on danh_muc.id = san_pham.iddm";
+    $sql .= " group by danh_muc.id order by danh_muc.id desc";
     $listtk = pdo_query($sql);
     return $listtk;
 }

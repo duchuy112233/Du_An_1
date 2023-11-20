@@ -21,7 +21,7 @@
                 <li><a href="index.php?act=listtk">Khách hàng</a></li>
                 <li><a href="index.php?act=listbl">Bình luận</a></li>
                 <li><a href="index.php?act=listdh">Đơn hàng</a></li>
-                <li><a href="index.php?act=list">Thống kê</a></li>
+                <li><a href="index.php?act=thongke">Thống kê</a></li>
             </ul>
             <span><a class="home" href="../view/index.php">Về trang người dùng</a></span>
         </div>
