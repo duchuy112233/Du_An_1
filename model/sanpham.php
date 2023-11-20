@@ -1,4 +1,5 @@
 <?php
+
 function loadall_sanpham($keyw="",$iddm=0){
     $sql="SELECT * from san_pham where 1";
     if($keyw!=""){

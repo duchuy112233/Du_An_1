@@ -18,6 +18,7 @@ include "header.php";
 if (isset($_GET['act']) && ($_GET['act']) != "") {
     $act = ($_GET['act']);
     switch ($act) {
+      
         case 'delcart':
             if (isset($_GET['idcart'])) {
                 array_splice($_SESSION['mycart'], $_GET['idcart'], 1);

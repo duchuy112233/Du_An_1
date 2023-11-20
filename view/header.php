@@ -28,7 +28,7 @@
             border-radius: 50%;
             padding: 4px 8px;
             font-size: 12px;
-          
+
             margin-right: 70px;
         }
     </style>
@@ -40,8 +40,8 @@
         <div class="bottom-header">
             <a href="index.php"><img src="../image/logo1.png"></a>
             <div class="timkiem-header">
-                <form class="search-box" method="post" action="index.php?act=danhmucsp">
-                    <input type="text" name="keyword" placeholder="Nhập tên sản phẩm...">
+                <form class="search-box" method="post" action="index.php?act=sanpham">
+                    <input type="text" name="kyw" placeholder="Nhập tên sản phẩm...">
                     <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i></button>
                 </form>
                 <div class="form-menu">
