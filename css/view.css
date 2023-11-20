@@ -436,6 +436,7 @@
     background-color: red;
 }
 
+
 /* Cập nhật thông tin tài khoản */
 .boxtaikhoan {
     display: flex;
@@ -459,11 +460,12 @@
     padding-bottom: 15px;
     border-bottom: 1px solid #ccc;
 }
-.anhdaidien{
-      display: flex;
+
+.anhdaidien {
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px; 
+    gap: 10px;
 }
 
 .anhdaidien img {
@@ -472,7 +474,7 @@
     width: 40px;
     height: 40px;
 
- 
+
 }
 
 .boxtrai img {
@@ -808,7 +810,93 @@
     cursor: pointer;
     text-decoration: underline;
 }
+  /* Bình luận */
+  .binhluan {
+    background: #fff;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
 
+.binhluan-title {
+    margin-bottom: 8px;
+}
+
+.binhluan img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.binhluan input[type="text"] {
+    width: 80%;
+    padding: 10.5px;
+    /* box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1); */
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.binhluan input[type="submit"] {
+    background-color: #009B48;
+    border: none;
+    color: #fff;
+    padding-left: 5px;
+}
+
+.binhluan span {
+    background-color: #009B48;
+    padding: 8px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+}
+
+.add-bl {
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dddddd;
+    margin-bottom: 10px;
+}
+
+.avatar-bl {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar-name {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #1a73e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: #fff;
+}
+
+.comment {
+    margin-left: 45px;
+}
+
+.noidung {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+    min-height: 70px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 3px;
+}
+
+.ngaybl {
+    font-size: 12px;
+    text-align: right;
+}
 /* Footer */
 .footer {
     width: 100%;

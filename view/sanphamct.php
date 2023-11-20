@@ -86,11 +86,46 @@
 
         <!-- FORM BÌNH LUẬN -->
 
+        <div class="binhluan">
+            <h4 class="binhluan-title">Bình Luận</h4>
+            <div class="add-bl">
+                <?php if (isset($_SESSION['user'])) : ?>
+                    <form action="index.php?act=sanphamct&idsp=<?php echo $onesp['id'] ?>" method="post">
+                        <input type="text" name="noidung">
+                        <input type="hidden" name="idsp" value="<?php echo $onesp['id'] ?>">
+                        <span><i class="fa-solid fa-paper-plane" style="color: #fff;"></i><input type="submit" name="guibinhluan" value="Gửi"></span><br><br>
+                        <p style="color:red;">
+                            <?php
+                            if (isset($thongbao8) && !empty($thongbao8)) {
+                                echo $thongbao8;
+                            }
+                            ?>
+                        </p>
+                    </form>
+                <?php else : ?>
+                    <p style="color: red;">Bạn cần đăng nhập để bình luận</p>
+                <?php endif ?>
+            </div>
+            <div class="form-bl">
+                <?php foreach ($binhluan as $key => $bl) : ?>
+                    <div class="avatar-bl">
+                        <?php if ($bl['img'] != "") : ?>
+                            <img src="../upload/<?php echo $bl['img'] ?>" alt="Ảnh đại diện">
+                        <?php else : ?>
+                            <?php $first_letter = strtoupper(substr($_SESSION['user']['email'], 0, 1)) ?>
+                            <div class="avatar-name"><?php echo $first_letter; ?></div>
+                        <?php endif ?>
+                        <p><?php echo $bl['user'] ?></p>
+                    </div>
+                    <div class="comment">
+                        <div class="noidung"><?php echo $bl['noidung'] ?></div>
+                        <div class="ngaybl"><?php echo date("d/m/Y", strtotime($bl['ngaybl'])) ?></div>
+                    </div>
+                <?php endforeach ?>
+            </div>
+        </div>
 
-        <?php
 
-        include "binhluan/binhluan.php";
-        ?>
 
 
 
@@ -99,4 +134,3 @@
 
 
 
-</div>

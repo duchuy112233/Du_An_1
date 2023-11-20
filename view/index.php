@@ -61,6 +61,16 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             break;
             // SẢN PHẨM CHI TIẾT
         case 'sanphamct':
+            if(isset($_POST['guibinhluan'])){
+                if(empty($_POST['noidung'])){
+                $thongbao8="Vui lòng nhập nội dung bình luận!";
+                }
+                else{
+                    $iduser=$_SESSION['user']['id'];
+                    insert_binhluan($_POST['idsp'], $_POST['noidung'],$iduser); 
+                }
+            }
+
             if (isset($_GET['idsp']) && ($_GET['idsp']) > 0) {
 
                 $id = $_GET['idsp'];
@@ -68,6 +78,8 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 extract($onesp);
                 $sp_cungloai = load_sanpham_cungloai($id, $iddm);
                 $tendm = load_tendm($iddm);
+                $binhluan=load_binhluan($_GET['idsp']);
+
                 tangluotxem($_GET['idsp']);
 
                 include "sanphamct.php";
