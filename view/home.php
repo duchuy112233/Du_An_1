@@ -102,8 +102,9 @@
     </div>
 </div>
 
+<!-- onclick="addToCart(event)"
 
-<!-- <script>
+<script> 
     function addToCart(event) {
         // Prevent the form from submitting and refreshing the page
         event.preventDefault();
@@ -124,4 +125,4 @@
         // Cập nhật số lượng trên trang
         document.getElementById("cart-count").textContent = currentCount.toString();
     }
-</script> -->
+</script>  -->
