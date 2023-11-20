@@ -58,11 +58,11 @@
                                 </ul>
                             </li>
                         <?php } else { ?>
-                            <li class="nav-item"><a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000; padding: 12px 12px;"></i> Đăng nhập </i></a></li>
+                            <li class="nav-item"><a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000; padding: 14px 14px;"></i> Đăng nhập </i></a></li>
                         <?php } ?>
                     </div>
                     <div class="giohang-icon" id="cart-icon-container">
-                        <a href="index.php?act=addtocart"> <i id="cart-icon" class="fa-solid fa-cart-shopping" style="color: #000000; padding: 12px 12px;"></i> Giỏ hàng </a>
+                        <a href="index.php?act=addtocart"> <i id="cart-icon" class="fa-solid fa-cart-shopping" style="color: #000000; "></i> Giỏ hàng </a>
                         <div id="cart-count">0</div>
                     </div>
                 </div>
