@@ -69,15 +69,12 @@
             </div>
         </div>
 
-
         <div class="title">
             <h4>SẢN PHẨM LIÊN QUAN</h4>
             <hr>
         </div>
 
-
         <?php
-
         include "sanphamlienquan.php";
         ?>
 
@@ -125,12 +122,5 @@
             </div>
         </div>
 
-
-
-
-
     </div>
 </div>
-
-
-
