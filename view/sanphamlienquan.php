@@ -24,7 +24,7 @@
                         </div>
 
                         <p class ="money">
-                        <del>' . $price . ' VNĐ</del>
+                        <del>' .  number_format($price) . ' VNĐ</del>
                         <span>-' . $giamgia . '%</span>                                                                  
                     </p>
                     <p class ="money2">                                                    
