@@ -1,6 +1,4 @@
-<div>
-    
-</div>
+
 <div class="row">
     <?php foreach ($dssp as $key => $sp) : $hinh = $image_path . $sp['img']; ?>
         <div class="boxsp">
@@ -26,10 +24,10 @@
                     <input type="hidden" name="name" value="<?php echo $sp['name'] ?>">
                     <input type="hidden" name="hinh" value="<?php echo $hinh ?>">
                     <input type="hidden" name="price" value="<?php echo $sp['price'] - $sp['price'] * ($sp['giamgia'] / 100) ?>">
-                <div class="add">
-                    <a href="" class="btn-shop"><input type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="btn-shop-text">
-                        <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
+                    <div class="add">
+                        <a href="" class="btn-shop"><input type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="btn-shop-text">
+                            <i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
                 </form>
             </div>
         </div>

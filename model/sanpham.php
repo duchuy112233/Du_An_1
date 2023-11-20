@@ -36,7 +36,8 @@ function load_sanpham_cungloai($id, $iddm){
 }
 
 function add_sanpham($name,$mota,$price,$cpu,$ram,$ocung,$carddohoa,$manhinh,$img,$giamgia,$iddm){
-    $sql = "INSERT INTO san_pham (name, mota, price, cpu, ram, ocung, card_do_hoa, man_hinh, img, giamgia, iddm) VALUES ('$name', '$mota', '$price', '$cpu', '$ram', '$ocung', '$carddohoa', '$manhinh', '$img', '$giamgia', '$iddm')";
+    $img_with_time = time() . basename($img);
+    $sql = "INSERT INTO san_pham (name, mota, price, cpu, ram, ocung, card_do_hoa, man_hinh, img, giamgia, iddm) VALUES ('$name', '$mota', '$price', '$cpu', '$ram', '$ocung', '$carddohoa', '$manhinh', '$img_with_time', '$giamgia', '$iddm')";
     pdo_execute($sql);
 }
 
@@ -47,7 +48,8 @@ function update_sanpham($id,$name,$mota,$price,$cpu,$ram,$ocung,$carddohoa,$manh
             $imglink = "../upload/" . $sanpham['img'];
             unlink($imglink);
         }
-        $sql = "UPDATE san_pham SET name ='$name', mota ='$mota', price ='$price', cpu ='$cpu', ram ='$ram', ocung ='$ocung', card_do_hoa ='$carddohoa', man_hinh ='$manhinh', img='$img', giamgia ='$giamgia', iddm ='$iddm' WHERE id = $id";
+        $img_with_time = time() . basename($img);
+        $sql = "UPDATE san_pham SET name ='$name', mota ='$mota', price ='$price', cpu ='$cpu', ram ='$ram', ocung ='$ocung', card_do_hoa ='$carddohoa', man_hinh ='$manhinh', img='$img_with_time', giamgia ='$giamgia', iddm ='$iddm' WHERE id = $id";
     }else{
         $sql = "UPDATE san_pham SET name ='$name', mota ='$mota', price ='$price', cpu ='$cpu', ram ='$ram', ocung ='$ocung', card_do_hoa ='$carddohoa', man_hinh ='$manhinh', giamgia ='$giamgia', iddm ='$iddm' WHERE id = $id";
     }

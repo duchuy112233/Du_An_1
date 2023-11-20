@@ -1,30 +1,27 @@
 <div class="mb10">
-    <h3>DANH SÁCH BÌNH LUẬN</h3>
+    <h3>DANH SÁCH MÀU</h3>
 </div>
 <div class="formcontent">
-    <form action="#" method="post">
+    <form action="index.php?act=addmau" method="post">
         <div class="mb10">
             <table class="mb10 content-table">
                 <thead>
                 <tr>
                     <th>Chọn nhanh</th>
-                    <th>Mã sản phẩm</th>
-                    <th>Tên sản phẩm</th>
-                    <th>Hình ảnh</th>
-                    <th>Tống số comment</th>
+                    <th>Mã màu</th>
+                    <th>Màu</th>
                     <th>Chức năng</th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($listbl as $key => $bl) : ?>
+                <?php foreach ($listmau as $key => $mau) : ?>
                 <tr>
                     <td><input type="checkbox" name=""></td>
-                    <td>SP<?php echo $bl['id'] ?></td>
-                    <td><?php echo $bl['name'] ?></td>
-                    <td><img src="../upload/<?php echo $bl['img'] ?>" alt="" width="70px" height="50px"></td>
-                    <td><?php echo $bl['sobl'] ?> lượt bình luận</td>
+                    <td>M<?php echo $mau['id'] ?></td>
+                    <td><?php echo $mau['mau_sp'] ?></td>
                     <td>
-                        <a href="?act=ctbl&idctbl=<?php echo $bl['id'] ?>"><input type="button" value="Xem chi tiết"></a>
+                        <a href="?act=editmau&idmau=<?php echo $mau['id'] ?>"><input type="button" value="Sửa"></a>
+                        <a onclick="return confirm('Bạn có chắc chắn muốn xóa')" href="?act=deletemau&idmau=<?php echo $mau['id'] ?>"><input type="button" value="Xóa"></a>
                     </td>
                 </tr>
                 <?php endforeach ?>
@@ -34,5 +31,6 @@
         <input type="button" value="Chọn tất cả">
         <input type="button" value="Bỏ chọn tất cả">
         <input type="button" value="Xóa các mục đã chọn">
+        <a href="index.php?act=addmau"><input type="button" value="Thêm mới"></a>
     </form>
 </div>

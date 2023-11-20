@@ -99,7 +99,7 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                     $tel=$_POST['tel'];
                     $id=$_POST['id'];
                     $img=$_FILES['img']['name'];
-                    $target_file=$image_path.basename($_FILES['img']['name']);
+                    $target_file=$image_path.time().basename($_FILES['img']['name']);
                     move_uploaded_file($_FILES['img']['tmp_name'],$target_file);
                     edit_taikhoan($id,$user,$img,$address,$tel);
                     $_SESSION['user']=dangnhap($email,$pass);

@@ -18,10 +18,13 @@
                 <li><a href="index.php">Trang chủ</a></li>
                 <li><a href="index.php?act=listdm">Danh mục</a></li>
                 <li><a href="index.php?act=listsp">Sản phẩm</a></li>
+                <li><a href="index.php?act=listbt">Sản phẩm biến thể</a></li>
+                <li><a href="index.php?act=listram">Ram</a></li>
+                <li><a href="index.php?act=listmau">Màu</a></li>
                 <li><a href="index.php?act=listtk">Khách hàng</a></li>
                 <li><a href="index.php?act=listbl">Bình luận</a></li>
                 <li><a href="index.php?act=listdh">Đơn hàng</a></li>
-                <li><a href="index.php?act=list">Thống kê</a></li>
+                <li><a href="index.php?act=thongke">Thống kê</a></li>
             </ul>
             <span><a class="home" href="../view/index.php">Về trang người dùng</a></span>
         </div>

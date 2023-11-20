@@ -6,6 +6,7 @@ include "../model/taikhoan.php";
 include "../model/binhluan.php";
 include "../model/thongke.php";
 include "../model/cart.php";
+include "../model/bienthe.php";
 include "../global.php";
 
 include "header.php";
@@ -73,7 +74,7 @@ if(isset($_GET['act']) && !empty($_GET['act'])){
                     $tel = $_POST['tel'];
                     $role = $_POST['role'];
                     $img= $_FILES['img']['name'];
-                    $target_file=$image_path.basename($_FILES['img']['name']);
+                    $target_file=$image_path.time().basename($_FILES['img']['name']);
                     move_uploaded_file($_FILES['img']['tmp_name'],$target_file);
                     add_taikhoan_admin($user,$pass,$img,$email,$address,$tel,$role);
                     header("location: index.php?act=listtk");
@@ -95,7 +96,7 @@ if(isset($_GET['act']) && !empty($_GET['act'])){
                 $role = $_POST['role'];
                 $id = $_POST['id'];
                 $img= $_FILES['img']['name'];
-                $target_file=$image_path.basename($_FILES['img']['name']);
+                $target_file=$image_path.time().basename($_FILES['img']['name']);
                 move_uploaded_file($_FILES['img']['tmp_name'],$target_file);
                 update_taikhoan($id,$user,$pass,$img,$email,$address,$tel,$role);
                 header("location: index.php?act=listtk");
@@ -143,7 +144,7 @@ if(isset($_GET['act']) && !empty($_GET['act'])){
                 $thongbao6="Vui lòng nhập đủ!";
                 }
                 else{
-                $target_file=$image_path.basename($_FILES['img']['name']);
+                $target_file=$image_path.time().basename($_FILES['img']['name']);
                 move_uploaded_file($_FILES['img']['tmp_name'],$target_file);
                 add_sanpham($name,$mota,$price,$cpu,$ram,$ocung,$carddohoa,$manhinh,$img,$giamgia,$iddm);
                 header("location: index.php?act=listsp");
@@ -170,7 +171,7 @@ if(isset($_GET['act']) && !empty($_GET['act'])){
                 $manhinh=$_POST['manhinh'];
                 $giamgia=$_POST['giamgia'];
                 $img=$_FILES['img_new']['name'];
-                $target_file=$image_path.basename($_FILES['img_new']['name']);
+                $target_file=$image_path.time().basename($_FILES['img_new']['name']);
                 move_uploaded_file($_FILES['img_new']['tmp_name'],$target_file);
                 update_sanpham($id,$name,$mota,$price,$cpu,$ram,$ocung,$carddohoa,$manhinh,$img,$giamgia,$iddm);
                 header("location: index.php?act=listsp");
@@ -204,6 +205,102 @@ if(isset($_GET['act']) && !empty($_GET['act'])){
                 header("location: index.php?act=listbl");
             }
             break;
+        case 'thongke':
+            $thongke=load_thongke();
+            include "thongke/list.php";
+            break;
+        case 'bieudo':
+            $listtk = load_thongke();
+            include "thongke/char.php";
+            break;
+        //Ram
+        case 'listram':
+            $listram=loadall_ram();
+            include "bt_ram/list.php";
+            break;
+        case 'addram':
+            if(isset($_POST['themram'])){
+                if(empty($_POST['ramsp'])){
+                    $thongbao9="Không được để trống!";
+                }
+                else{
+                    $ramsp=$_POST['ramsp'];
+                    add_ram($ramsp);
+                    header("location: index.php?act=listram");
+                }
+            }
+            include "bt_ram/add.php";
+            break;
+        case 'editram':
+            if(isset($_GET['idram']) && $_GET['idram'] > 0){
+                $oneram = loadone_ram($_GET['idram']);
+            }
+            if(isset($_POST['editram'])){
+                $idram = $_POST['idram'];
+                $ramsp = $_POST['ramsp'];
+                update_ram($idram, $ramsp);
+                header("location: index.php?act=listram");
+            }
+            include "bt_ram/edit.php";
+            break;
+        //Phải xóa hết bên bảng sp_bienthe rồi mới xóa được
+        case 'deleteram':
+            if(isset($_GET['idram']) && $_GET['idram'] > 0){
+                delete_ram($_GET['idram']);
+                header("location: index.php?act=listram");
+            }
+            break;
+        //Màu
+        case 'listmau':
+            $listmau=loadall_mau();
+            include "bt_mau/list.php";
+            break;
+        case 'addmau':
+            if(isset($_POST['themmau'])){
+                if(empty($_POST['mausp'])){
+                    $thongbao10="Không được để trống!";
+                }
+                else{
+                    $mausp=$_POST['mausp'];
+                    add_mau($mausp);
+                    header("location: index.php?act=listmau");
+                }
+            }
+            include "bt_mau/add.php";
+            break;
+        case 'editmau':
+            if(isset($_GET['idmau']) && $_GET['idmau'] > 0){
+                $onemau = loadone_mau($_GET['idmau']);
+            }
+            if(isset($_POST['editmau'])){
+                $idmau = $_POST['idmau'];
+                $mausp = $_POST['mausp'];
+                update_mau($idmau, $mausp);
+                header("location: index.php?act=listmau");
+            }
+            include "bt_mau/edit.php";
+            break;
+        //Phải xóa hết bên bảng sp_bienthe rồi mới xóa được
+        case 'deletemau':
+            if(isset($_GET['idmau']) && $_GET['idmau'] > 0){
+                delete_mau($_GET['idmau']);
+                header("location: index.php?act=listmau");
+            }
+            break;
+        //Sản phẩm biến thể
+        case 'listbt':
+            include "sp_bienthe/list.php";
+            break;
+        case 'addbt':
+            include "sp_bienthe/add.php";
+            break;
+        case 'editbt':
+            include "sp_bienthe/edit.php";
+            break;
+        case 'deletebt':
+            include "sp_bienthe/list.php";
+            break;
+        //Trường hợp khác
         default:
         include "home.php";
             break;
