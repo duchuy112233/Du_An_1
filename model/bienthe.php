@@ -45,5 +45,31 @@ function delete_mau($id){
     $sql = "DELETE FROM mausp where id = $id";
     pdo_execute($sql);
 }
-//sản phẩm
+//sản phẩm biến thể
+function loadall_spbt(){
+    $sql="SELECT bienthe_sp.id, san_pham.name, mausp.mau_sp, ramsp.ram_sp, bienthe_sp.soluong FROM bienthe_sp 
+    join san_pham on bienthe_sp.idsp=san_pham.id 
+    join ramsp on bienthe_sp.idram=ramsp.id
+    join mausp on bienthe_sp.idmau=mausp.id
+    order by id desc";
+    $list=pdo_query($sql);
+    return $list;
+}
+function loadone_spbt($id){
+    $sql = "SELECT * FROM bienthe_sp where id = $id";
+    $result = pdo_query_one($sql);
+    return $result;
+}
+function add_spbt($idsp,$idram,$idmau,$soluong){
+    $sql = "INSERT INTO bienthe_sp (idsp,idram,idmau,soluong) VALUES ('$idsp','$idram','$idmau','$soluong')";
+    pdo_execute($sql);
+}
+function update_spbt($idbt,$idsp,$idram,$idmau,$soluong){
+    $sql = "UPDATE bienthe_sp SET idsp ='$idsp', idram='$idram', idmau='$idmau', soluong='$soluong' WHERE id = $idbt";
+    pdo_execute($sql);
+}
+function delete_spbt($id){
+    $sql = "DELETE FROM bienthe_sp where id = $id";
+    pdo_execute($sql);
+}
 ?>
