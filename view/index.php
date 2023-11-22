@@ -6,6 +6,7 @@ include "../model/sanpham.php";
 include "../model/taikhoan.php";
 include "../model/binhluan.php";
 include "../model/thongke.php";
+include "../model/bienthe.php";
 include "../model/cart.php";
 include "../global.php";
 
@@ -48,6 +49,7 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             if(isset($_GET['idsp']) && $_GET['idsp'] > 0 ){
                 tangluotxem($_GET['idsp']);
                 $onesp=loadone_sanpham($_GET['idsp']);
+                $onespbt=load_spbt($_GET['idsp']);
                 $sp_cungloai=load_sanpham_cungloai($_GET['idsp'],$onesp['iddm']);
                 $binhluan=load_binhluan($_GET['idsp']);
             }

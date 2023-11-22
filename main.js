@@ -33,8 +33,6 @@ var cha= x.parentElement;
 var soluongcu=cha.children[1];
 var soluongmoi=parseInt(soluongcu.innerHTML)+1;
 soluongcu.innerHTML=soluongmoi;
-
-
 }
 function giam(x){
     var cha= x.parentElement;

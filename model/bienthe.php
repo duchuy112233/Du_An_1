@@ -55,6 +55,15 @@ function loadall_spbt(){
     $list=pdo_query($sql);
     return $list;
 }
+function load_spbt($id){
+    $sql="SELECT san_pham.name, mausp.mau_sp, ramsp.ram_sp, bienthe_sp.soluong FROM bienthe_sp 
+    join san_pham on bienthe_sp.idsp=san_pham.id 
+    join ramsp on bienthe_sp.idram=ramsp.id
+    join mausp on bienthe_sp.idmau=mausp.id
+    where bienthe_sp.idsp=$id";
+    $list=pdo_query($sql);
+    return $list;
+}
 function loadone_spbt($id){
     $sql = "SELECT * FROM bienthe_sp where id = $id";
     $result = pdo_query_one($sql);

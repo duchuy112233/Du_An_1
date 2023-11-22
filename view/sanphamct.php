@@ -10,6 +10,17 @@
                 <p>Giá gốc : <del><?php echo number_format($onesp['price']) ?> Đ</del></p>
                 <p>Giảm giá: -<?php echo number_format($onesp['giamgia']) ?>%</p>
                 <p>Lượt xem: <?php echo $onesp['luotxem'] ?></p>
+                    <select name="idram">
+                    <?php foreach ($onespbt as $key => $spbt) : ?>
+                        <option value=""><?php echo $spbt['ram_sp'] ?></option>
+                    <?php endforeach ?>
+                    </select><br>
+                    <select name="idmau">
+                    <?php foreach ($onespbt as $key => $spbt) : ?>
+                        <option value=""><?php echo $spbt['mau_sp'] ?></option>
+                        <?php endforeach ?>
+                    </select><br>
+                <input type="number" name="soluong"><span>Còn: <?php ?></span>
                 <input type="submit" value="Mua hàng" class="btn-mua">
             </div>
         </div>
