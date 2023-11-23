@@ -55,12 +55,26 @@ function loadall_spbt(){
     $list=pdo_query($sql);
     return $list;
 }
-function load_spbt($id){
-    $sql="SELECT san_pham.name, mausp.mau_sp, ramsp.ram_sp, bienthe_sp.soluong FROM bienthe_sp 
-    join san_pham on bienthe_sp.idsp=san_pham.id 
-    join ramsp on bienthe_sp.idram=ramsp.id
-    join mausp on bienthe_sp.idmau=mausp.id
-    where bienthe_sp.idsp=$id";
+function load_btram($id){
+    $sql="SELECT DISTINCT ramsp.id, ramsp.ram_sp
+    FROM bienthe_sp
+    JOIN ramsp ON bienthe_sp.idram = ramsp.id
+    WHERE bienthe_sp.idsp = $id";
+    $list=pdo_query($sql);
+    return $list;
+}
+function load_btmau($idram,$idsp){
+    $sql="SELECT DISTINCT mausp.id, mausp.mau_sp 
+    FROM bienthe_sp 
+    JOIN mausp ON bienthe_sp.idmau = mausp.id 
+    WHERE bienthe_sp.idram = $idram AND bienthe_sp.idsp = $idsp";
+    $list=pdo_query($sql);
+    return $list;
+}
+function load_btsl($idram,$idsp,$idmau){
+    $sql="SELECT soluong
+    FROM bienthe_sp  
+    WHERE idram = $idram AND idsp = $idsp AND idmau=$idmau";
     $list=pdo_query($sql);
     return $list;
 }

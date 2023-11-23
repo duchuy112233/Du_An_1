@@ -6,22 +6,24 @@
                 <img src="../upload/<?php echo $onesp['img'] ?>" alt="">
             </div>
             <div class="boxctsp-money">
+                <form action="index.php?act=addtocart" method="post">
                 <h3 style="color: #009B48;"><?php echo number_format($onesp['price'] - $onesp['price'] * ($onesp['giamgia'] / 100)) ?> Đ</h3>
                 <p>Giá gốc : <del><?php echo number_format($onesp['price']) ?> Đ</del></p>
                 <p>Giảm giá: -<?php echo number_format($onesp['giamgia']) ?>%</p>
                 <p>Lượt xem: <?php echo $onesp['luotxem'] ?></p>
-                    <select name="idram">
-                    <?php foreach ($onespbt as $key => $spbt) : ?>
-                        <option value=""><?php echo $spbt['ram_sp'] ?></option>
+                    <select name="idram" class="ram">
+                        <option value="0">Chọn loại ram khác</option>
+                    <?php foreach ($onebtram as $spbt) : ?>
+                        <option value="<?php echo $spbt['id'] ?>"><?php echo $spbt['ram_sp'] ?></option>
                     <?php endforeach ?>
                     </select><br>
-                    <select name="idmau">
-                    <?php foreach ($onespbt as $key => $spbt) : ?>
-                        <option value=""><?php echo $spbt['mau_sp'] ?></option>
-                        <?php endforeach ?>
-                    </select><br>
-                <input type="number" name="soluong"><span>Còn: <?php ?></span>
-                <input type="submit" value="Mua hàng" class="btn-mua">
+                    <select name="idmau" class="mau">
+                    <option value="0">Hãy chọn ram để chọn màu</option>
+                    </select>
+                <input type="number" name="soluong" placeholder="Nhập số lượng"><p id="soluonggg"></p><br>
+                <input type="hidden" id="idsp" value="<?php echo $onesp['id'] ?>">
+                <input type="submit" name="addtocart" value="Mua hàng" class="btn-mua">
+                </form>
             </div>
         </div>
         <div class="box-right">
