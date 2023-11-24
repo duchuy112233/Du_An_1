@@ -154,10 +154,25 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 else{
                     $soluong=1;
                 }
+                if(isset($_POST['idram']) && !empty($_POST['idram'])){
+                $oneram=loadone_ram($_POST['idram']);
+                $ram=$oneram['ram_sp'];
+                }
+                else{
+                    $ram="";
+                }
+
+                if(isset($_POST['idmau']) && !empty($_POST['idmau'])){
+                $onemau=loadone_mau($_POST['idmau']);
+                $mau=$onemau['mau_sp'];
+                }
+                else{
+                    $mau="";
+                }
                 $fg=0;
                 $i=0;
                 foreach ($_SESSION['mycart'] as $item) {
-                    if($item[1]==$name){
+                    if($item[1]==$name&& $item[5] == $ram && $item[6] == $mau){
                         $slnew=$soluong+$item[4];
                         $_SESSION['mycart'][$i][4]=$slnew;
                         $fg=1;
@@ -166,7 +181,7 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                     $i++;
                 }
                 if($fg==0){
-                    $spadd=[$id,$name,$hinh,$price,$soluong];
+                    $spadd=[$id,$name,$hinh,$price,$soluong,$ram,$mau];
                     array_push($_SESSION['mycart'],$spadd);
                 }
             }
@@ -183,6 +198,10 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             break;
         case 'viewcart':
             include "cart/viewcart.php";
+            break;
+        case 'bill':
+            break;
+        case 'mybill':
             break;
         default:
             include "home.php";

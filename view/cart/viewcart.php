@@ -24,6 +24,8 @@
                 <td><?php echo $key + 1 ?></td>
                 <td><img src="<?php echo $hinh ?>" alt="" width="70px" height="50px">
                     <p><?php echo $cart[1] ?></p>
+                    <span><?php echo $cart[5] ?></span>
+                    <span><?php echo $cart[6] ?></span>
                 </td>
                 <td><?php echo number_format($cart[3]) ?> VND</td>
                 <td><?php echo $cart[4] ?></td>
