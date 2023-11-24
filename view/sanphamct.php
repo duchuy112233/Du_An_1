@@ -7,6 +7,7 @@
             </div>
             <div class="boxctsp-money">
                 <form action="index.php?act=addtocart" method="post">
+                    <?php $hinh = $image_path.$onesp['img']; ?>
                 <h3 style="color: #009B48;"><?php echo number_format($onesp['price'] - $onesp['price'] * ($onesp['giamgia'] / 100)) ?> Đ</h3>
                 <p>Giá gốc : <del><?php echo number_format($onesp['price']) ?> Đ</del></p>
                 <p>Giảm giá: -<?php echo number_format($onesp['giamgia']) ?>%</p>
@@ -24,7 +25,7 @@
                 <input type="hidden" id="idsp" name="id" value="<?php echo $onesp['id'] ?>">
                 <input type="hidden" name="name" value="<?php echo $onesp['name'] ?>">
                 <input type="hidden" name="hinh" value="<?php echo $hinh ?>">
-                <input type="hidden" name="price" value="<?php echo $onesp['price'] - $sp['price'] * ($sp['giamgia'] / 100) ?>">
+                <input type="hidden" name="price" value="<?php echo $onesp['price'] - $onesp['price'] * ($onesp['giamgia'] / 100) ?>">
                 <input type="submit" name="addtocart" value="Add to cart" class="btn-mua">
                 </form>
             </div>
