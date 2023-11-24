@@ -113,7 +113,8 @@ function update_taikhoan($id,$user,$pass,$img,$email,$address,$tel,$role){
             $imglink = "../upload/" . $taikhoan['img'];
             unlink($imglink);
         }
-        $sql = "UPDATE tai_khoan SET user ='$user', pass ='$pass', img ='$img', email ='$email', address ='$address', tel ='$tel', role ='$role' WHERE id = $id";
+        $img_with_time = time() . basename($img);
+        $sql = "UPDATE tai_khoan SET user ='$user', pass ='$pass', img ='$img_with_time', email ='$email', address ='$address', tel ='$tel', role ='$role' WHERE id = $id";
     }else{
         $sql = "UPDATE tai_khoan SET user ='$user', pass ='$pass', email ='$email', address ='$address', tel ='$tel', role ='$role' WHERE id = $id";
     }
@@ -131,7 +132,8 @@ function delete_taikhoan($id){
 }
 
 function add_taikhoan_admin($user,$pass,$img,$email,$address,$tel,$role){
-    $sql = "INSERT INTO tai_khoan (user, pass, img, email, address, tel, role) VALUES ('$user', '$pass', '$img', '$email', '$address', '$tel', '$role')";
+    $img_with_time = time() . basename($img);
+    $sql = "INSERT INTO tai_khoan (user, pass, img, email, address, tel, role) VALUES ('$user', '$pass', '$img_with_time', '$email', '$address', '$tel', '$role')";
     pdo_execute($sql);
 }
 
@@ -142,10 +144,12 @@ function edit_taikhoan($id,$user,$img,$address,$tel){
             $imglink = "../upload/" . $taikhoan['img'];
             unlink($imglink);
         }
-        $sql = "UPDATE tai_khoan SET user ='$user', img ='$img', address ='$address', tel ='$tel' WHERE id = $id";
+        $img_with_time = time() . basename($img);
+        $sql = "UPDATE tai_khoan SET user ='$user', img ='$img_with_time', address ='$address', tel ='$tel' WHERE id = $id";
     }else{
         $sql = "UPDATE tai_khoan SET user ='$user', address ='$address', tel ='$tel' WHERE id = $id";
     }
     pdo_execute($sql);
+    header("location:".$_SERVER['HTTP_REFERER']);
 }
 ?>

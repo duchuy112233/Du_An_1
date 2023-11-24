@@ -18,6 +18,9 @@
                 <li><a href="index.php">Trang chủ</a></li>
                 <li><a href="index.php?act=listdm">Danh mục</a></li>
                 <li><a href="index.php?act=listsp">Sản phẩm</a></li>
+                <li><a href="index.php?act=listbt">Sản phẩm biến thể</a></li>
+                <li><a href="index.php?act=listram">Ram</a></li>
+                <li><a href="index.php?act=listmau">Màu</a></li>
                 <li><a href="index.php?act=listtk">Khách hàng</a></li>
                 <li><a href="index.php?act=listbl">Bình luận</a></li>
                 <li><a href="index.php?act=listdh">Đơn hàng</a></li>

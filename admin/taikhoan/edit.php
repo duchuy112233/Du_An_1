@@ -22,7 +22,7 @@
         </div><br>
         <div>
             <label>Email</label><br>
-            <input type="text" name="email" value="<?php echo $onetk['email'] ?>" required>
+            <input type="text" name="email" value="<?php echo $onetk['email'] ?>" readonly>
         </div><br>
         <div>
             <label>Địa chỉ</label><br>

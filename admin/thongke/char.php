@@ -1,4 +1,3 @@
-
 <?php
 // Assuming $listtk is the result from loadall_thongke
 
@@ -8,14 +7,15 @@ $quantities = [];
 $averagePrices = [];
 
 foreach ($listtk as $row) {
-    $categories[] = $row['tendm'];
+    $categories[] = $row['name'];
     $quantities[] = $row['soluong'];
-    $averagePrices[] = $row['giatb'];
+    $averagePrices[] = $row['gia_avg'];
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,8 +23,9 @@ foreach ($listtk as $row) {
     <!-- Include Chart.js library -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
-    <div style="width: 80%; margin: auto;">
+    <div style="width: 80%; margin: 10px auto;">
         <canvas id="combinedChart"></canvas>
     </div>
 
@@ -35,8 +36,7 @@ foreach ($listtk as $row) {
             type: 'bar',
             data: {
                 labels: <?php echo json_encode($categories); ?>,
-                datasets: [
-                    {
+                datasets: [{
                         label: 'Số lượng',
                         data: <?php echo json_encode($quantities); ?>,
                         backgroundColor: 'rgba(75, 192, 192, 0.2)', // Bar chart color
@@ -49,7 +49,7 @@ foreach ($listtk as $row) {
                         data: <?php echo json_encode($averagePrices); ?>,
                         fill: false,
                         borderColor: '#FF6384', // Line chart color
-                        borderWidth: 2,
+                        borderWidth: 1,
                         yAxisID: 'price'
                     }
                 ]
@@ -71,8 +71,5 @@ foreach ($listtk as $row) {
         });
     </script>
 </body>
+
 </html>
-
-
-<!-- ///////////////////////////////// -->
-
