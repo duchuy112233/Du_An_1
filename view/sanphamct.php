@@ -12,17 +12,20 @@
                 <p>Giảm giá: -<?php echo number_format($onesp['giamgia']) ?>%</p>
                 <p>Lượt xem: <?php echo $onesp['luotxem'] ?></p>
                     <select name="idram" class="ram">
-                        <option value="0">Chọn loại ram khác</option>
+                        <option value="">Chọn loại ram khác</option>
                     <?php foreach ($onebtram as $spbt) : ?>
                         <option value="<?php echo $spbt['id'] ?>"><?php echo $spbt['ram_sp'] ?></option>
                     <?php endforeach ?>
                     </select><br>
                     <select name="idmau" class="mau">
-                    <option value="0">Hãy chọn ram để chọn màu</option>
+                    <option value="">Hãy chọn ram để chọn màu</option>
                     </select>
                 <input type="number" name="soluong" placeholder="Nhập số lượng"><p id="soluonggg"></p><br>
-                <input type="hidden" id="idsp" value="<?php echo $onesp['id'] ?>">
-                <input type="submit" name="addtocart" value="Mua hàng" class="btn-mua">
+                <input type="hidden" id="idsp" name="id" value="<?php echo $onesp['id'] ?>">
+                <input type="hidden" name="name" value="<?php echo $onesp['name'] ?>">
+                <input type="hidden" name="hinh" value="<?php echo $hinh ?>">
+                <input type="hidden" name="price" value="<?php echo $onesp['price'] - $sp['price'] * ($sp['giamgia'] / 100) ?>">
+                <input type="submit" name="addtocart" value="Add to cart" class="btn-mua">
                 </form>
             </div>
         </div>

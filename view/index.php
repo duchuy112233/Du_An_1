@@ -148,7 +148,12 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 $name=$_POST['name'];
                 $hinh=$_POST['hinh'];
                 $price=$_POST['price'];
-                $soluong=1;
+                if(isset($_POST['soluong'])){
+                $soluong=$_POST['soluong'];
+                }
+                else{
+                    $soluong=1;
+                }
                 $fg=0;
                 $i=0;
                 foreach ($_SESSION['mycart'] as $item) {
