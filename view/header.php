@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="../css/view.css">
     <script src="../ajax.js"></script>
 </head>
+
 <body>
     <div class="container">
         <div class="top-header"></div>
@@ -22,24 +24,30 @@
                 </form>
                 <div class="form-menu">
                     <div class="dn-header">
-                        <?php if(isset($_SESSION['user'])) { ?>
+                        <?php if (isset($_SESSION['user'])) { ?>
                             <?php $first_letter = strtoupper(substr($_SESSION['user']['email'], 0, 1)) ?>
-                            <?php if($_SESSION['user']['img'] != "") : ?>
-                                <li class="nav-item"><a class="acc" href="#"><img class="avata-img" src="../upload/<?php echo $_SESSION['user']['img'] ?>" alt="Ảnh đại diện"> <p><?php echo $_SESSION['user']['user'] ?></p></a>
-                            <?php else : ?>
-                                <li class="nav-item"><a class="acc" href="#"><p class="avatar-header"><?php echo $first_letter; ?></p> <p><?php echo $_SESSION['user']['user'] ?></p></a>
-                            <?php endif ?>
-                            <ul class = "submenu">
-                                <li class="header-tk"> <a  href="index.php?act=taikhoan">Thông tin tài khoản </a></li>
-                                <li class="header-tk"> <a  href="index.php?act=doimk">Đổi mật khẩu </a></li>
-                                <?php if($_SESSION['user']['role']==1){ ?>
-                                <li class="header-tk"> <a  href="../admin/index.php">Đăng nhập vào ADMIN</a></li>
-                                <?php } ?>
-                                <li class="header-tk"> <a  href="index.php?act=dangxuat">Đăng xuất</a></li>
-                            </ul></li>
-                        <?php } else { ?>
-                            <li class="nav-item"><a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> Đăng nhập</a></li>
-                        <?php } ?> 
+                            <?php if ($_SESSION['user']['img'] != "") : ?>
+                                <li class="nav-item"><a class="acc" href="#"><img class="avata-img" src="../upload/<?php echo $_SESSION['user']['img'] ?>" alt="Ảnh đại diện">
+                                        <p><?php echo $_SESSION['user']['user'] ?></p>
+                                    </a>
+                                <?php else : ?>
+                                <li class="nav-item"><a class="acc" href="#">
+                                        <p class="avatar-header"><?php echo $first_letter; ?></p>
+                                        <p><?php echo $_SESSION['user']['user'] ?></p>
+                                    </a>
+                                <?php endif ?>
+                                <ul class="submenu">
+                                    <li class="header-tk"> <a href="index.php?act=taikhoan">Thông tin tài khoản </a></li>
+                                    <li class="header-tk"> <a href="index.php?act=doimk">Đổi mật khẩu </a></li>
+                                    <?php if ($_SESSION['user']['role'] == 1) { ?>
+                                        <li class="header-tk"> <a href="../admin/index.php">Đăng nhập vào ADMIN</a></li>
+                                    <?php } ?>
+                                    <li class="header-tk"> <a href="index.php?act=dangxuat">Đăng xuất</a></li>
+                                </ul>
+                                </li>
+                            <?php } else { ?>
+                                <li class="nav-item"><a href="index.php?act=dangnhap"><i class="fa-solid fa-user" style="color: #000000;"></i> Đăng nhập</a></li>
+                            <?php } ?>
                     </div>
                     <div class="giohang-icon">
                         <a href="index.php?act=addtocart"> <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i> Giỏ hàng </a>
@@ -57,7 +65,7 @@
                     <a class="nav-link" href="#">DANH MỤC</a>
                     <ul class="submenu">
                         <!-- Danh mục -->
-                        <?php foreach($listdm as $dm) : ?>
+                        <?php foreach ($listdm as $dm) : ?>
                             <li><a href="index.php?act=danhmucsp&iddm=<?php echo $dm['id'] ?>"><?php echo $dm['name'] ?></a></li>
                         <?php endforeach ?>
                     </ul>

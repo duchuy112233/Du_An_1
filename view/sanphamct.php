@@ -21,7 +21,7 @@
                     <select name="idmau" class="mau">
                     <option value="">Hãy chọn ram để chọn màu</option>
                     </select>
-                <input type="number" name="soluong" placeholder="Nhập số lượng"><p id="soluonggg"></p><br>
+                <input type="number" name="soluong" placeholder="Nhập số lượng" value="1" min="1" required><p id="soluonggg"></p><br>
                 <input type="hidden" id="idsp" name="id" value="<?php echo $onesp['id'] ?>">
                 <input type="hidden" name="name" value="<?php echo $onesp['name'] ?>">
                 <input type="hidden" name="hinh" value="<?php echo $hinh ?>">
@@ -124,6 +124,5 @@
             <?php endforeach ?>
         </div>
     </div>
-
 
 </div>
