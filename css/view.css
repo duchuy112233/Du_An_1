@@ -811,6 +811,7 @@ color: #202114;
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    border: 1px solid #ccc;
 }
 .form-giohang th,
 .form-giohang td{
@@ -852,6 +853,86 @@ font-weight: bold;
 	color: #222; 
 	outline: none; 
 }
+/* Đặt hàng */
+.bill{
+display: flex;
+gap:30px;
+margin: 0 30px;
+justify-content: space-between;
+}
+.giohang{
+border: 1px solid #ccc;
+background: #eee;
+padding: 30px;
+}
+.order{
+display: flex;
+gap:30px;
+margin: 20px 0;
+}
+.giohang .title-cart{
+font-size: 22px;
+color: #575757;
+padding-bottom: 3px;
+border-bottom: 1px solid #ccc;
+}
+.giohang .total{
+border-bottom: 1px solid #ccc;
+border-top: 1px solid #ccc;
+text-align: center;
+padding: 20px 0;
+font-size: 20px;
+font-weight: 600;
+}
+.giohang .content-on{
+color: #575757;
+margin-bottom: 15px;
+}
+.giohang .content-below{
+color: #009B48;
+}
+.giohang .content-below p{
+margin-top: 5px;
+}
+.bill .left{
+width: 65%;
+}
+.bill .left input[type="text"]{
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-top: 6px;
+}
+.bill .left input[type="text"]:focus{
+    border: 1px solid #009879;
+	color: #222; 
+	outline: none; 
+}
+.bill .left .order-form{
+border: 1px solid #009B48;
+border-radius: 4px;
+padding: 15px;
+margin-bottom: 20px;
+}
+.bill .left .order-form p{
+    padding-bottom: 5px;
+border-bottom: 1px solid #009879;
+margin-bottom: 15px;
+}
+.bill .left .payment{
+border: 1px solid #009B48;
+border-radius: 4px;
+padding: 15px;
+text-align: center;
+}
+.bill .left .payment p{
+    padding-bottom: 5px;
+border-bottom: 1px solid #009879;
+margin-bottom: 15px;
+}
+  
+  
 
 /* Footer */
 .footer {
