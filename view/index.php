@@ -189,7 +189,6 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             include "cart/viewcart.php";
             break;
         case 'bill':
-
             include "cart/bill.php";
             break;
         case 'billcomfirm':
@@ -214,7 +213,6 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 }
             }
             $bill = loadone_bill($idbill);
-            $billcart = loadall_cart($idbill);
             include "cart/billcomfirm.php";
             break;
         case 'mybill':

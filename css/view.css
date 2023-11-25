@@ -818,24 +818,22 @@ color: #202114;
 padding: 10px 0;
 }
 
-.btn-mua{
-padding: 8px 15px;
+.form-giohang .btn-mua{
+padding: 8px;
 background-color: #009B48;
 color: #fff;
 border: none;
-font-weight: bold;
 }
-.btn-mua:hover{
+.form-giohang .btn-mua:hover{
     background: #0d8244;
 }
-.btn-del{
-    padding: 8px 15px;
+.form-giohang .btn-del{
+    padding: 8px;
     background-color: red;
     color: #fff;
     border: none;
-    font-weight: bold;
 }
-.btn-del:hover{
+.form-giohang .btn-del:hover{
     background-color: rgb(237, 39, 39);
 }
 /* Biến thể sản phẩm */
@@ -931,9 +929,28 @@ text-align: center;
 border-bottom: 1px solid #009879;
 margin-bottom: 15px;
 }
-  
-  
-
+/* Trang cảm ơn */
+.billcomfirm{
+text-align: center;
+}
+.billcomfirm h4{
+margin:15px 0;
+}
+.billcomfirm .btn-a{
+margin-top: 25px;
+}
+.billcomfirm a{
+padding: 8px;
+background-color: #009B48;
+text-decoration: none;
+color: #fff;
+}
+.billcomfirm .content-bill{
+display: flex;
+justify-content: center;
+gap:30px;
+margin: 15px 0;
+}
 /* Footer */
 .footer {
     width: 100%;
