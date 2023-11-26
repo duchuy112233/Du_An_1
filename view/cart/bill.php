@@ -2,7 +2,7 @@
     <div class="left">
         <form action="index.php?act=billcomfirm" method="post">
             <div class="order-form">
-            <p>Thông tin người đặt hàng</p>
+                <p>Thông tin người đặt hàng</p>
                 <?php
                 if (isset($_SESSION['user'])) {
                     $name = $_SESSION['user']['user'];
@@ -48,6 +48,8 @@
     <div class="giohang">
         <p class="title-cart">Tóm tắt đơn hàng</p>
         <?php $tong = 0;
+        $allmau = loadall_mau();
+        $allram = loadall_ram();
         foreach ($_SESSION['mycart'] as $cart) {
             $hinh = $image_path . $cart[2];
             $tongtien = intval($cart[3]) * intval($cart[4]);
@@ -57,8 +59,16 @@
                 <div>
                     <div class="content-on">
                         <p><?php echo $cart[1] ?></p>
-                        <span><?php echo $cart[5] ?></span>
-                        <span><?php echo $cart[6] ?></span>
+                        <?php foreach ($allram as $ram) : ?>
+                            <?php if ($ram['id'] == $cart[5]) : ?>
+                                <span><?php echo $ram['ram_sp'] ?></span>
+                            <?php endif ?>
+                        <?php endforeach ?>
+                        <?php foreach ($allmau as $mau) : ?>
+                            <?php if ($mau['id'] == $cart[6]) : ?>
+                                <span><?php echo $mau['mau_sp'] ?></span>
+                            <?php endif ?>
+                        <?php endforeach ?>
                     </div>
                     <div class="content-below">
                         <p>Đơn giá: <?php echo number_format($cart[3]) ?> VND</p>

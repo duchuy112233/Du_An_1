@@ -335,6 +335,35 @@ if(isset($_GET['act']) && !empty($_GET['act'])){
                 header("location: index.php?act=listbt");
             }
             break;
+        //Đơn hàng
+         //Danh sách đơn hàng
+        case 'listdh':
+            $listbill=loadall_billdh();
+            include "donhang/list.php";
+            break;
+         //Chi tiết đơn hàng
+        case 'ctdh':
+            if(isset($_GET['iddh']) && $_GET['iddh'] > 0){
+                $cart=loadall_cart($_GET['iddh']);
+            }
+            include "donhang/ctdh.php";
+            break;
+         //Cập nhật đơn hàng
+        case 'editdh':
+            if(isset($_GET['iddh']) & $_GET['iddh'] > 0){
+                $onebill = loadone_bill($_GET['iddh']);
+            }
+            if(isset($_POST['editdh'])){
+                $bill_status = $_POST['bill_status'];
+                $id = $_POST['iddh'];
+                update_bill($id, $bill_status);
+                header("location: index.php?act=listdh");
+            }
+            include "donhang/edit.php";
+            break;
+         //Xóa sản phẩm trong đơn hàng
+        case 'deletedh':
+            break;
         //Trường hợp khác
         default:
         include "home.php";

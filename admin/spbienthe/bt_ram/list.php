@@ -17,7 +17,7 @@
                 <?php foreach ($listram as $key => $ram) : ?>
                 <tr>
                     <td><input type="checkbox" name=""></td>
-                    <td>R<?php echo $ram['id'] ?></td>
+                    <td><?php echo $ram['id'] ?></td>
                     <td><?php echo $ram['ram_sp'] ?></td>
                     <td>
                         <a href="?act=editram&idram=<?php echo $ram['id'] ?>"><input type="button" value="Sửa"></a>

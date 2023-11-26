@@ -147,15 +147,13 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 }
                 $tongtien=$soluong*$price;
                 if (isset($_POST['idram']) && !empty($_POST['idram'])) {
-                    $oneram = loadone_ram($_POST['idram']);
-                    $ram = $oneram['ram_sp'];
+                    $ram = $_POST['idram'];
                 } else {
                     $ram = "";
                 }
 
                 if (isset($_POST['idmau']) && !empty($_POST['idmau'])) {
-                    $onemau = loadone_mau($_POST['idmau']);
-                    $mau = $onemau['mau_sp'];
+                    $mau = $_POST['idmau'];
                 } else {
                     $mau = "";
                 }
@@ -208,6 +206,9 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 //insert into cart: $_SESSION['mycart'] & idbill
                 foreach ($_SESSION['mycart'] as $cart) {
                     add_cart($_SESSION['user']['id'], $cart[0], $cart[2], $cart[1], $cart[5], $cart[6], $cart[3], $cart[4], $cart[7], $idbill);
+                    if($cart[5] != "" && $cart[6] !=""){
+                        update_soluong($cart[4],$cart[5],$cart[0],$cart[6]);
+                    }
                     //xóa $_SESSION['cart']
                     $_SESSION['mycart'] = [];
                 }
