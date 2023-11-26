@@ -149,13 +149,13 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 if (isset($_POST['idram']) && !empty($_POST['idram'])) {
                     $ram = $_POST['idram'];
                 } else {
-                    $ram = "";
+                    $ram = 0;
                 }
 
                 if (isset($_POST['idmau']) && !empty($_POST['idmau'])) {
                     $mau = $_POST['idmau'];
                 } else {
-                    $mau = "";
+                    $mau = 0;
                 }
                 $fg = 0;
                 $i = 0;
@@ -206,7 +206,7 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 //insert into cart: $_SESSION['mycart'] & idbill
                 foreach ($_SESSION['mycart'] as $cart) {
                     add_cart($_SESSION['user']['id'], $cart[0], $cart[2], $cart[1], $cart[5], $cart[6], $cart[3], $cart[4], $cart[7], $idbill);
-                    if($cart[5] != "" && $cart[6] !=""){
+                    if($cart[5] != 0 && $cart[6] != 0){
                         update_soluong($cart[4],$cart[5],$cart[0],$cart[6]);
                     }
                     //xóa $_SESSION['cart']
@@ -217,6 +217,8 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             include "cart/billcomfirm.php";
             break;
         case 'mybill':
+            $listbill=loadall_billdh();
+            include "cart/mybill.php";
             break;
         default:
             include "home.php";

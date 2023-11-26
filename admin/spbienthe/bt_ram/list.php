@@ -7,7 +7,7 @@
             <table class="mb10 content-table">
                 <thead>
                 <tr>
-                    <th>Chọn nhanh</th>
+                    <th>STT</th>
                     <th>Mã ram</th>
                     <th>Ram</th>
                     <th>Chức năng</th>
@@ -16,7 +16,7 @@
                 <tbody>
                 <?php foreach ($listram as $key => $ram) : ?>
                 <tr>
-                    <td><input type="checkbox" name=""></td>
+                    <td><?php echo $key + 1 ?></td>
                     <td><?php echo $ram['id'] ?></td>
                     <td><?php echo $ram['ram_sp'] ?></td>
                     <td>

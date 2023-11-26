@@ -18,7 +18,7 @@
                 <tbody>
                 <?php foreach ($listbl as $key => $bl) : ?>
                 <tr>
-                    <td><input type="checkbox" name=""></td>
+                    <td><?php echo $key + 1 ?></td>
                     <td>SP<?php echo $bl['id'] ?></td>
                     <td><?php echo $bl['name'] ?></td>
                     <td><img src="../upload/<?php echo $bl['img'] ?>" alt="" width="70px" height="50px"></td>
@@ -31,8 +31,5 @@
                 </tbody>
             </table>
         </div>
-        <input type="button" value="Chọn tất cả">
-        <input type="button" value="Bỏ chọn tất cả">
-        <input type="button" value="Xóa các mục đã chọn">
     </form>
 </div>

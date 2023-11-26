@@ -38,7 +38,6 @@
                                 <?php endif ?>
                                 <ul class="submenu">
                                     <li class="header-tk"> <a href="index.php?act=taikhoan">Thông tin tài khoản </a></li>
-                                    <li class="header-tk"> <a href="index.php?act=doimk">Đổi mật khẩu </a></li>
                                     <?php if ($_SESSION['user']['role'] == 1) { ?>
                                         <li class="header-tk"> <a href="../admin/index.php">Đăng nhập vào ADMIN</a></li>
                                     <?php } ?>

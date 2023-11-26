@@ -12,7 +12,7 @@ $sql="INSERT INTO bill(iduser,bill_name,bill_address,bill_tel,bill_email,bill_pt
 return pdo_execute_return_lastInsertId($sql);
 }
 function add_cart($iduser,$idsp,$img,$name,$ram,$mau,$price,$soluong,$thanhtien,$idbill){
-$sql="INSERT INTO cart (iduser,idsp,img,name,ram,mau,price,soluong,thanhtien,idbill) VALUES ('$iduser','$idsp','$img','$name','$ram','$mau','$price','$soluong','$thanhtien','$idbill')";
+$sql="INSERT INTO cart (iduser,idsp,img,name,idram,idmau,price,soluong,thanhtien,idbill) VALUES ('$iduser','$idsp','$img','$name','$ram','$mau','$price','$soluong','$thanhtien','$idbill')";
 pdo_execute($sql);
 }
 function loadone_bill($id){
@@ -21,7 +21,7 @@ $bill=pdo_query_one($sql);
 return $bill;
 }
 function loadall_cart($idbill){
-$sql="SELECT * FROM cart where idbill=$idbill";
+$sql="SELECT * FROM cart where idbill=$idbill order by name desc";
 $bill=pdo_query($sql);
 return $bill;
 }
@@ -46,17 +46,20 @@ function update_bill($id, $bill_status){
 }
 function get_ttdh($n){
 switch ($n){
-    case '0':
+    case '1':
         $tt="Đơn hàng mới";
         break;
-    case '1':
+    case '2':
         $tt="Đang xử lý";
         break;
-    case '2':
+    case '3':
         $tt="Đang giao hàng";
         break;
-    case '3':
-        $tt="Hoàn tất";
+    case '4':
+        $tt="Đã giao hàng";
+        break;
+    case '5':
+        $tt="Đơn hàng bị hủy";
         break;
     default:
         $tt="Đơn hàng mới";

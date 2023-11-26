@@ -15,7 +15,6 @@
                         <th>Ngày đặt</th>
                         <th>Thanh toán</th>
                         <th>Tình trạng</th>
-                        </th>
                         <th>Chức năng</th>
                 </thead>
                 <tbody>

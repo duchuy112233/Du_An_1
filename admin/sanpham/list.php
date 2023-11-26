@@ -17,7 +17,7 @@
             <table class="mb10 content-table">
                 <thead>
                 <tr>
-                    <th>Chọn nhanh</th>
+                    <th>STT</th>
                     <th>Mã sp</th>
                     <th>Hình ảnh</th>
                     <th>Tên sp</th>
@@ -31,7 +31,7 @@
                 <tbody>
                 <?php foreach ($listsp as $key => $sp) : ?>
                 <tr>
-                    <td><input type="checkbox" name=""></td>
+                    <td><?php echo $key + 1 ?></td>
                     <td>SP<?php echo $sp['id'] ?></td>
                     <td>
                         <?php $img=$image_path.$sp['img']; if(is_file($img)) : ?>
@@ -56,9 +56,6 @@
                 </tbody>
             </table>
         </div>
-        <input type="button" value="Chọn tất cả">
-        <input type="button" value="Bỏ chọn tất cả">
-        <input type="button" value="Xóa các mục đã chọn">
         <a href="index.php?act=addsp"><input type="button" value="Thêm mới"></a>
     </form>
 </div>

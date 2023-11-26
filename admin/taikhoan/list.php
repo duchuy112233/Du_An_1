@@ -7,7 +7,7 @@
             <table class="mb10 content-table">
                 <thead>
                 <tr>
-                    <th>Chọn nhanh</th>
+                    <th>STT</th>
                     <th>Mã tài khoản</th>
                     <th>Hình ảnh</th>
                     <th>User</th>
@@ -22,7 +22,7 @@
                 <tbody>
                 <?php foreach ($listtk as $key => $tk) : ?>
                 <tr>
-                    <td><input type="checkbox" name=""></td>
+                    <td><?php echo $key + 1 ?></td>
                     <td>TK<?php echo $tk['id'] ?></td>
                     <td>
                         <?php $img=$image_path.$tk['img']; if(is_file($img)) : ?>
@@ -54,9 +54,6 @@
                 </tbody>
             </table>
         </div>
-        <input type="button" value="Chọn tất cả">
-        <input type="button" value="Bỏ chọn tất cả">
-        <input type="button" value="Xóa các mục đã chọn">
         <a href="index.php?act=addtk"><input type="button" value="Thêm mới"></a>
     </form>
 </div>
