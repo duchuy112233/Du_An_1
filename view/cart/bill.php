@@ -18,19 +18,19 @@
                 ?>
                 <div>
                     <label>Người đặt hàng: </label>
-                    <input type="text" name="name" value="<?php echo $name ?>" required>
+                    <input type="text" name="name" value="<?php echo $name ?>" placeholder="Tên người nhận" required>
                 </div><br>
                 <div>
                     <label>Địa chỉ:</label>
-                    <input type="text" name="address" value="<?php echo $address ?>" required>
+                    <input type="text" name="address" value="<?php echo $address ?>" placeholder="Địa chỉ" required>
                 </div><br>
                 <div>
                     <label>Email:</label>
-                    <input type="text" name="email" value="<?php echo $email ?>" required>
+                    <input type="text" name="email" value="<?php echo $email ?>" placeholder="Email" required>
                 </div><br>
                 <div>
                     <label>Số điện thoại:</label>
-                    <input type="text" name="tel" value="<?php echo $tel ?>" required>
+                    <input type="text" name="tel" value="<?php echo $tel ?>" placeholder="Số điện thoại" required>
                 </div>
             </div>
             <div class="payment">
@@ -40,10 +40,9 @@
                 <input type="radio" value="2" name="pttt" id="payment2">
                 <label for="payment2">Thanh toán online</label>
             </div><br>
-            <a href="index.php?act=billcomfirm"><input type="submit" name="dathang" value="Đồng ý đặt hàng"></a>
+            <a href="index.php?act=billcomfirm"><input type="submit" name="thanhtoan" value="Thanh toán"></a>
         </form>
     </div>
-
 
     <div class="giohang">
         <p class="title-cart">Tóm tắt đơn hàng</p>
@@ -55,7 +54,7 @@
             $tongtien = intval($cart[3]) * intval($cart[4]);
             $tong += $tongtien; ?>
             <div class="order">
-                <img src="<?php echo $hinh ?>" alt="" width="120px" height="120px" style="border:1px solid #ccc">
+                <img src="<?php echo $hinh ?>" alt="" width="120px" height="120px" style="border:1px solid #009879">
                 <div>
                     <div class="content-on">
                         <p><?php echo $cart[1] ?></p>

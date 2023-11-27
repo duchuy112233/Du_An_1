@@ -31,7 +31,7 @@ function loadall_cart_count($idbill){
     return count($bill);
 }
 function loadall_bill($iduser){
-    $sql="SELECT * FROM bill where iduser=$iduser";
+    $sql="SELECT * FROM bill where iduser=$iduser order by id desc";
     $listbill=pdo_query($sql);
     return $listbill;
 }

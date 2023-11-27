@@ -194,7 +194,7 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 $iduser = $_SESSION['user']['id'];
             }
             //tạo bill
-            if (isset($_POST['dathang'])) {
+            if (isset($_POST['thanhtoan'])) {
                 $name = $_POST['name'];
                 $address = $_POST['address'];
                 $email = $_POST['email'];
@@ -217,7 +217,7 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             include "cart/billcomfirm.php";
             break;
         case 'mybill':
-            $listbill=loadall_billdh();
+            $listbill=loadall_bill($_SESSION['user']['id']);;
             include "cart/mybill.php";
             break;
         default:

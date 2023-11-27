@@ -23,22 +23,38 @@
             <p class="tieude1">Đơn hàng của tôi <i class="fa-solid fa-user-secret" style="color: #000000;"></i></p>
             <p class="tieude2">Quản lý thông tin về trạng thái đơn hàng bạn đã mua</p>
         </div>
-        <div class="form-tk">
-            <table border="1px">
+            <table class="content-table">
+                <thead>
                 <tr>
                     <th>STT</th>
                     <th>Mã đơn hàng</th>
-                    <th>Số lượng sp</th>
-                    <th>Tổng giá tiền</th>
+                    <th>Số lượng</th>
+                    <th>Tổng tiền</th>
                     <th>Ngày đặt</th>
                     <th>Thanh toán</th>
                     <th>Tình trạng</th>
-                    <th>Chức năng</th>
+                    <th></th>
                 </tr>
-                <?php foreach ($listbill as $key => $bill) { ?>
-
-                <?php } ?>
+                </thead>
+                <tbody>
+                <?php
+                    foreach ($listbill as $key => $bill) {
+                        $countsp = loadall_cart_count($bill['id']);
+                        $ttdh = get_ttdh($bill['bill_status']);
+                        $pttt = get_pttt($bill['bill_pttt']);
+                    ?>
+                        <tr>
+                            <td><?php echo $key + 1 ?></td>
+                            <td>DA1-<?php echo $bill['id'] ?></td>
+                            <td><?php echo $countsp ?></td>
+                            <td><?php echo number_format($bill['total']) ?> VND</td>
+                            <td><?php echo date("d/m/Y", strtotime($bill['ngaydh'])) ?></td>
+                            <td><?php echo $pttt ?></td>
+                            <td><?php echo $ttdh ?></td>
+                            <td><a href="index.php?act=ctdh&iddh=<?php echo $bill['id'] ?>"><input type="button" value="Xem chi tiết"></a></td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
             </table>
-        </div>
     </div>
 </div>

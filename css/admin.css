@@ -37,7 +37,7 @@
 
 .menu_admin ul li a {
     text-decoration: none;
-    color: #575757;
+    color: #202114;
 }
 
 .menu_admin ul li a:hover {
@@ -45,7 +45,7 @@
 }
 .home{
     text-decoration: none;
-    color: #575757;
+    color: #202114;
     padding-right: 10px;
 }
 .home:hover{
@@ -110,7 +110,7 @@ max-width: 500px;
     margin-top: 6px;
 }
 .formcontent label{
-color: #575757;
+color: #202114;
 }
 select{
     width: 100%;

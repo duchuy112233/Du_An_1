@@ -361,9 +361,6 @@ if(isset($_GET['act']) && !empty($_GET['act'])){
             }
             include "donhang/edit.php";
             break;
-         //Xóa sản phẩm trong đơn hàng
-        case 'deletedh':
-            break;
         //Trường hợp khác
         default:
         include "home.php";

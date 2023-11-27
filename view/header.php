@@ -16,11 +16,11 @@
     <div class="container">
         <div class="top-header"></div>
         <div class="bottom-header">
-            <a href="index.php"><img src="../image/logo1.png"></a>
+            <a href="index.php"><img src="../image/logo3.png"></a>
             <div class="timkiem-header">
                 <form class="search-box" method="post" action="index.php?act=danhmucsp">
                     <input type="text" name="keyword" placeholder="Nhập tên sản phẩm..." required>
-                    <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i></button>
+                    <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass icon" style="color: #000000;"></i></button>
                 </form>
                 <div class="form-menu">
                     <div class="dn-header">
@@ -58,10 +58,10 @@
         <div class="menu">
             <ul class="menu-row">
                 <li class="nav-item">
-                    <a href="index.php">TRANG CHỦ</a>
+                    <a href="index.php">Trang chủ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">DANH MỤC</a>
+                    <a class="nav-link" href="#">Danh mục</a>
                     <ul class="submenu">
                         <!-- Danh mục -->
                         <?php foreach ($listdm as $dm) : ?>
@@ -70,13 +70,13 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#">LIÊN HỆ</a>
+                    <a href="#">Liên hệ</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#">GÓP Ý</a>
+                    <a href="#">Góp ý</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#">HỎI ĐÁP</a>
+                    <a href="#">Hỏi đáp</a>
                 </li>
             </ul>
         </div>
