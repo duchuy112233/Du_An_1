@@ -1,3 +1,5 @@
+
+
 <div class="form-giohang">
     <div class="title-giohang">
         <h3>Giỏ Hàng</h3>
@@ -16,14 +18,26 @@
         </tr>
         <?php $tong = 0;
         $i = 0;
+        $allmau=loadall_mau();
+        $allram=loadall_ram();
         foreach ($_SESSION['mycart'] as $key => $cart) {
             $hinh = $image_path . $cart[2];
-            $tongtien = $cart[3] * $cart[4];
+            $tongtien = intval($cart[3]) * intval($cart[4]);
             $tong += $tongtien; ?>
             <tr>
                 <td><?php echo $key + 1 ?></td>
                 <td><img src="<?php echo $hinh ?>" alt="" width="70px" height="50px">
                     <p><?php echo $cart[1] ?></p>
+                    <?php foreach ($allram as $ram) : ?>
+                        <?php if($ram['id'] == $cart[5]) : ?>
+                            <span><?php echo $ram['ram_sp'] ?></span>
+                        <?php endif ?>
+                    <?php endforeach ?>
+                    <?php foreach ($allmau as $mau) : ?>
+                        <?php if($mau['id'] == $cart[6]) : ?>
+                            <span><?php echo $mau['mau_sp'] ?></span>
+                        <?php endif ?>
+                    <?php endforeach ?>
                 </td>
                 <td><?php echo number_format($cart[3]) ?> VND</td>
                 <td><?php echo $cart[4] ?></td>
