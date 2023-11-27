@@ -16,7 +16,7 @@
     <div class="container">
         <div class="top-header"></div>
         <div class="bottom-header">
-            <a href="index.php"><img src="../image/logo3.png"></a>
+            <a href="index.php"><img src="../image/logo4.png"></a>
             <div class="timkiem-header">
                 <form class="search-box" method="post" action="index.php?act=danhmucsp">
                     <input type="text" name="keyword" placeholder="Nhập tên sản phẩm..." required>

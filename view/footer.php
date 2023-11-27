@@ -1,7 +1,7 @@
 <div class="footer">
     <div class="content-logo">
         <div class="logo">
-            <img src="../image/logo3.png" alt="">
+            <img src="../image/logo4.png" alt="">
         </div>
         <p>Hotline: 1900 96 96 01</p>
         <p>Email: contact@laptopia.vn</p>
