@@ -361,6 +361,13 @@ if(isset($_GET['act']) && !empty($_GET['act'])){
             }
             include "donhang/edit.php";
             break;
+        case 'deletedh':
+            if(isset($_GET['iddh']) && $_GET['iddh'] > 0){
+                deletecart($_GET['iddh']);
+                deletebill($_GET['iddh']);
+                header("location: index.php?act=listdh");
+            }
+            break;
         //Trường hợp khác
         default:
         include "home.php";

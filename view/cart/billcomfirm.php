@@ -7,7 +7,7 @@
     <div>
         <p>Mã đơn hàng: DA1-<?php echo $bill['id'] ?></li></p>
         <p>Ngày đặt hàng: <?php echo date("d/m/Y", strtotime($bill['ngaydh'])) ?></p>
-        <p>Tổng đơn hàng: <?php echo number_format($bill['total']) ?> VND</p>
+        <p>Tổng đơn hàng: <?php echo number_format($bill['total'], 0, ",", ".") ?> VND</p>
         <?php $pttt=get_pttt($bill['bill_pttt']) ?>
         <p>Phương thức thanh toán: <?php echo $pttt ?></p>
     </div>

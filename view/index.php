@@ -220,6 +220,19 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             $listbill=loadall_bill($_SESSION['user']['id']);;
             include "cart/mybill.php";
             break;
+        case 'updateb':
+            if(isset($_GET['idb']) && $_GET['idb'] > 0){
+                updatebill($_GET['idb']);
+                header("location: index.php?act=mybill");
+            }
+            break;
+        case 'deleteb':
+            if(isset($_GET['idb']) && $_GET['idb'] > 0){
+                deletecart($_GET['idb']);
+                deletebill($_GET['idb']);
+                header("location: index.php?act=mybill");
+            }
+            break;
         default:
             include "home.php";
             break;

@@ -8,9 +8,9 @@
             <div class="boxctsp-money">
                 <form action="index.php?act=addtocart" method="post">
                     <?php $hinh = $image_path.$onesp['img']; ?>
-                <h3 style="color: #009B48;"><?php echo number_format($onesp['price'] - $onesp['price'] * ($onesp['giamgia'] / 100)) ?> Đ</h3>
-                <p>Giá gốc : <del><?php echo number_format($onesp['price']) ?> Đ</del></p>
-                <p>Giảm giá: -<?php echo number_format($onesp['giamgia']) ?>%</p>
+                <h3 style="color: #009B48;"><?php echo number_format($onesp['price'] - $onesp['price'] * ($onesp['giamgia'] / 100), 0, ",", ".") ?> Đ</h3>
+                <p>Giá gốc : <del><?php echo number_format($onesp['price'], 0, ",", ".") ?> Đ</del></p>
+                <p>Giảm giá: -<?php echo $onesp['giamgia'] ?>%</p>
                 <p>Lượt xem: <?php echo $onesp['luotxem'] ?></p>
                     <select name="idram" class="ram">
                         <option value="">Chọn loại ram khác</option>
@@ -73,9 +73,9 @@
                         <p>M.Hình <?php echo $sp['man_hinh'] ?></p>
                     </div>
                     <div class="money">
-                        <del><?php echo number_format($sp['price']) ?> VND</del>
-                        <span>-<?php echo number_format($sp['giamgia']) ?>%</span>
-                        <p><?php echo number_format($sp['price'] - $sp['price'] * ($sp['giamgia'] / 100)) ?> Đ</p>
+                        <del><?php echo number_format($sp['price'], 0, ",", ".") ?> VND</del>
+                        <span>-<?php echo $sp['giamgia'] ?>%</span>
+                        <p><?php echo number_format($sp['price'] - $sp['price'] * ($sp['giamgia'] / 100), 0, ",", ".") ?> Đ</p>
                     </div>
                     <div class="add">
                         <a href="" class="btn-shop"><input type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="btn-shop-text">

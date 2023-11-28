@@ -33,7 +33,7 @@
                     <th>Ngày đặt</th>
                     <th>Thanh toán</th>
                     <th>Tình trạng</th>
-                    <th></th>
+                    <th>Hành động</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -47,11 +47,16 @@
                             <td><?php echo $key + 1 ?></td>
                             <td>DA1-<?php echo $bill['id'] ?></td>
                             <td><?php echo $countsp ?></td>
-                            <td><?php echo number_format($bill['total']) ?> VND</td>
+                            <td><?php echo number_format($bill['total'], 0, ",", ".") ?> VND</td>
                             <td><?php echo date("d/m/Y", strtotime($bill['ngaydh'])) ?></td>
                             <td><?php echo $pttt ?></td>
                             <td><?php echo $ttdh ?></td>
-                            <td><a href="index.php?act=ctdh&iddh=<?php echo $bill['id'] ?>"><input type="button" value="Xem chi tiết"></a></td>
+                            <?php if($bill['bill_status'] == 1) : ?>
+                                <td><a onclick="return confirm('Bạn có chắc muốn hủy đơn hàng')" href="index.php?act=updateb&idb=<?php echo $bill['id'] ?>"><input type="button" value="Hủy"></a></td>
+                            <?php elseif ($bill['bill_status'] == 5) : ?>
+                                <td><a onclick="return confirm('Bạn có chắc muốn xóa')" href="index.php?act=deleteb&idb=<?php echo $bill['id'] ?>"><input type="button" value="Xóa"></a></td>
+                            <?php else : ?>
+                            <?php endif ?>
                         </tr>
                     <?php } ?>
                 </tbody>

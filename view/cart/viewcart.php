@@ -5,7 +5,7 @@
             <p><i class="fa-solid fa-chevron-left" style="color: #000000;"></i> Tiếp tục mua hàng</p>
         </a>
     </div>
-    <table  class="content-table">
+    <table class="content-table" id="order">
         <thead>
         <tr>
             <th>STT</th>
@@ -40,16 +40,16 @@
                         <?php endif ?>
                     <?php endforeach ?>
                 </td>
-                <td><?php echo number_format($cart[3]) ?> VND</td>
-                <td><?php echo $cart[4] ?></td>
-                <td><?php echo number_format($tongtien) ?> VND</td>
+                <td id="gia"><?php echo number_format($cart[3], 0, ",", ".") ?> VND</td>
+                <td><a onclick="giam(this)">-</a> <span><?php echo $cart[4] ?></span> <a onclick="tang(this)">+</a> <span style="display:none;"><?php echo $i ?></span></td>
+                <td ><?php echo number_format($tongtien, 0, ",", ".") ?> VND</td>
                 <td><a onclick="return confirm('Bạn có chắc chắn muốn xóa')" href="index.php?act=deletecart&idcart=<?php echo $i ?>"><i class="fa-solid fa-trash-can" style="color: #f52424;"></i></a></td>
             </tr>
             <?php $i += 1; ?>
         <?php } ?>
         <tr>
             <td colspan="4">Tổng đơn hàng</td>
-            <td colspan="2"><?php echo number_format($tong) ?> VND</td>
+            <td colspan="2"><?php echo number_format($tong, 0, ",", ".") ?> VND</td>
         </tr>
         </tbody>
     </table>
@@ -63,3 +63,65 @@
         <a onclick="return confirm('Bạn có chắc chắn muốn xóa hết')" href="index.php?act=deletecart"><input type="button" value="Xóa giỏ hàng"></a>
     </div>
 </div>
+
+
+
+<script>
+    function tang(x) {
+        var cha = x.parentElement;
+        var soluongcu = cha.children[1];
+        var soluongmoi = parseInt(soluongcu.innerText) + 1;
+        soluongcu.innerText = soluongmoi;
+        var vitri = cha.children[3].innerText;
+
+        // Gửi yêu cầu AJAX
+        $.ajax({
+            type: "POST",
+            url: "./cart/update_quantity.php", // Đường dẫn đến tập lệnh PHP để xử lý cập nhật
+            data: { vitri: vitri, soluong: soluongmoi },
+            success: function(response) {
+                // Xử lý phản hồi từ tập lệnh PHP (nếu cần)
+                console.log("Cập nhật thành công");
+                // Sau khi cập nhật thành công
+                $.post('tableCartOrder.php', function(data) {
+                        $('#order').html(data);
+                    })
+            },
+            error: function() {
+                // Xử lý lỗi (nếu có)
+                console.log("Lỗi khi cập nhật số lượng");
+            }
+        });
+    }
+
+    function giam(x) {
+        var cha = x.parentElement;
+        var soluongcu = cha.children[1];
+        if (parseInt(soluongcu.innerText) > 1) {
+            var soluongmoi = parseInt(soluongcu.innerText) - 1;
+            soluongcu.innerText = soluongmoi;
+            var vitri = cha.children[3].innerText;
+
+            // Gửi yêu cầu AJAX
+            $.ajax({
+                type: "POST",
+                url: "./cart/update_quantity.php", // Đường dẫn đến tập lệnh PHP để xử lý cập nhật
+                data: { vitri: vitri, soluong: soluongmoi },
+                success: function(response) {
+                    // Xử lý phản hồi từ tập lệnh PHP (nếu cần)
+                    console.log("Cập nhật thành công");
+                    // Sau khi cập nhật thành công
+                    $.post('tableCartOrder.php', function(data) {
+                        $('#order').html(data);
+                    })
+                },
+                error: function() {
+                    // Xử lý lỗi (nếu có)
+                    console.log("Lỗi khi cập nhật số lượng");
+                }
+            });
+        } else {
+            alert("Đặt hàng tối thiểu là 1");
+        }
+    }
+</script>

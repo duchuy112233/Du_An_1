@@ -64,6 +64,29 @@ function loadall_spbt(){
     return $list;
 }
 
+function loadone_spbt($id){
+    $sql = "SELECT * FROM bienthe_sp where id = $id";
+    $result = pdo_query_one($sql);
+    return $result;
+}
+
+function add_spbt($idsp,$idram,$idmau,$soluong){
+    $sql = "INSERT INTO bienthe_sp (idsp,idram,idmau,soluong) VALUES ('$idsp','$idram','$idmau','$soluong')";
+    pdo_execute($sql);
+}
+
+function update_spbt($idbt,$idsp,$idram,$idmau,$soluong){
+    $sql = "UPDATE bienthe_sp SET idsp ='$idsp', idram='$idram', idmau='$idmau', soluong='$soluong' WHERE id = $idbt";
+    pdo_execute($sql);
+}
+
+function delete_spbt($id){
+    $sql = "DELETE FROM bienthe_sp where id = $id";
+    pdo_execute($sql);
+}
+
+
+//biến thể bên người dùng
 function load_btram($id){
     $sql="SELECT DISTINCT ramsp.id, ramsp.ram_sp
     FROM bienthe_sp
@@ -98,27 +121,6 @@ function load_sl($idram,$idsp,$idmau){
     return $list;
 }
 
-function loadone_spbt($id){
-    $sql = "SELECT * FROM bienthe_sp where id = $id";
-    $result = pdo_query_one($sql);
-    return $result;
-}
-
-function add_spbt($idsp,$idram,$idmau,$soluong){
-    $sql = "INSERT INTO bienthe_sp (idsp,idram,idmau,soluong) VALUES ('$idsp','$idram','$idmau','$soluong')";
-    pdo_execute($sql);
-}
-
-function update_spbt($idbt,$idsp,$idram,$idmau,$soluong){
-    $sql = "UPDATE bienthe_sp SET idsp ='$idsp', idram='$idram', idmau='$idmau', soluong='$soluong' WHERE id = $idbt";
-    pdo_execute($sql);
-}
-
-function delete_spbt($id){
-    $sql = "DELETE FROM bienthe_sp where id = $id";
-    pdo_execute($sql);
-}
-
 function update_soluong($soluongg,$idram,$idsp,$idmau){
 $btsl=load_sl($idram,$idsp,$idmau);
 extract($btsl);
@@ -126,4 +128,5 @@ $sl=$soluong - $soluongg;
 $sql="UPDATE bienthe_sp SET soluong = $sl where idram = $idram AND idsp = $idsp AND idmau = $idmau ";
 pdo_execute($sql);
 }
+
 ?>

@@ -70,15 +70,15 @@
                         <?php endforeach ?>
                     </div>
                     <div class="content-below">
-                        <p>Đơn giá: <?php echo number_format($cart[3]) ?> VND</p>
+                        <p>Đơn giá: <?php echo number_format($cart[3], 0, ",", ".") ?> VND</p>
                         <p>Số lượng: <?php echo $cart[4] ?></p>
-                        <p>Thành tiền: <?php echo number_format($tongtien) ?> VND</p>
+                        <p>Thành tiền: <?php echo number_format($tongtien, 0, ",", ".") ?> VND</p>
                     </div>
                 </div>
             </div>
         <?php } ?>
         <div>
-            <p class="total">Tổng đơn hàng: <?php echo number_format($tong) ?> VND</p>
+            <p class="total">Tổng đơn hàng: <?php echo number_format($tong, 0, ",", ".") ?> VND</p>
         </div>
     </div>
 

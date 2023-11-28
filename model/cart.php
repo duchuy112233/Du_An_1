@@ -81,4 +81,16 @@ switch ($n){
 }
 return $tt;
 }
+function deletecart($id){
+$sql="DELETE FROM cart where idbill=$id";
+pdo_execute($sql);
+}
+function deletebill($id){
+$sql="DELETE FROM bill where id=$id";
+pdo_execute($sql);
+}
+function updatebill($id){
+    $sql="UPDATE bill SET bill_status = 5 where id=$id";
+    pdo_execute($sql);
+}
 ?>

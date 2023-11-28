@@ -39,7 +39,8 @@
                             <td><?php echo $pttt ?></td>
                             <td><?php echo $ttdh ?></td>
                             <td><a href="index.php?act=editdh&iddh=<?php echo $bill['id'] ?>"><input type="button" value="Cập nhật"></a>
-                            <a href="index.php?act=ctdh&iddh=<?php echo $bill['id'] ?>"><input type="button" value="Xem chi tiết"></a></td>
+                            <a href="index.php?act=ctdh&iddh=<?php echo $bill['id'] ?>"><input type="button" value="Xem chi tiết"></a>
+                            <a onclick="return confirm('Bạn có chắc muốn hủy đơn hàng')" href="index.php?act=deletedh&iddh=<?php echo $bill['id'] ?>"><input type="button" value="Xóa"></a></td>
                         </tr>
                     <?php } ?>
                 </tbody>
