@@ -36,7 +36,7 @@ function loadall_bill($iduser){
     return $listbill;
 }
 function loadall_billdh(){
-    $sql="SELECT * FROM bill order by iduser desc";
+    $sql="SELECT * FROM bill order by id desc";
     $listbill=pdo_query($sql);
     return $listbill;
 }
