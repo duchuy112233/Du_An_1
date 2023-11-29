@@ -123,11 +123,11 @@
                     <div class="ngaybl"><?php echo date("d/m/Y", strtotime($bl['ngaybl'])) ?></div>
                 </div>
             <?php endforeach ?>
-            <!-- <?php if (!isset($_GET['full'])) : ?>
-                <a style="text-decoration: underline;" href="?act=sanphamct&idsp=<?php echo $idsp ?>&full">Xem thêm</a>
+            <?php if (!isset($_GET['full'])) : ?>
+                <a style="text-decoration: underline;" href="?act=sanphamct&idsp=<?php echo $onesp['id'] ?>&full">Xem thêm</a>
             <?php else : ?>
-                <a style="text-decoration: underline;" href="?act=sanphamct&idsp=<?php echo $idsp ?>">Ẩn bớt</a>
-            <?php endif; ?> -->
+                <a style="text-decoration: underline;" href="?act=sanphamct&idsp=<?php echo $onesp['id'] ?>">Ẩn bớt</a>
+            <?php endif; ?>
         </div>
     </div>
 
