@@ -53,9 +53,8 @@
                             <td><?php echo $ttdh ?></td>
                             <?php if($bill['bill_status'] == 1) : ?>
                                 <td><a onclick="return confirm('Bạn có chắc muốn hủy đơn hàng')" href="index.php?act=updateb&idb=<?php echo $bill['id'] ?>"><input type="button" value="Hủy"></a></td>
-                            <?php elseif ($bill['bill_status'] == 5) : ?>
-                                <td><a onclick="return confirm('Bạn có chắc muốn xóa')" href="index.php?act=deleteb&idb=<?php echo $bill['id'] ?>"><input type="button" value="Xóa"></a></td>
                             <?php else : ?>
+                                <td></td>
                             <?php endif ?>
                         </tr>
                     <?php } ?>

@@ -41,7 +41,7 @@
                     <?php endforeach ?>
                 </td>
                 <td id="gia"><?php echo number_format($cart[3], 0, ",", ".") ?> VND</td>
-                <td><a onclick="giam(this)">-</a> <span><?php echo $cart[4] ?></span> <a onclick="tang(this)">+</a> <span style="display:none;"><?php echo $i ?></span></td>
+                <td class="quantity"><a onclick="giam(this)">-</a> <span style="margin: 0 5px;"><?php echo $cart[4] ?></span> <a onclick="tang(this)">+</a> <span style="display:none;"><?php echo $i ?></span></td>
                 <td ><?php echo number_format($tongtien, 0, ",", ".") ?> VND</td>
                 <td><a onclick="return confirm('Bạn có chắc chắn muốn xóa')" href="index.php?act=deletecart&idcart=<?php echo $i ?>"><i class="fa-solid fa-trash-can" style="color: #f52424;"></i></a></td>
             </tr>

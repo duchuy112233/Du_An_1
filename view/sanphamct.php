@@ -7,26 +7,27 @@
             </div>
             <div class="boxctsp-money">
                 <form action="index.php?act=addtocart" method="post">
-                    <?php $hinh = $image_path.$onesp['img']; ?>
-                <h3 style="color: #009B48;"><?php echo number_format($onesp['price'] - $onesp['price'] * ($onesp['giamgia'] / 100), 0, ",", ".") ?> Đ</h3>
-                <p>Giá gốc : <del><?php echo number_format($onesp['price'], 0, ",", ".") ?> Đ</del></p>
-                <p>Giảm giá: -<?php echo $onesp['giamgia'] ?>%</p>
-                <p>Lượt xem: <?php echo $onesp['luotxem'] ?></p>
+                    <?php $hinh = $image_path . $onesp['img']; ?>
+                    <h3 style="color: #009B48;"><?php echo number_format($onesp['price'] - $onesp['price'] * ($onesp['giamgia'] / 100), 0, ",", ".") ?> Đ</h3>
+                    <p>Giá gốc : <del><?php echo number_format($onesp['price'], 0, ",", ".") ?> Đ</del></p>
+                    <p>Giảm giá: -<?php echo $onesp['giamgia'] ?>%</p>
+                    <p>Lượt xem: <?php echo $onesp['luotxem'] ?></p>
                     <select name="idram" class="ram">
                         <option value="">Chọn loại ram khác</option>
-                    <?php foreach ($onebtram as $spbt) : ?>
-                        <option value="<?php echo $spbt['id'] ?>"><?php echo $spbt['ram_sp'] ?></option>
-                    <?php endforeach ?>
+                        <?php foreach ($onebtram as $spbt) : ?>
+                            <option value="<?php echo $spbt['id'] ?>"><?php echo $spbt['ram_sp'] ?></option>
+                        <?php endforeach ?>
                     </select><br>
                     <select name="idmau" class="mau">
-                    <option value="">Hãy chọn ram để chọn màu</option>
+                        <option value="">Hãy chọn ram để chọn màu</option>
                     </select>
-                <input type="number" name="soluong" placeholder="Nhập số lượng" value="1" min="1" required><p id="soluonggg"></p><br>
-                <input type="hidden" id="idsp" name="id" value="<?php echo $onesp['id'] ?>">
-                <input type="hidden" name="name" value="<?php echo $onesp['name'] ?>">
-                <input type="hidden" name="hinh" value="<?php echo $hinh ?>">
-                <input type="hidden" name="price" value="<?php echo $onesp['price'] - $onesp['price'] * ($onesp['giamgia'] / 100) ?>">
-                <input type="submit" name="addtocart" value="Add to cart" class="btn-mua">
+                    <input type="number" name="soluong" placeholder="Nhập số lượng" value="1" min="1" required>
+                    <p id="soluonggg"></p><br>
+                    <input type="hidden" id="idsp" name="id" value="<?php echo $onesp['id'] ?>">
+                    <input type="hidden" name="name" value="<?php echo $onesp['name'] ?>">
+                    <input type="hidden" name="hinh" value="<?php echo $hinh ?>">
+                    <input type="hidden" name="price" value="<?php echo $onesp['price'] - $onesp['price'] * ($onesp['giamgia'] / 100) ?>">
+                    <input type="submit" name="addtocart" value="Add to cart" class="btn-mua">
                 </form>
             </div>
         </div>
@@ -122,11 +123,11 @@
                     <div class="ngaybl"><?php echo date("d/m/Y", strtotime($bl['ngaybl'])) ?></div>
                 </div>
             <?php endforeach ?>
-            <?php if(!isset($_GET['full'])):?>
-                                    <a style="text-decoration: underline;" href="?act=ctsp&idsp=<?php echo $idsp?>&full">Xem thêm</a>
-                                    <?php else: ?>
-                                        <a style="text-decoration: underline;" href="?act=ctsp&idsp=<?php echo $idsp?>">Ẩn bớt</a>
-                                    <?php endif;?>
+            <!-- <?php if (!isset($_GET['full'])) : ?>
+                <a style="text-decoration: underline;" href="?act=sanphamct&idsp=<?php echo $idsp ?>&full">Xem thêm</a>
+            <?php else : ?>
+                <a style="text-decoration: underline;" href="?act=sanphamct&idsp=<?php echo $idsp ?>">Ẩn bớt</a>
+            <?php endif; ?> -->
         </div>
     </div>
 

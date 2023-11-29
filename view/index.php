@@ -51,6 +51,11 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 $onebtram = load_btram($_GET['idsp']);
                 $sp_cungloai = load_sanpham_cungloai($_GET['idsp'], $onesp['iddm']);
                 $binhluan = load_binhluan($_GET['idsp']);
+                // if (isset($_GET['full'])) {
+                //     $binhluan = load_binhluan($_GET['idsp']);
+                // }else{
+                //     $binhluan = load_binhluantop5($_GET['idsp']);
+                // }
             }
             include "sanphamct.php";
             break;
@@ -226,13 +231,6 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
         case 'updateb':
             if(isset($_GET['idb']) && $_GET['idb'] > 0){
                 updatebill($_GET['idb']);
-                header("location: index.php?act=mybill");
-            }
-            break;
-        case 'deleteb':
-            if(isset($_GET['idb']) && $_GET['idb'] > 0){
-                deletecart($_GET['idb']);
-                deletebill($_GET['idb']);
                 header("location: index.php?act=mybill");
             }
             break;

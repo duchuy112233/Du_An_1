@@ -4,7 +4,16 @@ function load_binhluan($idsp)
     $sql = "SELECT binh_luan.id, binh_luan.noidung, tai_khoan.user, tai_khoan.img, binh_luan.ngaybl FROM binh_luan
     JOIN tai_khoan ON binh_luan.iduser = tai_khoan.id
     JOIN san_pham ON binh_luan.idsp = san_pham.id
-    WHERE san_pham.id = $idsp";
+    WHERE san_pham.id = $idsp order by binh_luan.id desc";
+    $result = pdo_query($sql);
+    return $result;
+}
+function load_binhluantop5($idsp)
+{
+    $sql = "SELECT binh_luan.id, binh_luan.noidung, tai_khoan.user, tai_khoan.img, binh_luan.ngaybl FROM binh_luan
+    JOIN tai_khoan ON binh_luan.iduser = tai_khoan.id
+    JOIN san_pham ON binh_luan.idsp = san_pham.id
+    WHERE san_pham.id = $idsp limit 0,5" ;
     $result = pdo_query($sql);
     return $result;
 }
@@ -43,13 +52,5 @@ function loadall_binhluan($id)
     return $result;
 }
 
-function getoneblfull($id){
-    $sql="SELECT * FROM binh_luan INNER JOIN tai_khoan on binh_luan.iduser=tai_khoan.iduser where binh_luan.idsp=$id ";
-    return pdo_query($sql);
-}
-function getonebl($id){
-    $sql="SELECT * FROM binh_luan INNER JOIN tai_khoan on binh_luan.iduser=tai_khoan.iduser where binh_luan.idsp=$id LIMIT 0,10";
-    return pdo_query($sql);
-}
 
 ?>
