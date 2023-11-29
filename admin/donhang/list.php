@@ -38,9 +38,12 @@
                             <td><?php echo date("d/m/Y", strtotime($bill['ngaydh'])) ?></td>
                             <td><?php echo $pttt ?></td>
                             <td><?php echo $ttdh ?></td>
-                            <td><a href="index.php?act=editdh&iddh=<?php echo $bill['id'] ?>"><input type="button" value="Cập nhật"></a>
+                            <td>
+                            <?php if($bill['bill_status'] != 5 && $bill['bill_status'] != 4) : ?>
+                                <a href="index.php?act=editdh&iddh=<?php echo $bill['id'] ?>"><input type="button" value="Cập nhật"></a>
+                            <?php endif ?>
                             <a href="index.php?act=ctdh&iddh=<?php echo $bill['id'] ?>"><input type="button" value="Xem chi tiết"></a>
-                            <a onclick="return confirm('Bạn có chắc muốn hủy đơn hàng')" href="index.php?act=deletedh&iddh=<?php echo $bill['id'] ?>"><input type="button" value="Xóa"></a></td>
+                            </td>
                         </tr>
                     <?php } ?>
                 </tbody>

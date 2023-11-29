@@ -51,7 +51,7 @@
                             <td><?php echo date("d/m/Y", strtotime($bill['ngaydh'])) ?></td>
                             <td><?php echo $pttt ?></td>
                             <td><?php echo $ttdh ?></td>
-                            <?php if($bill['bill_status'] == 1) : ?>
+                            <?php if($bill['bill_status'] == 1 || $bill['bill_status'] == 2) : ?>
                                 <td><a onclick="return confirm('Bạn có chắc muốn hủy đơn hàng')" href="index.php?act=updateb&idb=<?php echo $bill['id'] ?>"><input type="button" value="Hủy"></a></td>
                             <?php else : ?>
                                 <td></td>
