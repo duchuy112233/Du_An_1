@@ -187,6 +187,9 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             include "cart/viewcart.php";
             break;
         case 'bill':
+            if(empty($_SESSION['mycart'])){
+            header("location: index.php?act=viewcart");
+            }
             include "cart/bill.php";
             break;
         case 'billcomfirm':

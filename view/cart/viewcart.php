@@ -53,7 +53,6 @@
         </tr>
         </tbody>
     </table>
-    <p><?php if(isset($tb) && !empty($tb)) echo $tb ?></p>
     <div>
         <?php if (isset($_SESSION['user'])) : ?>
             <a href="index.php?act=bill"><input type="button" name="dathang" value="Đặt hàng"></a>

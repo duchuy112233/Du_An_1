@@ -1,11 +1,3 @@
-.home1 {
-    text-decoration: none;
-}
-
-.home1:hover {
-    text-decoration: underline;
-}
-
 .dm {
     list-style-type: none;
     margin: 0;

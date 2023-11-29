@@ -42,3 +42,14 @@ function loadall_binhluan($id)
     $result = pdo_query($sql);
     return $result;
 }
+
+function getoneblfull($id){
+    $sql="SELECT * FROM binh_luan INNER JOIN tai_khoan on binh_luan.iduser=tai_khoan.iduser where binh_luan.idsp=$id ";
+    return pdo_query($sql);
+}
+function getonebl($id){
+    $sql="SELECT * FROM binh_luan INNER JOIN tai_khoan on binh_luan.iduser=tai_khoan.iduser where binh_luan.idsp=$id LIMIT 0,10";
+    return pdo_query($sql);
+}
+
+?>

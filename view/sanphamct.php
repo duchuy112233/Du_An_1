@@ -122,6 +122,11 @@
                     <div class="ngaybl"><?php echo date("d/m/Y", strtotime($bl['ngaybl'])) ?></div>
                 </div>
             <?php endforeach ?>
+            <?php if(!isset($_GET['full'])):?>
+                                    <a style="text-decoration: underline;" href="?act=ctsp&idsp=<?php echo $idsp?>&full">Xem thêm</a>
+                                    <?php else: ?>
+                                        <a style="text-decoration: underline;" href="?act=ctsp&idsp=<?php echo $idsp?>">Ẩn bớt</a>
+                                    <?php endif;?>
         </div>
     </div>
 

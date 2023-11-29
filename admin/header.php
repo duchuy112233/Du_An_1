@@ -26,6 +26,6 @@
                 <li><a href="index.php?act=listdh">Đơn hàng</a></li>
                 <li><a href="index.php?act=thongke">Thống kê</a></li>
             </ul>
-            <span><a class="home" href="../view/index.php">Về trang người dùng</a></span>
+            <span><a href="../view/index.php" class="home"><i class="fa-solid fa-house"></i> Quay về WEBSITE</a></span>
         </div>
         <!-- END HEADER -->
