@@ -12,7 +12,7 @@ $sql="INSERT INTO bill(iduser,bill_name,bill_address,bill_tel,bill_email,bill_pt
 return pdo_execute_return_lastInsertId($sql);
 }
 function add_cart($iduser,$idsp,$img,$name,$ram,$mau,$price,$soluong,$thanhtien,$idbill){
-$sql="INSERT INTO cart (iduser,idsp,img,name,idram,idmau,price,soluong,thanhtien,idbill) VALUES ('$iduser','$idsp','$img','$name','$ram','$mau','$price','$soluong','$thanhtien','$idbill')";
+$sql="INSERT INTO cart (iduser,idsp,img,name,ram,mau,price,soluong,thanhtien,idbill) VALUES ('$iduser','$idsp','$img','$name','$ram','$mau','$price','$soluong','$thanhtien','$idbill')";
 pdo_execute($sql);
 }
 function loadone_bill($id){
