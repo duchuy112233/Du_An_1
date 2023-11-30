@@ -3,7 +3,6 @@ include "../model/pdo.php";
 include "../model/bienthe.php";
 $idram = $_POST['id'];
 $idsp = $_POST['idsp'];
-$idmau = $_POST['idmau'];
 $onebtmau = load_btmau($idram, $idsp);
 
 $chonOptionPrinted = false; // Biến để kiểm tra xem phần tử "<option value="">chọn</option>" đã được in ra hay chưa

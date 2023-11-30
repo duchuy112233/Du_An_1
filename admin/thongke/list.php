@@ -1,5 +1,5 @@
 <div class="mb10">
-    <h3>DANH SÁCH DANH MỤC</h3>
+    <h3>THỐNG KÊ SẢN PHẨM</h3>
 </div>
 <div class="formcontent">
     <form action="index.php?act=thongke" method="post">
