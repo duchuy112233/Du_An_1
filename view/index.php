@@ -50,12 +50,22 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 $onesp = loadone_sanpham($_GET['idsp']);
                 $onebtram = load_btram($_GET['idsp']);
                 $sp_cungloai = load_sanpham_cungloai($_GET['idsp'], $onesp['iddm']);
-               // $binhluan = load_binhluan($_GET['idsp']);
-                if (isset($_GET['full'])) {
-                    $binhluan = load_binhluan($_GET['idsp']);
-                }else{
-                    $binhluan = load_binhluantop5($_GET['idsp']);
+
+                if(isset($_GET['per_page'])){
+                    $soluongbl= $_GET['per_page'];
                 }
+                else{
+                $soluongbl=1;
+                }
+                if(isset($_GET['page'])){
+                    $page= $_GET['page'];
+                }
+                else{
+                $page=1;
+                }
+                $dsbl=count_bl($_GET['idsp']);
+                $sotrang=ceil($dsbl/$soluongbl);
+                $binhluan = load_binhluan($_GET['idsp'],$page,$soluongbl);
             }
             include "sanphamct.php";
             break;

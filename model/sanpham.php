@@ -11,9 +11,6 @@ function loadall_sanpham_dm2(){
 }
 
 function loadall_sanpham($keyw="",$iddm=0){
-
-    if($page="" || )
-
     $sql="SELECT * from san_pham where 1";
     if($keyw!=""){
         $sql.=" and name like '%".$keyw."%'";

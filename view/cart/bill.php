@@ -18,19 +18,19 @@
                 ?>
                 <div>
                     <label>Người đặt hàng: </label>
-                    <input type="text" name="name" value="<?php echo $name ?>" placeholder="Tên người nhận" required>
+                    <input type="text" name="name" id="name" value="<?php echo $name ?>" placeholder="Tên người nhận">
                 </div><br>
                 <div>
                     <label>Địa chỉ:</label>
-                    <input type="text" name="address" value="<?php echo $address ?>" placeholder="Địa chỉ" required>
+                    <input type="text" name="address" id="address" value="<?php echo $address ?>" placeholder="Địa chỉ">
                 </div><br>
                 <div>
                     <label>Email:</label>
-                    <input type="text" name="email" value="<?php echo $email ?>" placeholder="Email" required>
+                    <input type="text" name="email" id="email" value="<?php echo $email ?>" placeholder="Email">
                 </div><br>
                 <div>
                     <label>Số điện thoại:</label>
-                    <input type="text" name="tel" value="<?php echo $tel ?>" placeholder="Số điện thoại" required>
+                    <input type="text" name="tel" id="tel" value="<?php echo $tel ?>" placeholder="Số điện thoại">
                 </div>
             </div>
             <div class="payment">
@@ -39,8 +39,9 @@
                 <label for="payment1" style="margin-right: 30px;">Trả tiền khi nhận hàng</label>
                 <input type="radio" value="2" name="pttt" id="payment2">
                 <label for="payment2">Thanh toán online</label>
+                <a href="index.php?act=onpayment"><input type="button" name="redirect" value="VNPAY"></a>
             </div><br>
-            <a href="index.php?act=billcomfirm"><input type="submit" name="thanhtoan" value="Thanh toán"></a>
+            <a href="index.php?act=billcomfirm"><input type="submit" name="thanhtoan" onclick="return kiemtraform()" value="Thanh toán"></a>
         </form>
     </div>
 
@@ -83,3 +84,33 @@
     </div>
 
 </div>
+
+<script>
+    function kiemtraform(){
+    var name=document.getElementById("name");
+    if(name.value == ""){
+    alert("Vui lòng nhập tên!");
+    name.focus();
+    return false;
+    }
+    var address=document.getElementById("address");
+    if(address.value == ""){
+    alert("Vui lòng nhập địa chỉ!");
+    address.focus();
+    return false;
+    }
+    var email=document.getElementById("email");
+    if(email.value == ""){
+    alert("Vui lòng nhập email!");
+    email.focus();
+    return false;
+    }
+    var tel=document.getElementById("tel");
+    if(tel.value == ""){
+    alert("Vui lòng nhập sdt!");
+    tel.focus();
+    return false;
+    }
+    return true;
+    }
+</script>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 include "../model/pdo.php";
 include "../model/bienthe.php";
 $idram = $_POST['id'];
@@ -12,8 +12,8 @@ foreach ($onebtmau as $mau) {
         echo '<option value="">Chọn màu</option>';
         $chonOptionPrinted = true; // Đánh dấu rằng phần tử đã được in ra
     }
-    ?>
+?>
     <option value="<?php echo $mau['id'] ?>"><?php echo $mau['mau_sp'] ?></option>
-    <?php 
+<?php
 }
 ?>

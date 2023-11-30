@@ -128,5 +128,4 @@ $sl=$soluong - $soluongg;
 $sql="UPDATE bienthe_sp SET soluong = $sl where idram = $idram AND idsp = $idsp AND idmau = $idmau ";
 pdo_execute($sql);
 }
-
 ?>
