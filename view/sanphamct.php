@@ -143,15 +143,15 @@
                     <a href="?act=sanphamct&idsp=<?php echo $onesp['id'] ?>&per_page=<?php echo $soluongbl ?>&page=<?php echo $i ?>"><?php echo $i ?></a>
                         <?php endif ?>
                     <?php else : ?>
-                        <span><?php echo $i ?></span>
+                        <span class="active"><?php echo $i ?></span>
                     <?php endif ?>
                 <?php endfor ?>
                 <!-- Nút Next -->
-                <?php if($page < $dsbl - 1) : $next_page= $page +1 ?>
+                <?php if($page < $sotrang - 1) : $next_page= $page +1 ?>
                     <a href="?act=sanphamct&idsp=<?php echo $onesp['id'] ?>&per_page=<?php echo $soluongbl ?>&page=<?php echo $next_page ?>">Next</a>
                 <?php endif ?>
                 <!-- Trang cuối -->
-                <?php if($page < $dsbl - 3) : $end_page=$dsbl ?>
+                <?php if($page < $sotrang - 3) : $end_page=$sotrang ?>
                     <a href="?act=sanphamct&idsp=<?php echo $onesp['id'] ?>&per_page=<?php echo $soluongbl ?>&page=<?php echo $end_page ?>">Last</a>
                 <?php endif ?>
             </div>

@@ -428,24 +428,25 @@
     gap: 40px;
     padding: 5px 0;
 }
-.chitietsp .page{
-text-align: center;
-margin-top: 20px;
-border-top: 1px solid #ccc;
-padding-top: 10px;
+
+/*===========================================================Phân trang==========================================================*/
+.page {
+    text-align: center;
+    margin-top: 20px;
 }
-.chitietsp .page a{
-padding: 4px 10px;
-border: 1px solid #009B48;
-text-decoration: none;
-color: #202114;
-}
-.chitietsp .page span{
+
+.page a {
     padding: 4px 10px;
+    border: 1px solid #009B48;
     text-decoration: none;
+    color: #202114;
+}
+
+.page .active {
+    padding: 5px 10px;
     background-color: #009B48;
     color: #fff;
-    }
+}
 
 /*================================================================= Bình luận =================================================================*/
 .binhluan {
@@ -905,34 +906,39 @@ color: #202114;
     color: #202114;
 }
 
-.form-giohang .content-table{
+.form-giohang .content-table {
     width: 100%;
-    border-collapse:collapse;
+    border-collapse: collapse;
     border-radius: 4px 4px 0 0;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     margin-bottom: 20px;
 }
-.form-giohang .content-table thead tr{
-background-color: #009879;
-color: #fff;
-}
-.form-giohang .content-table td,
-.form-giohang .content-table th{
-    padding:10px 20px;
-    text-align: center;
-}
-.form-giohang .content-table tbody tr{
-border-bottom: 1px solid #dddddd;
-}
-.form-giohang .content-table tbody tr:nth-of-type(even){
-background-color: #f3f3f3;
-}
-.form-giohang .content-table tbody tr:last-of-type{
-border-bottom: 2px solid #009879;
+
+.form-giohang .content-table thead tr {
+    background-color: #009879;
+    color: #fff;
 }
 
-.form-giohang  input[type="button"] {
+.form-giohang .content-table td,
+.form-giohang .content-table th {
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.form-giohang .content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.form-giohang .content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.form-giohang .content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.form-giohang input[type="button"] {
     border: 1px solid #009879;
     border-radius: 4px;
     padding: 5px 10px;
@@ -944,18 +950,21 @@ border-bottom: 2px solid #009879;
     color: #fff;
 }
 
-.form-giohang .login{
-color: #1a73e8;
-text-decoration: none;
+.form-giohang .login {
+    color: #1a73e8;
+    text-decoration: none;
 }
-.form-giohang .login:hover{
-text-decoration: underline;
+
+.form-giohang .login:hover {
+    text-decoration: underline;
 }
-.form-giohang .quantity a{
-font-size: 20px;
+
+.form-giohang .quantity a {
+    font-size: 20px;
 }
-.form-giohang .quantity a:hover{
-cursor: pointer;
+
+.form-giohang .quantity a:hover {
+    cursor: pointer;
 }
 
 /*================================================= Biến thể sản phẩm =========================================================*/
@@ -1066,6 +1075,7 @@ cursor: pointer;
     border-bottom: 1px solid #009879;
     margin-bottom: 15px;
 }
+
 .bill input[type="submit"] {
     border: 1px solid #009879;
     border-radius: 4px;
@@ -1148,9 +1158,11 @@ cursor: pointer;
     background-color: #009879;
     color: #fff;
 }
-.boxtaikhoan .boxphai .contact-info p{
-margin-bottom: 5px;
+
+.boxtaikhoan .boxphai .contact-info p {
+    margin-bottom: 5px;
 }
+
 /*=========================================================== Footer ===========================================================*/
 .footer {
     width: 100%;
@@ -1160,18 +1172,22 @@ margin-bottom: 5px;
     display: flex;
     justify-content: space-around;
 }
-.footer .content-logo p{
-margin-bottom: 5px;
+
+.footer .content-logo p {
+    margin-bottom: 5px;
 }
+
 .footer img {
     width: 140px;
     margin-bottom: 5px;
 }
-.footer .box p{
-font-weight: bold;
-margin-bottom: 8px;
+
+.footer .box p {
+    font-weight: bold;
+    margin-bottom: 8px;
 }
-.footer ul li{
-list-style-type: none;
-margin-bottom: 5px;
+
+.footer ul li {
+    list-style-type: none;
+    margin-bottom: 5px;
 }

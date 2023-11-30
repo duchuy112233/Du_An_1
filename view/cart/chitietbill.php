@@ -63,9 +63,9 @@
                                     <?php endif ?>
                                 <?php endforeach ?>
                             </td>
-                            <td><?php echo number_format($sp['price']) ?> VNĐ</td>
+                            <td><?php echo number_format($sp['price'], 0, ",", ".") ?> VNĐ</td>
                             <td><?php echo $sp['soluong'] ?></td>
-                            <td><?php echo number_format($sp['thanhtien']) ?> VNĐ</td>
+                            <td><?php echo number_format($sp['thanhtien'], 0, ",", ".") ?> VNĐ</td>
                         </tr>
                     <?php } ?>
                 </tbody>

@@ -1,14 +1,15 @@
 <?php
-function load_binhluan($idsp,$page,$soluongbl)
+function load_binhluan($idsp,$page,$soluong)
 {
-    $batdau=($page-1)*$soluongbl;
+    $batdau=($page-1)*$soluong;
     $sql = "SELECT binh_luan.id, binh_luan.noidung, tai_khoan.user, tai_khoan.img, binh_luan.ngaybl FROM binh_luan
     JOIN tai_khoan ON binh_luan.iduser = tai_khoan.id
     JOIN san_pham ON binh_luan.idsp = san_pham.id
-    WHERE san_pham.id = $idsp order by binh_luan.id desc limit $batdau,$soluongbl";
+    WHERE san_pham.id = $idsp order by binh_luan.id desc limit $batdau,$soluong";
     $result = pdo_query($sql);
     return $result;
 }
+//Đếm số lượng để phân trang
 function count_bl($id){
 $sql="SELECT * FROM binh_luan where idsp=$id";
 return count(pdo_query($sql));

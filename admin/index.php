@@ -338,7 +338,21 @@ if(isset($_GET['act']) && !empty($_GET['act'])){
         //Đơn hàng
          //Danh sách đơn hàng
         case 'listdh':
-            $listbill=loadall_billdh();
+            if(isset($_GET['per_page'])){
+                $soluongbill= $_GET['per_page'];
+            }
+            else{
+            $soluongbill=6;
+            }
+            if(isset($_GET['page'])){
+                $page= $_GET['page'];
+            }
+            else{
+            $page=1;
+            }
+            $dsb=count_billdh();
+            $sotrang=ceil($dsb/$soluongbill);
+            $listbill=loadall_billdh($page,$soluongbill);
             include "donhang/list.php";
             break;
          //Chi tiết đơn hàng

@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $price = $_SESSION['mycart'][$vitri][3];
         $total = $quantity * $price;
         $_SESSION['mycart'][$vitri][7] = $total;
+        
     }
 }
 ?>

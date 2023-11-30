@@ -30,15 +30,27 @@ function loadall_cart_count($idbill){
     $bill=pdo_query($sql);
     return count($bill);
 }
-function loadall_bill($iduser){
-    $sql="SELECT * FROM bill where iduser=$iduser order by id desc";
+function loadall_bill($iduser,$page,$soluong){
+    $batdau=($page-1)*$soluong;
+    $sql="SELECT * FROM bill where iduser=$iduser order by id desc limit $batdau, $soluong";
     $listbill=pdo_query($sql);
     return $listbill;
 }
-function loadall_billdh(){
-    $sql="SELECT * FROM bill order by id desc";
+//Đếm số lượng để phân trang
+function count_bill($iduser){
+    $sql="SELECT * FROM bill where iduser=$iduser";
+    return count(pdo_query($sql));
+}
+function loadall_billdh($page,$soluong){
+    $batdau=($page-1)*$soluong;
+    $sql="SELECT * FROM bill order by id desc limit $batdau, $soluong";
     $listbill=pdo_query($sql);
     return $listbill;
+}
+//Đếm số lượng để phân trang bên admin
+function count_billdh(){
+    $sql="SELECT * FROM bill";
+    return count(pdo_query($sql));
 }
 function update_bill($id, $bill_status){
     $sql = "UPDATE bill SET `bill_status` ='$bill_status' WHERE id = $id";

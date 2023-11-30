@@ -51,21 +51,19 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 $onebtram = load_btram($_GET['idsp']);
                 $sp_cungloai = load_sanpham_cungloai($_GET['idsp'], $onesp['iddm']);
 
-                if(isset($_GET['per_page'])){
-                    $soluongbl= $_GET['per_page'];
+                if (isset($_GET['per_page'])) {
+                    $soluongbl = $_GET['per_page'];
+                } else {
+                    $soluongbl = 5;
                 }
-                else{
-                $soluongbl=1;
+                if (isset($_GET['page'])) {
+                    $page = $_GET['page'];
+                } else {
+                    $page = 1;
                 }
-                if(isset($_GET['page'])){
-                    $page= $_GET['page'];
-                }
-                else{
-                $page=1;
-                }
-                $dsbl=count_bl($_GET['idsp']);
-                $sotrang=ceil($dsbl/$soluongbl);
-                $binhluan = load_binhluan($_GET['idsp'],$page,$soluongbl);
+                $dsbl = count_bl($_GET['idsp']);
+                $sotrang = ceil($dsbl / $soluongbl);
+                $binhluan = load_binhluan($_GET['idsp'], $page, $soluongbl);
             }
             include "sanphamct.php";
             break;
@@ -160,7 +158,7 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 } else {
                     $soluong = 1;
                 }
-                $tongtien=$soluong*$price;
+                $tongtien = $price * $soluong;
                 if (isset($_POST['idram']) && !empty($_POST['idram'])) {
                     $ram = $_POST['idram'];
                 } else {
@@ -178,6 +176,7 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                     if ($item[1] == $name && $item[5] == $ram && $item[6] == $mau) {
                         $slnew = $soluong + $item[4];
                         $_SESSION['mycart'][$i][4] = $slnew;
+                        $_SESSION['mycart'][$i][7] = $_SESSION['mycart'][$i][4] * $_SESSION['mycart'][$i][3];
                         $fg = 1;
                         break;
                     }
@@ -202,8 +201,8 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             include "cart/viewcart.php";
             break;
         case 'bill':
-            if(empty($_SESSION['mycart'])){
-            header("location: index.php?act=viewcart");
+            if (empty($_SESSION['mycart'])) {
+                header("location: index.php?act=viewcart");
             }
             include "cart/bill.php";
             break;
@@ -224,8 +223,8 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 //insert into cart: $_SESSION['mycart'] & idbill
                 foreach ($_SESSION['mycart'] as $cart) {
                     add_cart($_SESSION['user']['id'], $cart[0], $cart[2], $cart[1], $cart[5], $cart[6], $cart[3], $cart[4], $cart[7], $idbill);
-                    if($cart[5] != 0 && $cart[6] != 0){
-                        update_soluong($cart[4],$cart[5],$cart[0],$cart[6]);
+                    if ($cart[5] != 0 && $cart[6] != 0) {
+                        update_soluong($cart[4], $cart[5], $cart[0], $cart[6]);
                     }
                     //xóa $_SESSION['cart']
                     $_SESSION['mycart'] = [];
@@ -235,19 +234,31 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             include "cart/billcomfirm.php";
             break;
         case 'mybill':
-            $listbill=loadall_bill($_SESSION['user']['id']);;
+            if (isset($_GET['per_page'])) {
+                $soluongbill = $_GET['per_page'];
+            } else {
+                $soluongbill = 6;
+            }
+            if (isset($_GET['page'])) {
+                $page = $_GET['page'];
+            } else {
+                $page = 1;
+            }
+            $dsb = count_bill($_SESSION['user']['id']);
+            $sotrang = ceil($dsb / $soluongbill);
+            $listbill = loadall_bill($_SESSION['user']['id'], $page, $soluongbill);
             include "cart/mybill.php";
             break;
         case 'updateb':
-            if(isset($_GET['idb']) && $_GET['idb'] > 0){
+            if (isset($_GET['idb']) && $_GET['idb'] > 0) {
                 updatebill($_GET['idb']);
                 header("location: index.php?act=mybill");
             }
             break;
         case 'chitietbill':
-            if(isset($_GET['idb']) && $_GET['idb'] > 0){
+            if (isset($_GET['idb']) && $_GET['idb'] > 0) {
                 $bill = loadone_bill($_GET['idb']);
-                $ctdh=loadall_cart($_GET['idb']);
+                $ctdh = loadall_cart($_GET['idb']);
             }
             include "cart/chitietbill.php";
             break;

@@ -61,5 +61,33 @@
                     <?php } ?>
                 </tbody>
             </table>
+            <div class="page">
+                <!-- Trang đầu -->
+                <?php if($page > 3) : $first_page=1 ?>
+                    <a href="?act=mybill&per_page=<?php echo $soluongbill ?>&page=<?php echo $first_page ?>">First</a>
+                <?php endif ?>
+                <!-- Nút Prev -->
+                <?php if($page > 1) : $prev_page= $page - 1 ?>
+                    <a href="?act=mybill&per_page=<?php echo $soluongbill ?>&page=<?php echo $prev_page ?>">Prev</a>
+                <?php endif ?>
+                <!-- Ở giữa -->
+                <?php for ($i=1; $i <= $sotrang; $i++) : ?>
+                    <?php if($i != $page) : ?>
+                        <?php if($i > $page - 3 && $i < $page + 3) : ?>
+                    <a href="?act=mybill&per_page=<?php echo $soluongbill ?>&page=<?php echo $i ?>"><?php echo $i ?></a>
+                        <?php endif ?>
+                    <?php else : ?>
+                        <span class="active"><?php echo $i ?></span>
+                    <?php endif ?>
+                <?php endfor ?>
+                <!-- Nút Next -->
+                <?php if($page < $sotrang - 1) : $next_page= $page +1 ?>
+                    <a href="?act=mybill&per_page=<?php echo $soluongbill ?>&page=<?php echo $next_page ?>">Next</a>
+                <?php endif ?>
+                <!-- Trang cuối -->
+                <?php if($page < $sotrang - 3) : $end_page=$sotrang ?>
+                    <a href="?act=mybill&per_page=<?php echo $soluongbill ?>&page=<?php echo $end_page ?>">Last</a>
+                <?php endif ?>
+            </div>
     </div>
 </div>

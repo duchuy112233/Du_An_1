@@ -23,7 +23,7 @@
             $allram = loadall_ram();
             foreach ($_SESSION['mycart'] as $key => $cart) {
                 $hinh = $image_path . $cart[2];
-                $tongtien = intval($cart[3]) * intval($cart[4]);
+                $tongtien = $cart[3] * $cart[4];
                 $tong += $tongtien; ?>
                 <tr>
                     <td><?php echo $key + 1 ?></td>
