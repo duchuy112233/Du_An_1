@@ -234,6 +234,13 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 header("location: index.php?act=mybill");
             }
             break;
+        case 'chitietbill':
+            if(isset($_GET['idb']) && $_GET['idb'] > 0){
+                $bill = loadone_bill($_GET['idb']);
+                $ctdh=loadall_cart($_GET['idb']);
+            }
+            include "cart/chitietbill.php";
+            break;
         default:
             include "home.php";
             break;

@@ -1102,7 +1102,7 @@ cursor: pointer;
 
 .boxtaikhoan .content-table td,
 .boxtaikhoan .content-table th {
-    padding: 10px 8px;
+    padding: 10px 10px;
     text-align: center;
 }
 
@@ -1129,7 +1129,9 @@ cursor: pointer;
     background-color: #009879;
     color: #fff;
 }
-
+.boxtaikhoan .boxphai .contact-info p{
+margin-bottom: 5px;
+}
 /*=========================================================== Footer ===========================================================*/
 .footer {
     width: 100%;

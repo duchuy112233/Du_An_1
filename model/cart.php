@@ -25,6 +25,11 @@ $sql="SELECT * FROM cart where idbill=$idbill order by name desc";
 $bill=pdo_query($sql);
 return $bill;
 }
+// function loadone_bill($id){
+//     $sql="SELECT bill_name,bill_email,bill_address,bill_tel FROM bill where id=$id";
+//     $bill=pdo_query_one($sql);
+//     return $bill;
+// }
 function loadall_cart_count($idbill){
     $sql="SELECT * FROM cart where idbill=$idbill";
     $bill=pdo_query($sql);
