@@ -58,8 +58,4 @@
         </div>
         <a href="index.php?act=addsp"><input type="button" value="Thêm mới"></a>
     </form>
-    <div class="page">
-        <a href="index.php?pg=products&page=1">1</a>
-        <a href="index.php?pg=products&page=2">2</a>
-    </div>
 </div>

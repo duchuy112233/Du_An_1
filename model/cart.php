@@ -41,16 +41,14 @@ function count_bill($iduser){
     $sql="SELECT * FROM bill where iduser=$iduser";
     return count(pdo_query($sql));
 }
-function loadall_billdh($page,$soluong){
-    $batdau=($page-1)*$soluong;
-    $sql="SELECT * FROM bill order by id desc limit $batdau, $soluong";
+function loadall_billdh($keyw=""){
+    $sql="SELECT * FROM bill where 1";
+    if($keyw!=""){
+        $sql.=" AND id like '%".$keyw."%'";
+    }
+    $sql.=" order by id desc";
     $listbill=pdo_query($sql);
     return $listbill;
-}
-//Đếm số lượng để phân trang bên admin
-function count_billdh(){
-    $sql="SELECT * FROM bill";
-    return count(pdo_query($sql));
 }
 function update_bill($id, $bill_status){
     $sql = "UPDATE bill SET `bill_status` ='$bill_status' WHERE id = $id";
@@ -72,6 +70,9 @@ switch ($n){
         break;
     case '5':
         $tt="Đơn hàng bị hủy";
+        break;
+    case '6':
+        $tt="Đang chờ duyệt";
         break;
     default:
         $tt="Đơn hàng mới";

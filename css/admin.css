@@ -157,21 +157,3 @@ input[type="file"]:focus {
     color: #222;
     outline: none;
 }
-
-.page {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.page a {
-    padding: 4px 10px;
-    border: 1px solid #009B48;
-    text-decoration: none;
-    color: #202114;
-}
-
-.page .active {
-    padding: 5px 10px;
-    background-color: #009B48;
-    color: #fff;
-}
