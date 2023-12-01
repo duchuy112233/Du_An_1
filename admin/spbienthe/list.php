@@ -7,7 +7,7 @@
             <table class="mb10 content-table">
                 <thead>
                 <tr>
-                    <th>Chọn nhanh</th>
+                    <th>STT</th>
                     <th>Mã Biến Thể</th>
                     <th>Tên Sản Phẩm</th>
                     <th>Màu Sắc</th>
@@ -19,7 +19,7 @@
                 <tbody>
                 <?php foreach ($listspbt as $key => $spbt) : ?>
                 <tr>
-                    <td><input type="checkbox" name=""></td>
+                    <td><?php echo $key + 1 ?></td>
                     <td>BT<?php echo $spbt['id'] ?></td>
                     <td><?php echo $spbt['name'] ?></td>
                     <td><?php echo $spbt['mau_sp'] ?></td>
@@ -34,9 +34,7 @@
                 </tbody>
             </table>
         </div>
-        <input type="button" value="Chọn tất cả">
-        <input type="button" value="Bỏ chọn tất cả">
-        <input type="button" value="Xóa các mục đã chọn">
+    
         <a href="index.php?act=addbt"><input type="button" value="Thêm mới"></a>
     </form>
 </div>

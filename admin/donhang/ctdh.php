@@ -6,33 +6,43 @@
         <div class="mb10">
             <table class="mb10 content-table">
                 <thead>
-                <tr>
-                    <th>Chọn nhanh</th>
-                    <th>Tên tài khoản</th>
-                    <th>Tên sản phẩm</th>
-                    <th>Nội dung</th>
-                    <th>Ngày bình luận</th>
-                    <th>Chức năng</th>
-                </tr>
+                    <tr>
+                        <th>STT</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Ram</th>
+                        <th>Màu</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                    </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($ctbl as $key => $bl) : ?>
-                <tr>
-                    <td><input type="checkbox" name=""></td>
-                    <td><?php echo $bl['user'] ?></td>
-                    <td><?php echo $bl['name'] ?></td>
-                    <td><?php echo $bl['noidung'] ?></td>
-                    <td><?php echo date("d/m/Y", strtotime($bl['ngaybl'])) ?></td>
-                    <td>
-                        <a onclick="return confirm('Bạn có chắc chắn muốn xóa')" href="?act=deletebl&idbl=<?php echo $bl['id'] ?>"><input type="button" value="Xóa"></a>
-                    </td>
-                </tr>
-                <?php endforeach ?>
+                    <?php $allmau = loadall_mau();
+                    $allram = loadall_ram();
+                    foreach ($ctdh as $key => $sp) { ?>
+                        <tr>
+                            <td><?php echo $key + 1 ?></td>
+                            <td><?php echo $sp['name'] ?></td>
+                            <td><?php foreach ($allram as $ram) : ?>
+                                    <?php if ($ram['id'] == $sp['idram']) : ?>
+                                        <span><?php echo $ram['ram_sp'] ?></span>
+                                    <?php endif ?>
+                                <?php endforeach ?>
+                            </td>
+                            <td><?php foreach ($allmau as $mau) : ?>
+                                    <?php if ($mau['id'] == $sp['idmau']) : ?>
+                                        <span><?php echo $mau['mau_sp'] ?></span>
+                                    <?php endif ?>
+                                <?php endforeach ?>
+                            </td>
+                            <td><?php echo number_format($sp['price']) ?> VNĐ</td>
+                            <td><?php echo $sp['soluong'] ?></td>
+                            <td><?php echo number_format($sp['thanhtien']) ?> VNĐ</td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
-        <input type="button" value="Chọn tất cả">
-        <input type="button" value="Bỏ chọn tất cả">
-        <input type="button" value="Xóa các mục đã chọn">
+        <a href="index.php?act=listdh"><input type="button" value="Danh sách"></a><br>
     </form>
 </div>

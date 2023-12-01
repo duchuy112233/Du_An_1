@@ -344,7 +344,7 @@ if(isset($_GET['act']) && !empty($_GET['act'])){
          //Chi tiết đơn hàng
         case 'ctdh':
             if(isset($_GET['iddh']) && $_GET['iddh'] > 0){
-                $cart=loadall_cart($_GET['iddh']);
+                $ctdh=loadall_cart($_GET['iddh']);
             }
             include "donhang/ctdh.php";
             break;
@@ -360,9 +360,6 @@ if(isset($_GET['act']) && !empty($_GET['act'])){
                 header("location: index.php?act=listdh");
             }
             include "donhang/edit.php";
-            break;
-         //Xóa sản phẩm trong đơn hàng
-        case 'deletedh':
             break;
         //Trường hợp khác
         default:

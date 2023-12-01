@@ -26,7 +26,7 @@
                 <input type="hidden" name="name" value="<?php echo $onesp['name'] ?>">
                 <input type="hidden" name="hinh" value="<?php echo $hinh ?>">
                 <input type="hidden" name="price" value="<?php echo $onesp['price'] - $onesp['price'] * ($onesp['giamgia'] / 100) ?>">
-                <input type="submit" name="addtocart" value="Add to cart" class="btn-mua">
+                <input type="submit" name="addtocart" value="Đặt hàng" class="btn-mua">
                 </form>
             </div>
         </div>

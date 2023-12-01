@@ -7,7 +7,7 @@
             <table class="mb10 content-table">
                 <thead>
                 <tr>
-                    <th>Chọn nhanh</th>
+                    <th>STT</th>
                     <th>Mã ram</th>
                     <th>Ram</th>
                     <th>Chức năng</th>
@@ -16,7 +16,7 @@
                 <tbody>
                 <?php foreach ($listram as $key => $ram) : ?>
                 <tr>
-                    <td><input type="checkbox" name=""></td>
+                    <td><?php echo $key + 1 ?></td>
                     <td><?php echo $ram['id'] ?></td>
                     <td><?php echo $ram['ram_sp'] ?></td>
                     <td>
@@ -28,9 +28,7 @@
                 </tbody>
             </table>
         </div>
-        <input type="button" value="Chọn tất cả">
-        <input type="button" value="Bỏ chọn tất cả">
-        <input type="button" value="Xóa các mục đã chọn">
+      
         <a href="index.php?act=addram"><input type="button" value="Thêm mới"></a>
     </form>
 </div>

@@ -9,13 +9,13 @@
             <?php endif ?>
             <div>
                 <p><?php echo $_SESSION['user']['email'] ?></p>
-                <a href=""><i class="fa-solid fa-pencil" style="color: #575757;"></i> Sửa Hồ Sơ</a>
+                <a href="index.php?act=taikhoan"><i class="fa-solid fa-pencil" style="color: #575757;"></i> Sửa Hồ Sơ</a>
             </div>
         </div>
         <div class="boxdm">
             <p><a href="index.php?act=doimk"><i class="fa-solid fa-key" style="color: #575757;"></i> Đổi mật khẩu</a></p>
             <p><a href="index.php?act=quenmk"><i class="fa-solid fa-passport" style="color: #575757;"></i> Quên mật khẩu</a></p>
-            <p><a href="#"><i class="fa-solid fa-calendar" style="color: #575757;"></i> Đơn hàng của tôi</a></p>
+            <p><a href="index.php?act=mybill"><i class="fa-solid fa-calendar" style="color: #575757;"></i> Đơn hàng của tôi</a></p>
         </div>
     </div>
     <div class="boxphai">
