@@ -1,4 +1,8 @@
 <?php 
+session_start();
+if(!$_SESSION['user']||$_SESSION['user']['role']==0){ /*Cam vao trang neu ma no ko dang nhap + cai role=0 */
+    header("location: ../view/index.php");
+}
 include "../model/pdo.php";
 include "../model/danhmuc.php";
 include "../model/sanpham.php";
