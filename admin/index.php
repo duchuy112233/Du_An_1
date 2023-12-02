@@ -305,7 +305,7 @@ if (isset($_GET['act']) && !empty($_GET['act'])) {
             }
             $listram = loadall_ram();
             $listmau = loadall_mau();
-            $listsp = loadall_sanpham($keyw = "", $iddm = 0);
+            $listsp = loadall_sanpham("", 0);
             include "spbienthe/add.php";
             break;
         case 'editbt':
@@ -323,7 +323,7 @@ if (isset($_GET['act']) && !empty($_GET['act'])) {
             }
             $listram = loadall_ram();
             $listmau = loadall_mau();
-            $listsp = loadall_sanpham($keyw = "", $iddm = 0);
+            $listsp = loadall_sanpham("",0);
             include "spbienthe/edit.php";
             break;
         case 'deletebt':
