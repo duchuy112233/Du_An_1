@@ -152,4 +152,5 @@ function edit_taikhoan($id,$user,$img,$address,$tel){
     pdo_execute($sql);
     header("location:".$_SERVER['HTTP_REFERER']);
 }
+
 ?>
