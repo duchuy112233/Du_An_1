@@ -20,10 +20,14 @@
                     <option value="4" <?php echo ($onebill['bill_status'] == 4) ? 'selected' : ''; ?>>Đã giao hàng</option>
                     <option value="5" <?php echo ($onebill['bill_status'] == 5) ? 'selected' : ''; ?>>Đơn hàng bị hủy</option>
                 </select>
-            <?php else : ?>
+            <?php elseif ($onebill['bill_status'] == 3) : ?>
                 <select name="bill_status">
                     <option value="3" <?php echo ($onebill['bill_status'] == 3) ? 'selected' : ''; ?>>Đang giao hàng</option>
                     <option value="4" <?php echo ($onebill['bill_status'] == 4) ? 'selected' : ''; ?>>Đã giao hàng</option>
+                    <option value="5" <?php echo ($onebill['bill_status'] == 5) ? 'selected' : ''; ?>>Đơn hàng bị hủy</option>
+                </select>
+            <?php else : ?>
+                <select name="bill_status">
                     <option value="5" <?php echo ($onebill['bill_status'] == 5) ? 'selected' : ''; ?>>Đơn hàng bị hủy</option>
                 </select>
             <?php endif ?>

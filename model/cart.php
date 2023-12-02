@@ -96,7 +96,7 @@ return $tt;
 }
 
 function updatebill($id){
-    $sql="UPDATE bill SET bill_status = 5 where id=$id";
+    $sql="UPDATE bill SET bill_status = 6 where id=$id";
     pdo_execute($sql);
 }
 
