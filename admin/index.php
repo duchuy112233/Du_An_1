@@ -207,6 +207,7 @@ if (isset($_GET['act']) && !empty($_GET['act'])) {
             break;
         case 'thongke':
             $thongke = load_thongke();
+            $thongke1=thongke();
             include "thongke/list.php";
             break;
         case 'bieudo':

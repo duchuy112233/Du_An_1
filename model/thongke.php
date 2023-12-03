@@ -5,4 +5,17 @@ GROUP BY danh_muc.id, danh_muc.name
 ORDER BY soluong DESC";
 return pdo_query($sql);
 }
+
+function thongke(){
+$sql="SELECT 
+DATE_FORMAT(bill.ngaydh, '%Y-%m') AS 'thangvanam',
+SUM(cart.soluong * cart.price) AS 'doanhthu'
+FROM bill
+JOIN cart ON bill.id = cart.idbill
+WHERE bill.bill_status = 4   -- Chỉ lấy các đơn hàng đã giao thành công
+GROUP BY DATE_FORMAT(bill.ngaydh, '%Y-%m')
+ORDER BY MAX(bill.ngaydh) DESC  -- Sử dụng hàm tổng hợp MAX để ORDER BY
+LIMIT 4";
+return pdo_query($sql);
+}
 ?>
