@@ -214,6 +214,9 @@ if (isset($_GET['act']) && !empty($_GET['act'])) {
             $listtk = load_thongke();
             include "thongke/char.php";
             break;
+        case 'bieudo1':
+            include "thongke/char1.php";
+            break;
             //Ram
         case 'listram':
             $listram = loadall_ram();

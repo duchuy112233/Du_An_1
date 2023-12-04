@@ -60,6 +60,6 @@
                 </tbody>
             </table>
         </div>
-        <a href="index.php?act=bieudo"><input type="button" value="Xem biểu đồ"></a>
+        <a href="index.php?act=bieudo1"><input type="button" value="Xem biểu đồ"></a>
     </form>
 </div>
