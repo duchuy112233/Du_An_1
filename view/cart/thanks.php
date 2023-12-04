@@ -1,0 +1,1 @@
+<h2 style="text-align: center;">CẢM ƠN BẠN ĐÃ ĐẶT HÀNG</h2>

@@ -39,8 +39,8 @@
                 <label for="payment1" style="margin-right: 30px;">Trả tiền khi nhận hàng</label>
                 <input type="radio" value="2" name="pttt" id="payment2">
                 <label for="payment2">Thanh toán online</label>
-                <a href="index.php?act=onpayment"><input type="button" name="redirect" value="VNPAY"></a>
             </div><br>
+            <a href="index.php?act=billcomfirm"><input type="submit" name="redirect" value="VNPAY"></a>
             <a href="index.php?act=billcomfirm"><input type="submit" name="thanhtoan" onclick="return kiemtraform()" value="Thanh toán"></a>
         </form>
     </div>
