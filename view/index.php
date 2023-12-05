@@ -16,6 +16,9 @@ $dm2 = loadall_sanpham_dm2();
 if (!isset($_SESSION['mycart'])) {
     $_SESSION['mycart'] = [];
 }
+if (!isset($_SESSION['onpayment'])) {
+    $_SESSION['onpayment'] = [];
+}
 
 include "header.php";
 
@@ -230,7 +233,15 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                     $_SESSION['mycart'] = [];
                 }
             } else if (isset($_POST['redirect'])) {
+                $name = $_POST['name'];
+                $address = $_POST['address'];
+                $email = $_POST['email'];
+                $tel = $_POST['tel'];
+                $pttt = $_POST['pttt'];
+                $ngaydh = date('Y-m-d');
                 $tong = tongdonhang();
+                $addcart = [$name, $address, $email, $tel, $pttt, $ngaydh,$tong];
+                array_push($_SESSION['onpayment'], $addcart);
                 onpayment($tong);
             }
             $bill = loadone_bill($idbill);
@@ -266,6 +277,22 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             include "cart/chitietbill.php";
             break;
         case 'thanks':
+            if (isset($_SESSION['user'])) {
+                $iduser = $_SESSION['user']['id'];
+            }
+            if(isset($_GET['vnp_Amount'])){
+                $idbill = add_bill($iduser, $_SESSION['onpayment'][0][0], $_SESSION['onpayment'][0][1], $_SESSION['onpayment'][0][3], $_SESSION['onpayment'][0][2], $_SESSION['onpayment'][0][4], $_SESSION['onpayment'][0][5], $_SESSION['onpayment'][0][6]);
+                //insert into cart: $_SESSION['mycart'] & idbill
+                foreach ($_SESSION['mycart'] as $cart) {
+                    add_cart($_SESSION['user']['id'], $cart[0], $cart[2], $cart[1], $cart[5], $cart[6], $cart[3], $cart[4], $cart[7], $idbill);
+                    if ($cart[5] != 0 && $cart[6] != 0) {
+                        update_soluong($cart[4], $cart[5], $cart[0], $cart[6]);
+                    }
+                    //xóa $_SESSION['cart']
+                    $_SESSION['mycart'] = [];
+                }
+            }
+            // var_dump($_SESSION['onpayment']);
             include "cart/thanks.php";
             break;
         default:
