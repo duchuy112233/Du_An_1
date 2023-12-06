@@ -1,0 +1,9 @@
+.dm {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dm li {
+    margin-bottom: 3px;
+}
