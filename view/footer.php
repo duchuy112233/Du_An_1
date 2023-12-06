@@ -1,54 +1,44 @@
 <div class="footer">
-    <div class="box">
+    <div class="content-logo">
         <div class="logo">
-            <img src="../image/logoweb.jpg" alt="">
+            <img src="../image/logo4.png" alt="">
         </div>
-        <p class="sdt">Hotline: 1900 96 96 01</p><br>
+        <p>Hotline: 1900 96 96 01</p>
+        <p>Email: contact@laptopia.vn</p>
         <span>Công ty TNHH Laptopia Việt Nam</span>
     </div>
     <div class="box">
-        <h3>CỬA HÀNG TRỰC TUYẾN</h3>
-        <ul class="quick-menu">
-            <div class="item">
-                <a href="">Chính sách bán hàng</a>
-            </div>
-            <div class="item">
-                <a href="">Chính sách giao hàng</a>
-            </div>
-            <div class="item">
-                <a href="">Chính sách đổi hàng</a>
-            </div>
-            <div class="item">
-                <a href="">Chính sách bảo hành</a>
-            </div>
+        <p>CHÍNH SÁCH</p>
+        <ul>
+            <li>Chính sách mua hàng từ xa</li>
+            <li>Chính sách đặt cọc sản phẩm</li>
+            <li>Chính sách giao nhận - đổi trả</li>
+            <li>Chính sách bảo hành</li>
+            <li>Chính sách bảo mật thông tin</li>
+            <li>Thỏa thuận sử dụng và quy định giao dịch chung</li>
+            <li>Thỏa thuận sử dụng và quy định giao dịch chung</li>
         </ul>
     </div>
     <div class="box">
-        <h3>HỖ TRỢ KHÁCH HÀNG</h3>
-        <ul class="quick-menu">
-            <div class="item">
-                <a href="">Hỗ trợ sản phẩm</a>
-            </div>
-            <div class="item">
-                <a href="">Hỗ trợ kỹ thuật</a>
-            </div>
-            <div class="item">
-                <a href="">Tải driver</a>
-            </div>
-            <div class="item">
-                <a href="">Hỏi đáp</a>
-            </div>
+        <p>HỖ TRỢ KHÁCH HÀNG</p>
+        <ul>
+            <li>Hỗ trợ sản phẩm</li>
+            <li>Hỗ trợ kỹ thuật</li>
+            <li>Tải driver</li>
+            <li>Hỏi đáp</li>
         </ul>
     </div>
     <div class="box">
-        <h3>LIÊN HỆ</h3>
-        <form action="">
-            <input type="text" placeholder="Địa chỉ email" required>
-            <button>Nhận tin</button>
-        </form>
+        <p>THANH TOÁN</p>
+        <ul>
+            <li>Thanh toán trực tuyến (Internet Banking)</li>
+            <li>Thanh toán khi nhận hàng (COD)</li>
+            <li>Hướng dẫn thanh toán VNPAY</li>
+        </ul>
     </div>
 </div>
 </div>
 <script src="../main.js"></script>
 </body>
+
 </html>

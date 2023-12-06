@@ -1,120 +1,187 @@
-/* Header */
+/*================================================================= Kích thước =================================================================*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Tahoma', Geneva, Verdana, sans-serif;
 }
+
 .container {
-   width: 100%; 
-   margin: 0 auto;
+    width: 100%;
+    margin: 0 auto;
 }
-/* header */
-.top-header{
-height: 30px;
-background-color: #009B48;
+
+/*================================================================= header =================================================================*/
+.top-header {
+    height: 30px;
+    background-color: #009879;
 }
+
 .bottom-header {
     border-bottom: 1px solid gainsboro;
-    padding: 20px 60px;
-    font-size: 20px;
+    padding: 10px 25px 10px 45px;
     margin-bottom: 15px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .bottom-header img {
     width: 140px;
 }
-.timkiem-header{
+
+.timkiem-header {
+    display: flex;
+}
+
+.search-box {
+    border: 1px solid #202114;
+    margin-left: 5px;
     display: flex;
     justify-content: space-between;
-}
-.timkiem input[type="text"]{
+    align-items: center;
+    border-radius: 30px;
     height: 45px;
-    width: 500px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    margin-left: 200px;
-    padding-left: 5px;
+    margin-right: 210px;
+}
+
+.search-box input[type="text"] {
     outline: none;
-}
-.timkiem input[type="submit"]{
-    height: 45px;
     border: none;
-    background-color: #dddddd;
-    border-radius: 4px;
-    padding: 0px 10px;
+    background: none;
+    padding: 10px 15px;
+    width: 500px;
+}
+
+.search-box .search-btn {
+    background-color: #fff;
+    border: none;
+    padding: 12px;
     cursor: pointer;
+    border-radius: 50%;
 }
-.timkiem input[type="submit"]:hover{
-background-color: #cccccc;
-}
-  /* dangky/dangnhap phần header */
+
+/*================================================================= dangky/dangnhap phần header =================================================================*/
 .form-menu {
     margin-top: 10px;
-    margin-left: 150px;
     display: flex;
+    justify-content: space-between;
     gap: 20px;
 }
-.form-menu a{
+
+.form-menu a {
     text-decoration: none;
-    color: #575757;
+    color: #202114;
 }
-.form-menu a i{
-border-radius: 30px;
-border: 1px solid #cccccc;
-padding: 8px;
+
+.form-menu a i {
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    padding: 8px;
 }
-.form-menu a:hover i{
-background-color: #cccccc;
+
+.form-menu a:hover i {
+    border: 1px solid #009B48;
 }
-/* MENU */
+
+.form-menu .dn-header li {
+    list-style-type: none;
+}
+
+.header-tk a {
+    color: #202114;
+}
+
+.header-tk a:hover {
+    color: #009B48;
+    background-color: #eee;
+}
+
+.dn-header img {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+}
+
+.avatar-header {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    background-color: #1a73e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: #fff;
+}
+
+.acc {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/*================================================================= MENU =================================================================*/
 .menu {
     padding: 20px 0;
-    background-color: #dddddd;
+    background-color: #eee;
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
 }
+
 .menu .menu-row {
     display: flex;
     list-style: none;
 }
+
 .menu .menu-row .nav-item {
     padding-left: 20px;
     padding-right: 20px;
 }
+
 .menu .menu-row .nav-item a {
     text-decoration: none;
     font-size: 16px;
-    color: #575757;
+    color: #202114;
 }
+
 .menu .menu-row .nav-item a:hover {
-    color: #17d570;
+    color: #009B48;
 }
-/* Hiển thị danh sách con khi hover vào mục cha */
+
+/*================================================================= Hiển thị danh sách con khi hover vào mục cha =================================================================*/
 .nav-item:hover .submenu {
     display: block;
 }
+
 .submenu {
     display: none;
-    border-radius: 8px;
     background-color: #ffffff;
     position: absolute;
     list-style-type: none;
     z-index: 1;
     min-width: 130px;
-    min-height: 100px;
+    min-height: 50px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
 }
-  .submenu a {
+
+.submenu a {
     padding: 10px;
     text-decoration: none;
-    display: block; /* Làm cho các mục menu con trở thành khối, để tạo khoảng cách giữa chúng */
-  }
-/* HOME */
-.mr-banner{
+    display: block;
+}
+
+.submenu a:hover {
+    background-color: #eee;
+}
+
+/*================================================================= HOME =================================================================*/
+.mlr {
     margin: 0 20px;
 }
+
 .banner {
     width: 100%;
     min-width: 300px;
@@ -122,11 +189,13 @@ background-color: #cccccc;
     position: relative;
     margin-bottom: 30px;
 }
+
 .banner img {
     width: 100%;
     height: 400px;
     border-radius: 4px;
 }
+
 .pre,
 .next {
     cursor: pointer;
@@ -141,90 +210,33 @@ background-color: #cccccc;
     border-radius: 0 3px 3px 0;
     border: none;
 }
+
 .pre:hover,
 .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
+
 .pre {
     left: 0;
     border-radius: 0 3px 3px 0;
 }
-/* end banner */
-.row {
-    display: flex;
-    margin-top: 30px;
-    margin-bottom: 40px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap:10px;
-}
 
-.card {
-    min-height: 200px;
-    margin-top: 5px;
-    border: 1px solid black;
-    text-align: center;
-    padding: 20px 0px;
-    border-radius: 7px;
-    
-}
-.card:hover{
-    border: 3px solid #009B48;
-    border-radius: 7px; 
-}
-
-.card img{
-    width: 60%;
-    height: 60%;
-}
-
-.card-body .tensp {
-    margin: 10px 0;
-}
-
-.card-body .tensp a {
-    text-decoration: none;
-    color: black;
-}
-
-.card-body .card-price {
-    margin: 10px 0;
-}
-
-.card-body .card-price span {
-    color: #009B48;
-    font-weight: bold;
-}
-
-.card-body .card-price del {
-    color: black;
-    font-size: 13px;
-}
-
-.card-body .themgio {
-    border: 0px solid;
-    background-color: white;
-    color: #009B48;
-    font-size: 14px;
-}
-
-.card-body .themgio:hover {
-    color: red;
-}
-/* end sản phẩm */
+/*================================================================= phần giới thiệu dưới banner =================================================================*/
 .top-home {
     margin-left: 250px;
     margin-right: 250px;
     text-align: center;
     border: 1px solid #ddd;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     padding: 15px;
-    gap:15px;
+    gap: 15px;
+    margin-bottom: 50px;
 }
 
 .top-home .icon-top {
@@ -237,146 +249,383 @@ background-color: #cccccc;
     font-size: 14px;
     color: #009B48;
 }
-.top-home .nd{
-font-weight: bold;
+
+.top-home .nd {
+    font-weight: bold;
 }
+
 .top-home .icon2,
-.top-home .icon3{
-padding-right: 20px;
+.top-home .icon3 {
+    padding-right: 20px;
 }
-.top-home .icon4{
-border: none;
+
+.top-home .icon4 {
+    border: none;
 }
+
 .top-home .icon-top i {
     padding: 0px 90px;
 }
 
-.tieude {
-    margin-top: 50px;
-}
-/* Sản phẩm chi tiết */
-.chitiet-tong {
-    padding: 50px 300px;
-    margin-bottom: 50px;
-
+/*================================================================= box sản phẩm trang chủ =================================================================*/
+.title {
+    width: 1100px;
+    margin: 0 auto;
 }
 
-.chitiet-row {
-    display: flex;
-    gap: 50px;
+.title h4 {
+    padding-bottom: 3px;
+    color: #202114;
 }
 
-.chitiet-img {
-    border: 1px solid gray;
-    margin-bottom: 30px;
+.row {
+    width: 1100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin: 20px auto;
 }
 
-.chitiet-img img {
-    width: 300px;
-    padding: 20px 0px;
-}
-
-.chitiet-thongso li {
-    list-style: none;
-    padding: 5px 0px;
-}
-
-.chitiet-mota {
-    width: 700px;
-}
-
-.chitiet-muahang {
-    padding: 15px 20px;
-    background-color: #009B48;
+.boxsp {
+    background: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-top: 110px;
-    border-radius: 10px;
-
+    padding: 10px;
+    transition: box-shadow 0.3s ease-in-out;
+    margin-bottom: 5px;
 }
 
-.chitiet-muahang:hover {
-    background-color: red;
-
+.boxsp:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.chitiet-muahang a {
+.boxsp a {
+    color: #202114;
     text-decoration: none;
-    color: white;
-
-}
-.binhluan {
-    border: 1px solid gray;
-    height: 400px;
-    margin-top: 10px;
-    margin-bottom: 50px;
 }
 
-.binhluan-name {
-    margin-top: 100px;
+.boxsp img {
+    width: 140px;
+    margin-bottom: 3px;
 }
 
-.formbinhluan {
-    padding: 20px 50px;
-    float: right;
+.boxsp .box-title a:hover {
+    color: #009B48;
 }
 
-#nhap {
-    height: 40px;
-    width: 1300px;
+.boxsp .boxsp-content {
+    text-align: left;
+    font-size: 14px;
+    color: #575757;
+    margin-top: 15px;
 }
 
-.formbinhluan .nut-gui {
+.boxsp .boxsp-content p {
+    margin-bottom: 15px;
+}
+
+.boxsp .money span {
     background-color: #009B48;
-    padding: 10px 10px;
-    color: white;
-    font-weight: bold;
-}
-.formbinhluan .nut-gui:hover {
-    background-color: red;  
-}
-/* Sign in/ Sign up */
-.body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'Tahoma', Geneva, Verdana, sans-serif;
-    height: 100vh;
-    margin: -50px 0 -200px;
+    border-radius: 4px;
+    padding: 3px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
 }
 
-.body .form-container h1 {
-    font-weight: bold;
-    margin: 0;
-    color: #575757;
+.boxsp .money p {
+    margin: 12px 50px 20px 50px;
+    background-color: #009B48;
+    color: #fff;
+    border-radius: 20px;
+    padding: 8px;
+    font-weight: 800;
 }
 
-.body h2 {
-    text-align: center;
-    color: #575757;
+.boxsp .add {
+    margin-bottom: 8px;
+}
+
+.btn-shop:hover {
+    color: #009B48;
+}
+
+.btn-shop-text {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+/*================================================================= Sản phẩm chi tiết =================================================================*/
+.chitietsp {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.chitietsp .title-sp {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ccc;
     margin-bottom: 10px;
 }
 
-.body p {
-    font-size: 14px;
-    font-weight: 100;
-    line-height: 20px;
-    letter-spacing: 0.5px;
-    margin: 20px 0 30px;
+.boxctsp {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    gap: 45px;
 }
 
-.body span {
-    font-size: 12px;
+.box-left {
+    display: flex;
+    gap: 30px;
 }
 
-.body a {
-    color: #333;
-    font-size: 14px;
+.box-left img {
+    width: 300px;
+    border: 1px solid #ccc;
+}
+
+.chitietsp .title {
+    margin-top: 30px;
+}
+
+.boxctsp-money h3,
+.boxctsp-money p {
+    margin-bottom: 5px;
+}
+
+.boxctsp-money .btn-mua {
+    background-color: #009B48;
+    color: #fff;
+    border-radius: 20px;
+    padding: 8px;
+    font-weight: 800;
+    outline: none;
+    border: none;
+    width: 100%;
+}
+
+.box-right {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 400px;
+}
+
+.box-right .content-ctsp {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 8px;
+    margin: 8px 0;
+}
+
+.box-right .content-ctsp p {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 5px 0;
+}
+
+/*===========================================================Phân trang==========================================================*/
+.page {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.page a {
+    padding: 4px 10px;
+    border: 1px solid #009B48;
     text-decoration: none;
-    margin: 15px 0;
+    color: #202114;
 }
 
-.body button {
+.page .active {
+    padding: 5px 10px;
+    background-color: #009B48;
+    color: #fff;
+}
+
+/*================================================================= Bình luận =================================================================*/
+.binhluan {
+    background: #fff;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.binhluan-title {
+    margin-bottom: 8px;
+}
+
+.binhluan img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.binhluan input[type="text"] {
+    width: 80%;
+    padding: 10.5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.binhluan input[type="submit"] {
+    background-color: #009B48;
+    border: none;
+    color: #fff;
+    padding-left: 5px;
+}
+
+.binhluan span {
+    background-color: #009B48;
+    padding: 8px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+}
+
+.add-bl {
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dddddd;
+    margin-bottom: 10px;
+}
+
+.avatar-bl {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar-name {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #1a73e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: #fff;
+}
+
+.comment {
+    margin-left: 45px;
+}
+
+.noidung {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+    min-height: 70px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 3px;
+}
+
+.ngaybl {
+    font-size: 12px;
+    text-align: right;
+}
+
+/*================================================================= Cập nhật thông tin tài khoản =================================================================*/
+.boxtaikhoan {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.boxtaikhoan a {
+    text-decoration: none;
+    color: #202114;
+}
+
+.boxtrai {
+    margin-top: 20px;
+}
+
+.boxtrai-img {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.boxtrai img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.boxtrai-img p {
+    margin-bottom: 5px;
+}
+
+.boxtrai .boxdm p {
+    margin-top: 15px;
+}
+
+.boxtrai a:hover {
+    color: #009B48;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #1a73e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #fff;
+}
+
+.boxphai {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 20px;
+}
+
+.boxphai .boxphai-title {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.boxphai .boxphai-title .tieude1 {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.boxphai .boxphai-title .tieude2 {
+    font-size: 14px;
+    color: #575757;
+}
+
+.boxtaikhoan input[type="text"],
+.boxtaikhoan input[type="file"] {
+    width: 500px;
+    padding: 7px 10px;
+    background: #fff;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.boxphai .form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.boxtaikhoan input[type="submit"] {
     border-radius: 20px;
     border: 1px solid #009B48;
     background-color: #009B48;
@@ -385,169 +634,101 @@ border: none;
     font-weight: bold;
     padding: 12px 45px;
     letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: transform 80ms ease-in;
 }
 
-.body button:active {
-    transform: scale(0.95);
+.boxtaikhoan input[type="submit"]:hover {
+    opacity: 0.85;
 }
 
-.body button:focus {
+.boxphai label {
+    color: #575757;
+    font-size: 14px;
+}
+
+/*================================================================= Form đăng nhâp/đăng ký =================================================================*/
+#wrapper {
+    background-color: #fff;
+    color: #202114;
+}
+
+#wrapper form {
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    margin: auto;
+}
+
+#wrapper h3 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#wrapper .dk {
+    color: #1a73e8;
+}
+
+#wrapper .dk:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#wrapper a {
+    text-decoration: none;
+    color: black;
+}
+
+#wrapper .span {
+    font-size: 13px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+#wrapper input[type="text"],
+#wrapper input[type="email"],
+#wrapper input[type="password"] {
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 12px 15px;
+    color: #202114;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-top: 6px;
+}
+
+#wrapper input[type="text"]:focus,
+#wrapper input[type="password"]:focus,
+#wrapper input[type="email"]:focus {
+    border: 1px solid #202114;
+    color: #222;
     outline: none;
 }
 
-.body button.ghost {
+#wrapper form input[type="submit"] {
+    border-radius: 20px;
+    border: 1px solid #009B48;
     background-color: #009B48;
-    border-color: #009B48;
-}
-
-.body form {
-    background-color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 50px;
-    height: 100%;
-    text-align: center;
-}
-
-.body input {
-    background-color: #eee;
-    border: none;
-    padding: 12px 15px;
-    margin: 8px 0;
-    width: 100%;
-}
-
-.container-sign {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-        0 10px 10px rgba(0, 0, 0, 0.22);
-    position: relative;
-    overflow: hidden;
-    width: 768px;
-    max-width: 100%;
-    min-height: 480px;
-}
-
-.form-container {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    transition: all 0.6s ease-in-out;
-}
-
-.sign-in-container {
-    left: 0;
-    width: 50%;
-    z-index: 2;
-}
-
-.container-sign.right-panel-active .sign-in-container {
-    transform: translateX(100%);
-}
-
-.sign-up-container {
-    left: 0;
-    width: 50%;
-    opacity: 0;
-    z-index: 1;
-}
-
-.container-sign.right-panel-active .sign-up-container {
-    transform: translateX(100%);
-    opacity: 1;
-    z-index: 5;
-    animation: show 0.6s;
-}
-
-@keyframes show {
-
-    0%,
-    49.99% {
-        opacity: 0;
-        z-index: 1;
-    }
-
-    50%,
-    100% {
-        opacity: 1;
-        z-index: 5;
-    }
-}
-
-.overlay-container {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    transition: transform 0.6s ease-in-out;
-    z-index: 100;
-}
-
-.container-sign.right-panel-active .overlay-container {
-    transform: translateX(-100%);
-}
-
-.overlay {
-    background: #009B48;
-    background: -webkit-linear-gradient(to right, #01b756, #21fa86);
-    background: linear-gradient(to right, #1cff86, #19ff84);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0 0;
     color: #FFFFFF;
-    position: relative;
-    left: -100%;
-    height: 100%;
-    width: 200%;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
 }
 
-.container-sign.right-panel-active .overlay {
-    transform: translateX(50%);
-}
-
-.overlay-panel {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
+#wrapper .center {
     text-align: center;
-    top: 0;
-    height: 100%;
-    width: 50%;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
-}
-/* left  */
-.overlay-left {
-    transform: translateX(-20%);
 }
 
-.container-sign.right-panel-active .overlay-left {
-    transform: translateX(0);
+#wrapper form input[type="submit"]:hover {
+    opacity: 0.85;
 }
-/* end  */
-/* right  */
-.overlay-right {
-    right: 0;
-    transform: translateX(0);
-}
-.container-sign.right-panel-active .overlay-right {
-    transform: translateX(20%);
-}
-/* end  */
+
 .social-container {
-    margin: 20px 0;
+    margin: 20px 0 5px 0;
 }
 
 .social-container a {
@@ -559,56 +740,459 @@ border: none;
     margin: 0 5px;
     height: 40px;
     width: 40px;
+    text-decoration: none;
 }
-/* Footer */
+
+.social-container a:hover {
+    background-color: #dddddd;
+}
+
+#wrapper .mk {
+    text-align: right;
+    font-size: 14px;
+    color: #1a73e8;
+}
+
+#wrapper .mk:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/*=========================================================== Form quên mật khẩu =========================================================*/
+#wrapper-1 {
+    background-color: #fff;
+    color: #202114;
+}
+
+#wrapper-1 form {
+    border-radius: 3px;
+    padding: 30px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22); */
+    width: 45%;
+    margin: auto;
+}
+
+#wrapper-1 h3 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#wrapper-1 input[type="email"] {
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 12px 15px;
+    color: #202114;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-top: 6px;
+}
+
+#wrapper-1 input[type="email"]:focus {
+    border: 1px solid #202114;
+    color: #222;
+    outline: none;
+}
+
+#wrapper-1 form input[type="submit"] {
+    border-radius: 20px;
+    border: 1px solid #009B48;
+    background-color: #009B48;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+}
+
+#wrapper-1 form input[type="submit"]:hover {
+    opacity: 0.85;
+}
+
+#wrapper-1 a {
+    text-decoration: none;
+}
+
+#wrapper-1 .dk {
+    color: #1a73e8;
+}
+
+#wrapper-1 .dk:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/*========================================================= Form đổi mật khẩu ==========================================================*/
+#wrapper-2 {
+    background-color: #fff;
+    color: #202114;
+}
+
+#wrapper-2 form {
+    border-radius: 3px;
+    padding: 30px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    margin: auto;
+}
+
+#wrapper-2 h3 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#wrapper-2 input[type="password"] {
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 12px 15px;
+    color: #202114;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-top: 6px;
+}
+
+#wrapper-2 input[type="password"]:focus {
+    border: 1px solid #202114;
+    color: #222;
+    outline: none;
+}
+
+#wrapper-2 form input[type="submit"] {
+    border-radius: 20px;
+    border: 1px solid #009B48;
+    background-color: #009B48;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+}
+
+#wrapper-2 form input[type="submit"]:hover {
+    opacity: 0.85;
+}
+
+#wrapper-2 a {
+    text-decoration: none;
+}
+
+#wrapper-2 .dk {
+    color: #1a73e8;
+}
+
+#wrapper-2 .dk:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/*====================================================== Giỏ hàng ==========================================================*/
+.form-giohang {
+    margin: auto 30px;
+}
+
+.form-giohang .title-giohang {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.form-giohang .title-giohang a {
+    text-decoration: none;
+    color: #202114;
+}
+
+.form-giohang .content-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 4px 4px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+}
+
+.form-giohang .content-table thead tr {
+    background-color: #009879;
+    color: #fff;
+}
+
+.form-giohang .content-table td,
+.form-giohang .content-table th {
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.form-giohang .content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.form-giohang .content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.form-giohang .content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.form-giohang input[type="button"] {
+    border: 1px solid #009879;
+    border-radius: 4px;
+    padding: 5px 10px;
+    background-color: white;
+}
+
+.form-giohang input[type="button"]:hover {
+    background-color: #009879;
+    color: #fff;
+}
+
+.form-giohang .login {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.form-giohang .login:hover {
+    text-decoration: underline;
+}
+
+.form-giohang .quantity a {
+    font-size: 20px;
+}
+
+.form-giohang .quantity a:hover {
+    cursor: pointer;
+}
+
+/*================================================= Biến thể sản phẩm =========================================================*/
+.chitietsp select,
+.chitietsp input[type="number"] {
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid #009879;
+    margin-top: 6px;
+}
+
+.chitietsp select:focus,
+.chitietsp input[type="number"]:focus {
+    border: 2px solid #009879;
+    color: #222;
+    outline: none;
+}
+
+/*========================================================= Đặt hàng ===========================================================*/
+.bill {
+    display: flex;
+    gap: 30px;
+    margin: 0 30px;
+    justify-content: space-between;
+}
+
+.giohang {
+    height: 500px;
+    overflow-y: auto;
+    border: 1px solid #009879;
+    padding: 30px;
+    border-radius: 4px;
+    margin: 5px 0;
+}
+
+.giohang2 {
+    border: 1px solid #009879;
+    padding: 20px;
+    border-radius: 4px;
+    
+}
+
+.order {
+    display: flex;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.giohang2 .title-cart {
+    font-size: 20px;
+    color: #202114;
+}
+
+.giohang2 .total {
+    text-align: center;
+    font-weight: bold;
+}
+
+.giohang .content-on {
+    color: #202114;
+    margin-bottom: 15px;
+}
+
+.giohang .content-below {
+    color: #009879;
+}
+
+.giohang .content-below p {
+    margin-top: 5px;
+}
+
+.bill .left {
+    width: 65%;
+}
+
+.bill .left input[type="text"] {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 4px;
+    margin-top: 6px;
+}
+
+.bill .left input[type="text"]:focus {
+    border: 1px solid #009879;
+    color: #222;
+    outline: none;
+}
+
+.bill .left .order-form {
+    border: 1px solid #009879;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.bill .left .order-form p {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #009879;
+    margin-bottom: 15px;
+}
+
+.bill .left .payment {
+    border: 1px solid #009879;
+    border-radius: 4px;
+    padding: 15px;
+    text-align: center;
+}
+
+.bill .left .payment p {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #009879;
+    margin-bottom: 15px;
+}
+
+.bill input[type="submit"] {
+    border: 1px solid #009879;
+    border-radius: 4px;
+    padding: 5px 10px;
+    background-color: white;
+}
+
+.bill input[type="submit"]:hover {
+    background-color: #009879;
+    color: #fff;
+}
+
+/*====================================================== Trang cảm ơn ========================================================*/
+.billcomfirm {
+    text-align: center;
+}
+
+.billcomfirm h4 {
+    margin: 15px 0;
+}
+
+.billcomfirm .btn-a {
+    margin-top: 25px;
+}
+
+.billcomfirm a {
+    padding: 8px;
+    background-color: #009B48;
+    text-decoration: none;
+    color: #fff;
+}
+
+.billcomfirm .content-bill {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 15px 0;
+}
+
+/*====================================================== Đơn hàng của tôi ==============================================*/
+.boxtaikhoan .content-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 4px 4px 0 0;
+    overflow: hidden;
+}
+
+.boxtaikhoan .content-table thead tr {
+    background-color: #009879;
+    color: #fff;
+    font-weight: bold;
+}
+
+.boxtaikhoan .content-table td,
+.boxtaikhoan .content-table th {
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.boxtaikhoan .content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.boxtaikhoan .content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.boxtaikhoan .content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.boxtaikhoan .boxphai .content-table input[type="button"] {
+    border: 1px solid #009879;
+    border-radius: 4px;
+    padding: 5px 10px;
+    background-color: white;
+}
+
+.boxtaikhoan .boxphai .content-table input[type="button"]:hover {
+    background-color: #009879;
+    color: #fff;
+}
+
+.boxtaikhoan .boxphai .contact-info p {
+    margin-bottom: 5px;
+}
+
+/*=========================================================== Footer ===========================================================*/
 .footer {
     width: 100%;
-    background: rgb(0, 0, 0, 0.79);
-    height: 322px;
-    margin-top: 200px;
-    padding: 0px 63px;
-    padding-top: 57px;
+    background: #eee;
+    margin-top: 150px;
+    padding: 40px 0;
     display: flex;
     justify-content: space-around;
 }
-.footer img{
-width: 140px;
-}
-.footer .box {
-    width: 250px;
-    color: #fff;
-}
-.footer .box .sdt{
-margin-top: 10px;
-color: #009B48;
-font-weight: bold;
-}
-.footer .box .quick-menu {
-    margin-top: 25px;
 
+.footer .content-logo p {
+    margin-bottom: 5px;
 }
-.footer .box .quick-menu .item {
-    margin-bottom: 12px;
 
+.footer img {
+    width: 140px;
+    margin-bottom: 5px;
 }
-.footer .box .quick-menu,
-.item a {
-    color: #fff;
-    text-decoration: none;
+
+.footer .box p {
+    font-weight: bold;
+    margin-bottom: 8px;
 }
-.footer .box form input {
-    width: 294px;
-    height: 42px;
-    background: transparent;
-    padding-left: 20px;
-    color: #fff;
-    margin-top: 30px;
-}
-.footer .box form button {
-    background: #362f2f;
-    box-shadow: 5px 5px 4px rgba(0, 0, 0.25);
-    width: 163px;
-    height: 38px;
-    margin-top: 29px;
-    color: #fff;
+
+.footer ul li {
+    list-style-type: none;
+    margin-bottom: 5px;
 }
