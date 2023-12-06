@@ -288,11 +288,13 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                     if ($cart[5] != 0 && $cart[6] != 0) {
                         update_soluong($cart[4], $cart[5], $cart[0], $cart[6]);
                     }
-                    //xóa $_SESSION['cart']
+                    //xóa $_SESSION[]
                     $_SESSION['mycart'] = [];
+                    $_SESSION['onpayment']=[];
                 }
             }
             // var_dump($_SESSION['onpayment']);
+            $bill = loadone_bill($idbill);
             include "cart/thanks.php";
             break;
         default:

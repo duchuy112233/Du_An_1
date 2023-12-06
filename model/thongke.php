@@ -12,7 +12,7 @@ DATE_FORMAT(bill.ngaydh, '%Y-%m') AS 'thangvanam',
 SUM(cart.soluong * cart.price) AS 'doanhthu'
 FROM bill
 JOIN cart ON bill.id = cart.idbill
-WHERE bill.bill_status = 4   -- Chỉ lấy các đơn hàng đã giao thành công
+WHERE bill.bill_pttt = 1 and bill.bill_status = 4 or bill.bill_pttt = 2 and bill.bill_status <> 5    -- Chỉ lấy các đơn hàng đã giao thành công
 GROUP BY DATE_FORMAT(bill.ngaydh, '%Y-%m')
 ORDER BY MAX(bill.ngaydh) DESC  -- Sử dụng hàm tổng hợp MAX để ORDER BY
 LIMIT 4";

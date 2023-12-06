@@ -993,9 +993,19 @@
 }
 
 .giohang {
+    height: 500px;
+    overflow-y: auto;
     border: 1px solid #009879;
     padding: 30px;
     border-radius: 4px;
+    margin: 5px 0;
+}
+
+.giohang2 {
+    border: 1px solid #009879;
+    padding: 20px;
+    border-radius: 4px;
+    
 }
 
 .order {
@@ -1004,18 +1014,13 @@
     margin: 20px 0;
 }
 
-.giohang .title-cart {
+.giohang2 .title-cart {
     font-size: 20px;
     color: #202114;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #009879;
 }
 
-.giohang .total {
-    border-bottom: 1px solid #009879;
-    border-top: 1px solid #009879;
+.giohang2 .total {
     text-align: center;
-    padding: 20px 0;
     font-weight: bold;
 }
 

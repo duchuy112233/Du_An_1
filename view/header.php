@@ -14,7 +14,11 @@
 
 <body>
     <div class="container">
-        <div class="top-header"></div>
+        <div class="top-header">
+            <marquee behavior="scroll" direction="left" style="padding: 6px 0; color:#fff;">
+                Chào mừng ban đến với LapTopIA
+            </marquee>
+        </div>
         <div class="bottom-header">
             <a href="index.php"><img src="../image/logo4.png"></a>
             <div class="timkiem-header">
