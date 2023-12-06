@@ -34,7 +34,6 @@
                 </tbody>
             </table>
         </div>
-    
         <a href="index.php?act=addbt"><input type="button" value="Thêm mới"></a>
     </form>
 </div>

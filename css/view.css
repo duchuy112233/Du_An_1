@@ -374,7 +374,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
-    gap: 18px;
+    gap: 45px;
 }
 
 .box-left {
@@ -412,6 +412,7 @@
     border-radius: 10px;
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
     padding: 15px;
+    width: 400px;
 }
 
 .box-right .content-ctsp {
@@ -426,6 +427,25 @@
     justify-content: space-between;
     gap: 40px;
     padding: 5px 0;
+}
+
+/*===========================================================Phân trang==========================================================*/
+.page {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.page a {
+    padding: 4px 10px;
+    border: 1px solid #009B48;
+    text-decoration: none;
+    color: #202114;
+}
+
+.page .active {
+    padding: 5px 10px;
+    background-color: #009B48;
+    color: #fff;
 }
 
 /*================================================================= Bình luận =================================================================*/
@@ -939,6 +959,14 @@
     text-decoration: underline;
 }
 
+.form-giohang .quantity a {
+    font-size: 20px;
+}
+
+.form-giohang .quantity a:hover {
+    cursor: pointer;
+}
+
 /*================================================= Biến thể sản phẩm =========================================================*/
 .chitietsp select,
 .chitietsp input[type="number"] {
@@ -965,24 +993,19 @@
 }
 
 .giohang {
-    max-height: 580px;
+    height: 500px;
     overflow-y: auto;
-
     border: 1px solid #009879;
-    padding: 0px 30px;
+    padding: 30px;
     border-radius: 4px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 5px 0;
 }
 
 .giohang2 {
     border: 1px solid #009879;
     padding: 20px;
     border-radius: 4px;
-    font-size: 18px;
-    color: black;
-    font-weight: bold;
-    width: 550px;
+    
 }
 
 .order {
@@ -991,26 +1014,13 @@
     margin: 20px 0;
 }
 
-.giohang .title-cart {
+.giohang2 .title-cart {
     font-size: 20px;
     color: #202114;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #009879;
-}
-
-.giohang .total {
-    border-bottom: 1px solid #009879;
-    border-top: 1px solid #009879;
-    text-align: center;
-    padding: 20px 0;
-    font-weight: bold;
 }
 
 .giohang2 .total {
-
-    border-top: 1px solid #009879;
     text-align: center;
-    padding: 20px 0;
     font-weight: bold;
 }
 
@@ -1043,23 +1053,13 @@
     border: 1px solid #009879;
     color: #222;
     outline: none;
-
-}
-
-.form-pd {
-    padding: 15px 0px;
 }
 
 .bill .left .order-form {
     border: 1px solid #009879;
     border-radius: 4px;
-    padding: 10px;
+    padding: 15px;
     margin-bottom: 20px;
-    line-height: 45px;
-}
-
-.order-form input {
-    height: 50px;
 }
 
 .bill .left .order-form p {
@@ -1071,7 +1071,7 @@
 .bill .left .payment {
     border: 1px solid #009879;
     border-radius: 4px;
-    padding: 27.5px 15px;
+    padding: 15px;
     text-align: center;
 }
 
@@ -1084,12 +1084,8 @@
 .bill input[type="submit"] {
     border: 1px solid #009879;
     border-radius: 4px;
-    padding: 13.5px 40px;
+    padding: 5px 10px;
     background-color: white;
-    float: right;
-    font-size: 18px;
-    font-weight: bold;
-    color: #009879;
 }
 
 .bill input[type="submit"]:hover {
@@ -1140,7 +1136,7 @@
 
 .boxtaikhoan .content-table td,
 .boxtaikhoan .content-table th {
-    padding: 10px 8px;
+    padding: 10px 10px;
     text-align: center;
 }
 
@@ -1166,6 +1162,10 @@
 .boxtaikhoan .boxphai .content-table input[type="button"]:hover {
     background-color: #009879;
     color: #fff;
+}
+
+.boxtaikhoan .boxphai .contact-info p {
+    margin-bottom: 5px;
 }
 
 /*=========================================================== Footer ===========================================================*/

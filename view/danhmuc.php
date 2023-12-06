@@ -15,9 +15,9 @@
                     <p>M.Hình <?php echo $sp['man_hinh'] ?></p>
                 </div>
                 <div class="money">
-                    <del><?php echo number_format($sp['price']) ?> VND</del>
-                    <span>-<?php echo number_format($sp['giamgia']) ?>%</span>
-                    <p><?php echo number_format($sp['price'] - $sp['price'] * ($sp['giamgia'] / 100)) ?> Đ</p>
+                    <del><?php echo number_format($sp['price'], 0, ",", ".") ?> VND</del>
+                    <span>-<?php echo $sp['giamgia'] ?>%</span>
+                    <p><?php echo number_format($sp['price'] - $sp['price'] * ($sp['giamgia'] / 100), 0, ",", ".") ?> Đ</p>
                 </div>
                 <form action="index.php?act=addtocart" method="post">
                     <input type="hidden" name="id" value="<?php echo $sp['id'] ?>">

@@ -7,26 +7,31 @@
             </div>
             <div class="boxctsp-money">
                 <form action="index.php?act=addtocart" method="post">
-                    <?php $hinh = $image_path.$onesp['img']; ?>
-                <h3 style="color: #009B48;"><?php echo number_format($onesp['price'] - $onesp['price'] * ($onesp['giamgia'] / 100)) ?> Đ</h3>
-                <p>Giá gốc : <del><?php echo number_format($onesp['price']) ?> Đ</del></p>
-                <p>Giảm giá: -<?php echo number_format($onesp['giamgia']) ?>%</p>
-                <p>Lượt xem: <?php echo $onesp['luotxem'] ?></p>
-                    <select name="idram" class="ram">
+                    <?php $hinh = $image_path . $onesp['img']; ?>
+                    <h3 style="color: #009B48;"><?php echo number_format($onesp['price'] - $onesp['price'] * ($onesp['giamgia'] / 100), 0, ",", ".") ?> Đ</h3>
+                    <p>Giá gốc : <del><?php echo number_format($onesp['price'], 0, ",", ".") ?> Đ</del></p>
+                    <p>Giảm giá: -<?php echo $onesp['giamgia'] ?>%</p>
+                    <p>Lượt xem: <?php echo $onesp['luotxem'] ?></p>
+                    <!-- <select name="idram" class="ram">
                         <option value="">Chọn loại ram khác</option>
+                        <?php foreach ($onebtram as $spbt) : ?>
+                            <option value="<?php echo $spbt['id'] ?>"><?php echo $spbt['ram_sp'] ?></option>
+                        <?php endforeach ?>
+                    </select><br> -->
+                    <p>Chọn loại ram khác:</p>
                     <?php foreach ($onebtram as $spbt) : ?>
-                        <option value="<?php echo $spbt['id'] ?>"><?php echo $spbt['ram_sp'] ?></option>
+                        <span style="margin-right: 8px;"><input type="radio" name="idram" class="ram" value="<?php echo $spbt['id'] ?>"> <?php echo $spbt['ram_sp'] ?></span>
                     <?php endforeach ?>
-                    </select><br>
                     <select name="idmau" class="mau">
-                    <option value="">Hãy chọn ram để chọn màu</option>
+                        <option value="">Hãy chọn ram để chọn màu</option>
                     </select>
-                <input type="number" name="soluong" placeholder="Nhập số lượng" value="1" min="1" required><p id="soluonggg"></p><br>
-                <input type="hidden" id="idsp" name="id" value="<?php echo $onesp['id'] ?>">
-                <input type="hidden" name="name" value="<?php echo $onesp['name'] ?>">
-                <input type="hidden" name="hinh" value="<?php echo $hinh ?>">
-                <input type="hidden" name="price" value="<?php echo $onesp['price'] - $onesp['price'] * ($onesp['giamgia'] / 100) ?>">
-                <input type="submit" name="addtocart" value="Đặt hàng" class="btn-mua">
+                    <input type="number" name="soluong" id="sl-input" placeholder="Nhập số lượng" value="1" min="1" required>
+                    <p id="sl-hienthi"></p><br>
+                    <input type="hidden" id="idsp" name="id" value="<?php echo $onesp['id'] ?>">
+                    <input type="hidden" name="name" value="<?php echo $onesp['name'] ?>">
+                    <input type="hidden" name="hinh" value="<?php echo $hinh ?>">
+                    <input type="hidden" name="price" value="<?php echo $onesp['price'] - $onesp['price'] * ($onesp['giamgia'] / 100) ?>">
+                    <input type="submit" name="addtocart" onclick="return checksl()" value="Thêm vào giỏ hàng" class="btn-mua">
                 </form>
             </div>
         </div>
@@ -73,9 +78,9 @@
                         <p>M.Hình <?php echo $sp['man_hinh'] ?></p>
                     </div>
                     <div class="money">
-                        <del><?php echo number_format($sp['price']) ?> VND</del>
-                        <span>-<?php echo number_format($sp['giamgia']) ?>%</span>
-                        <p><?php echo number_format($sp['price'] - $sp['price'] * ($sp['giamgia'] / 100)) ?> Đ</p>
+                        <del><?php echo number_format($sp['price'], 0, ",", ".") ?> VND</del>
+                        <span>-<?php echo $sp['giamgia'] ?>%</span>
+                        <p><?php echo number_format($sp['price'] - $sp['price'] * ($sp['giamgia'] / 100), 0, ",", ".") ?> Đ</p>
                     </div>
                     <div class="add">
                         <a href="" class="btn-shop"><input type="submit" name="addtocart" value="Thêm vào giỏ hàng" class="btn-shop-text">
@@ -122,7 +127,59 @@
                     <div class="ngaybl"><?php echo date("d/m/Y", strtotime($bl['ngaybl'])) ?></div>
                 </div>
             <?php endforeach ?>
+            <div class="page">
+                <!-- Trang đầu -->
+                <?php if($page > 3) : $first_page=1 ?>
+                    <a href="?act=sanphamct&idsp=<?php echo $onesp['id'] ?>&per_page=<?php echo $soluongbl ?>&page=<?php echo $first_page ?>">First</a>
+                <?php endif ?>
+                <!-- Nút Prev -->
+                <?php if($page > 1) : $prev_page= $page - 1 ?>
+                    <a href="?act=sanphamct&idsp=<?php echo $onesp['id'] ?>&per_page=<?php echo $soluongbl ?>&page=<?php echo $prev_page ?>">Prev</a>
+                <?php endif ?>
+                <!-- Ở giữa -->
+                <?php for ($i=1; $i <= $sotrang; $i++) : ?>
+                    <?php if($i != $page) : ?>
+                        <?php if($i > $page - 3 && $i < $page + 3) : ?>
+                    <a href="?act=sanphamct&idsp=<?php echo $onesp['id'] ?>&per_page=<?php echo $soluongbl ?>&page=<?php echo $i ?>"><?php echo $i ?></a>
+                        <?php endif ?>
+                    <?php else : ?>
+                        <span class="active"><?php echo $i ?></span>
+                    <?php endif ?>
+                <?php endfor ?>
+                <!-- Nút Next -->
+                <?php if($page < $sotrang - 1) : $next_page= $page +1 ?>
+                    <a href="?act=sanphamct&idsp=<?php echo $onesp['id'] ?>&per_page=<?php echo $soluongbl ?>&page=<?php echo $next_page ?>">Next</a>
+                <?php endif ?>
+                <!-- Trang cuối -->
+                <?php if($page < $sotrang - 3) : $end_page=$sotrang ?>
+                    <a href="?act=sanphamct&idsp=<?php echo $onesp['id'] ?>&per_page=<?php echo $soluongbl ?>&page=<?php echo $end_page ?>">Last</a>
+                <?php endif ?>
+            </div>
         </div>
     </div>
 
 </div>
+
+<script>
+    function checksl() {
+        // Lấy nội dung từ thẻ p
+        var pContent = document.getElementById("sl-hienthi").innerText;
+
+        // Tách chuỗi bằng dấu ':'
+        var parts = pContent.split(':');
+
+        // Lấy số cuối cùng sau dấu ':', loại bỏ khoảng trắng ở đầu và chuyển đổi sang số nguyên
+        var slhienthi = parseInt(parts[1].trim());
+        // Kết quả sẽ là số 50 nếu chuỗi "Sản phẩm còn: 50" được lưu trong thẻ p
+
+        var slinput = document.getElementById("sl-input");
+        if (slhienthi !== undefined) {
+            if (slinput.value > slhienthi) {
+                alert("Số lượng sản phẩm mua nhiều quá!");
+                slinput.focus();
+                return false;
+            }
+        }   
+        return true;
+    }
+</script>

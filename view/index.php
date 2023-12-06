@@ -9,12 +9,15 @@ include "../model/thongke.php";
 include "../model/bienthe.php";
 include "../model/cart.php";
 include "../global.php";
-ob_start();
+
 $listdm = loadall_danhmuc();
 $dm1 = loadall_sanpham_dm1();
 $dm2 = loadall_sanpham_dm2();
 if (!isset($_SESSION['mycart'])) {
     $_SESSION['mycart'] = [];
+}
+if (!isset($_SESSION['onpayment'])) {
+    $_SESSION['onpayment'] = [];
 }
 
 include "header.php";
@@ -50,7 +53,20 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 $onesp = loadone_sanpham($_GET['idsp']);
                 $onebtram = load_btram($_GET['idsp']);
                 $sp_cungloai = load_sanpham_cungloai($_GET['idsp'], $onesp['iddm']);
-                $binhluan = load_binhluan($_GET['idsp']);
+
+                if (isset($_GET['per_page'])) {
+                    $soluongbl = $_GET['per_page'];
+                } else {
+                    $soluongbl = 5;
+                }
+                if (isset($_GET['page'])) {
+                    $page = $_GET['page'];
+                } else {
+                    $page = 1;
+                }
+                $dsbl = count_bl($_GET['idsp']);
+                $sotrang = ceil($dsbl / $soluongbl);
+                $binhluan = load_binhluan($_GET['idsp'], $page, $soluongbl);
             }
             include "sanphamct.php";
             break;
@@ -145,7 +161,7 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 } else {
                     $soluong = 1;
                 }
-                $tongtien=$soluong*$price;
+                $tongtien = $price * $soluong;
                 if (isset($_POST['idram']) && !empty($_POST['idram'])) {
                     $ram = $_POST['idram'];
                 } else {
@@ -163,6 +179,7 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                     if ($item[1] == $name && $item[5] == $ram && $item[6] == $mau) {
                         $slnew = $soluong + $item[4];
                         $_SESSION['mycart'][$i][4] = $slnew;
+                        $_SESSION['mycart'][$i][7] = $_SESSION['mycart'][$i][4] * $_SESSION['mycart'][$i][3];
                         $fg = 1;
                         break;
                     }
@@ -187,6 +204,9 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             include "cart/viewcart.php";
             break;
         case 'bill':
+            if (empty($_SESSION['mycart'])) {
+                header("location: index.php?act=viewcart");
+            }
             include "cart/bill.php";
             break;
         case 'billcomfirm':
@@ -206,19 +226,76 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 //insert into cart: $_SESSION['mycart'] & idbill
                 foreach ($_SESSION['mycart'] as $cart) {
                     add_cart($_SESSION['user']['id'], $cart[0], $cart[2], $cart[1], $cart[5], $cart[6], $cart[3], $cart[4], $cart[7], $idbill);
-                    if($cart[5] != 0 && $cart[6] != 0){
-                        update_soluong($cart[4],$cart[5],$cart[0],$cart[6]);
+                    if ($cart[5] != 0 && $cart[6] != 0) {
+                        update_soluong($cart[4], $cart[5], $cart[0], $cart[6]);
                     }
                     //xóa $_SESSION['cart']
                     $_SESSION['mycart'] = [];
                 }
+            } else if (isset($_POST['redirect'])) {
+                $name = $_POST['name'];
+                $address = $_POST['address'];
+                $email = $_POST['email'];
+                $tel = $_POST['tel'];
+                $pttt = $_POST['pttt'];
+                $ngaydh = date('Y-m-d');
+                $tong = tongdonhang();
+                $addcart = [$name, $address, $email, $tel, $pttt, $ngaydh,$tong];
+                array_push($_SESSION['onpayment'], $addcart);
+                onpayment($tong);
             }
             $bill = loadone_bill($idbill);
             include "cart/billcomfirm.php";
             break;
         case 'mybill':
-            $listbill=loadall_bill($_SESSION['user']['id']);;
+            if (isset($_GET['per_page'])) {
+                $soluongbill = $_GET['per_page'];
+            } else {
+                $soluongbill = 6;
+            }
+            if (isset($_GET['page'])) {
+                $page = $_GET['page'];
+            } else {
+                $page = 1;
+            }
+            $dsb = count_bill($_SESSION['user']['id']);
+            $sotrang = ceil($dsb / $soluongbill);
+            $listbill = loadall_bill($_SESSION['user']['id'], $page, $soluongbill);
             include "cart/mybill.php";
+            break;
+        case 'updateb':
+            if (isset($_GET['idb']) && $_GET['idb'] > 0) {
+                updatebill($_GET['idb']);
+                header("location: index.php?act=mybill");
+            }
+            break;
+        case 'chitietbill':
+            if (isset($_GET['idb']) && $_GET['idb'] > 0) {
+                $bill = loadone_bill($_GET['idb']);
+                $ctdh = loadall_cart($_GET['idb']);
+            }
+            include "cart/chitietbill.php";
+            break;
+        case 'thanks':
+            if (isset($_SESSION['user'])) {
+                $iduser = $_SESSION['user']['id'];
+            }
+            if(isset($_GET['vnp_Amount'])){
+                $idbill = add_bill($iduser, $_SESSION['onpayment'][0][0], $_SESSION['onpayment'][0][1], $_SESSION['onpayment'][0][3], $_SESSION['onpayment'][0][2], $_SESSION['onpayment'][0][4], $_SESSION['onpayment'][0][5], $_SESSION['onpayment'][0][6]);
+                //insert into cart: $_SESSION['mycart'] & idbill
+                foreach ($_SESSION['mycart'] as $cart) {
+                    add_cart($_SESSION['user']['id'], $cart[0], $cart[2], $cart[1], $cart[5], $cart[6], $cart[3], $cart[4], $cart[7], $idbill);
+                    if ($cart[5] != 0 && $cart[6] != 0) {
+                        update_soluong($cart[4], $cart[5], $cart[0], $cart[6]);
+                    }
+                    //xóa $_SESSION[]
+                    $_SESSION['mycart'] = [];
+                    $_SESSION['onpayment']=[];
+                }
+            }
+            // var_dump($_SESSION['onpayment']);
+            $bill = loadone_bill($idbill);
+            include "cart/thanks.php";
             break;
         default:
             include "home.php";

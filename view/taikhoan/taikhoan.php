@@ -49,7 +49,7 @@
                 <input type="hidden" name="pass" value="<?php echo $_SESSION['user']['pass'] ?>">
                 <input type="hidden" name="email" value="<?php echo $_SESSION['user']['email'] ?>">
                 <input type="hidden" name="id" value="<?php echo $_SESSION['user']['id'] ?>">
-                <input type="submit" name="capnhat" value="Cập nhật">
+                <input type="submit" name="capnhat" value="Cập nhật"><br><br>
                 <p style="color:red;">
                 <?php if(isset($thongbao7) && !empty($thongbao7)){
                     echo $thongbao7;

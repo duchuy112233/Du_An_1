@@ -1,20 +1,3 @@
-<!DOCTYPE html>
-<!-- Coding By CodingNepal - www.codingnepalweb.com -->
-<html lang="en" dir="ltr">
-
-<head>
-    <meta charset="utf-8">
-    <title>Chatbot in JavaScript | CodingNepal</title>
-    <link rel="stylesheet" href="chatbotcss.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Fonts Link For Icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
-    <script src="script.js" defer></script>
-</head>
-
-<body>
-
 <div class="mlr">
     <div class="banner">
         <img id="banner" src="../image/anh1.jpg">
@@ -66,9 +49,9 @@
                     <p>M.Hình <?php echo $sp['man_hinh'] ?></p>
                 </div>
                 <div class="money">
-                    <del><?php echo number_format($sp['price']) ?> VND</del>
-                    <span>-<?php echo number_format($sp['giamgia']) ?>%</span>
-                    <p><?php echo number_format($sp['price'] - $sp['price'] * ($sp['giamgia'] / 100)) ?> Đ</p>
+                    <del><?php echo number_format($sp['price'], 0, ",", ".") ?> VND</del>
+                    <span>-<?php echo $sp['giamgia'] ?>%</span>
+                    <p><?php echo number_format($sp['price'] - $sp['price'] * ($sp['giamgia'] / 100), 0, ",", ".") ?> Đ</p>
                 </div>
                 <form action="index.php?act=addtocart" method="post">
                     <input type="hidden" name="id" value="<?php echo $sp['id'] ?>">
@@ -105,9 +88,9 @@
                     <p>M.Hình <?php echo $sp['man_hinh'] ?></p>
                 </div>
                 <div class="money">
-                    <del><?php echo number_format($sp['price']) ?> VND</del>
-                    <span>-<?php echo number_format($sp['giamgia']) ?>%</span>
-                    <p><?php echo number_format($sp['price'] - $sp['price'] * ($sp['giamgia'] / 100)) ?> Đ</p>
+                    <del><?php echo number_format($sp['price'], 0, ",", ".") ?> VND</del>
+                    <span>-<?php echo $sp['giamgia'] ?>%</span>
+                    <p><?php echo number_format($sp['price'] - $sp['price'] * ($sp['giamgia'] / 100), 0, ",", ".") ?> Đ</p>
                 </div>
                 <form action="index.php?act=addtocart" method="post">
                     <input type="hidden" name="id" value="<?php echo $sp['id'] ?>">
@@ -123,40 +106,3 @@
         </div>
     <?php endforeach ?>
 </div>
-
-
-    <!-- ////////////////////Chatbot//////////////////////// -->
-
-
-
-
-
-
-
-
-
-
-    <button class="chatbot-toggler">
-        <span class="material-symbols-rounded">mode_comment</span>
-        <span class="material-symbols-outlined">close</span>
-    </button>
-    <div class="chatbot">
-        <header>
-            <h2>LAPTOPIA_CSKH</h2>
-            <span class="close-btn material-symbols-outlined">close</span>
-        </header>
-        <ul class="chatbox">
-            <li class="chat incoming">
-                <span class="material-symbols-outlined">smart_toy</span>
-                <p>Xin chào👋<br>Hôm nay tôi giúp gì được cho bạn?</p>
-            </li>
-        </ul>
-        <div class="chat-input">
-            <textarea placeholder="Nhập tin nhắn..." spellcheck="false" required></textarea>
-            <span id="send-btn" class="material-symbols-rounded">send</span>
-        </div>
-    </div>
-
-</body>
-
-</html>

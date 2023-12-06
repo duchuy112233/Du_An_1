@@ -1,4 +1,4 @@
-//banner
+// //banner
 var album = [];
 for (var i = 1; i < 4; i++) {
     album[i] = new Image();

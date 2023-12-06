@@ -43,7 +43,7 @@
                         <?php endif ?>
                     </td>
                     <td><?php echo $sp['name'] ?></td>
-                    <td><?php echo number_format($sp['price']) ?></td>
+                    <td><?php echo number_format($sp['price'], 0, ",", ".") ?></td>
                     <td><?php echo $sp['giamgia'] ?>%</td>
                     <td class="mota"><?php echo $sp['mota'] ?></td>
                     <td><?php echo $sp['luotxem'] ?></td>

@@ -1,3 +1,4 @@
+<!-- <h2 style="text-align: center;">CẢM ƠN BẠN ĐÃ ĐẶT HÀNG</h2> -->
 <div class="billcomfirm">
     <i class="fa-solid fa-bag-shopping" style="color: #009B48;font-size: 100px; margin-bottom:15px"></i>
     <h4>Cảm ơn bạn đã mua hàng</h4>

@@ -28,7 +28,6 @@
                 </tbody>
             </table>
         </div>
-      
         <a href="index.php?act=addram"><input type="button" value="Thêm mới"></a>
     </form>
 </div>

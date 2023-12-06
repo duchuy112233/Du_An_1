@@ -2,6 +2,10 @@
     <h3>DANH SÁCH ĐƠN HÀNG</h3>
 </div>
 <div class="formcontent">
+    <form action="index.php?act=listdh" method="post">
+        <input type="text" name="keyw" placeholder="Nhập mã đơn hàng cần tìm"><br><br>
+        <input type="submit" name="TimKiem" value="Tìm kiếm"><br><br>
+    </form>
     <form action="#" method="post">
         <div class="mb10">
             <table class="mb10 content-table">
@@ -34,12 +38,16 @@
                                 <?php echo $bill['bill_tel'] ?>
                             </td>
                             <td><?php echo $countsp ?></td>
-                            <td><?php echo number_format($bill['total']) ?> VND</td>
+                            <td><?php echo number_format($bill['total'], 0, ",", ".") ?> VND</td>
                             <td><?php echo date("d/m/Y", strtotime($bill['ngaydh'])) ?></td>
                             <td><?php echo $pttt ?></td>
                             <td><?php echo $ttdh ?></td>
-                            <td><a href="index.php?act=editdh&iddh=<?php echo $bill['id'] ?>"><input type="button" value="Cập nhật"></a>
-                            <a href="index.php?act=ctdh&iddh=<?php echo $bill['id'] ?>"><input type="button" value="Xem chi tiết"></a></td>
+                            <td>
+                                <?php if($bill['bill_status'] != 4 && $bill['bill_status'] != 5) : ?>
+                                    <a href="index.php?act=editdh&iddh=<?php echo $bill['id'] ?>"><input type="button" value="Cập nhật"></a>
+                                <?php endif ?>
+                                <a href="index.php?act=ctdh&iddh=<?php echo $bill['id'] ?>"><input type="button" value="Xem chi tiết"></a>
+                            </td>
                         </tr>
                     <?php } ?>
                 </tbody>
