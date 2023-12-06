@@ -45,7 +45,7 @@
                     ?>
                         <tr>
                             <td><?php echo $key + 1 ?></td>
-                            <td>DA1-<?php echo $bill['id'] ?></td>
+                            <td>MDH-<?php echo $bill['id'] ?></td>
                             <td><?php echo $countsp ?></td>
                             <td><?php echo number_format($bill['total']) ?> VND</td>
                             <td><?php echo date("d/m/Y", strtotime($bill['ngaydh'])) ?></td>
