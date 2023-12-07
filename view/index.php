@@ -240,7 +240,7 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                 $pttt = $_POST['pttt'];
                 $ngaydh = date('Y-m-d');
                 $tong = tongdonhang();
-                $addcart = [$name, $address, $email, $tel, $pttt, $ngaydh,$tong];
+                $addcart = [$name, $address, $email, $tel, $pttt, $ngaydh, $tong];
                 array_push($_SESSION['onpayment'], $addcart);
                 onpayment($tong);
             }
@@ -280,7 +280,7 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             if (isset($_SESSION['user'])) {
                 $iduser = $_SESSION['user']['id'];
             }
-            if(isset($_GET['vnp_Amount'])){
+            if (isset($_GET['vnp_Amount'])) {
                 $idbill = add_bill($iduser, $_SESSION['onpayment'][0][0], $_SESSION['onpayment'][0][1], $_SESSION['onpayment'][0][3], $_SESSION['onpayment'][0][2], $_SESSION['onpayment'][0][4], $_SESSION['onpayment'][0][5], $_SESSION['onpayment'][0][6]);
                 //insert into cart: $_SESSION['mycart'] & idbill
                 foreach ($_SESSION['mycart'] as $cart) {
@@ -290,7 +290,7 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                     }
                     //xóa $_SESSION[]
                     $_SESSION['mycart'] = [];
-                    $_SESSION['onpayment']=[];
+                    $_SESSION['onpayment'] = [];
                 }
             }
             // var_dump($_SESSION['onpayment']);
