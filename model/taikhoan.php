@@ -1,5 +1,5 @@
 <?php
-function add_taikhoan($email,$user,$pass){
+function add_taikhoan($email,$user,$pass){ //thêm
     $sql="INSERT INTO tai_khoan ( email, user, pass) VALUES ( '$email', '$user','$pass')";
     pdo_execute($sql);
 }
@@ -51,45 +51,45 @@ function sendMailPass($email, $username, $pass) {
 
     $mail = new PHPMailer\PHPMailer\PHPMailer(true);
 
-try {
-    //Server settings
-    $mail->SMTPDebug = PHPMailer\PHPMailer\SMTP::DEBUG_OFF;                      //Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'sandbox.smtp.mailtrap.io';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = '00a2d4229bd65b';                     //SMTP username
-    $mail->Password   = '6dd329c899a82a';                               //SMTP password
-    $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
-    $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    try {
+        //Server settings
+        $mail->SMTPDebug = PHPMailer\PHPMailer\SMTP::DEBUG_OFF;                      //Enable verbose debug output
+        $mail->isSMTP();                                            //Send using SMTP
+        $mail->Host       = 'sandbox.smtp.mailtrap.io';                     //Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        $mail->Username   = '00a2d4229bd65b';                     //SMTP username
+        $mail->Password   = '6dd329c899a82a';                               //SMTP password
+        $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
+        $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-    //Recipients
-    $mail->setFrom('shoplaptopia@example.com', 'Shop Laptopia');
-    $mail->addAddress($email, $username);     //Add a recipient
-    // $mail->addAddress('ellen@example.com');               //Name is optional
-    // $mail->addReplyTo('info@example.com', 'Information');
-    // $mail->addCC('cc@example.com');
-    // $mail->addBCC('bcc@example.com');
+        //Recipients
+        $mail->setFrom('shoplaptopia@example.com', 'Shop Laptopia');
+        $mail->addAddress($email, $username);     //Add a recipient
+        // $mail->addAddress('ellen@example.com');               //Name is optional
+        // $mail->addReplyTo('info@example.com', 'Information');
+        // $mail->addCC('cc@example.com');
+        // $mail->addBCC('bcc@example.com');
 
-    //Attachments
-    // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+        //Attachments
+        // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+        // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
 
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->CharSet = 'UTF-8';                             // Set character encoding to UTF-8
-    $mail->Encoding = 'base64';                           // Set the encoding type to base64 (optional, but recommended)
-    $mail->Subject = 'Mật khẩu mới';
-    $mail->Body    = 'Mật khẩu mới của bạn là: '.$pass;
-    // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+        //Content
+        $mail->isHTML(true);                                  //Set email format to HTML
+        $mail->CharSet = 'UTF-8';                             // Set character encoding to UTF-8
+        $mail->Encoding = 'base64';                           // Set the encoding type to base64 (optional, but recommended)
+        $mail->Subject = 'Mật khẩu mới';
+        $mail->Body    = 'Mật khẩu mới của bạn là: '.$pass;
+        // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-    $mail->send();
-    // echo 'Message has been sent';
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-}
+        $mail->send();
+        // echo 'Message has been sent';
+    } catch (Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
 }
 //Đổi mật khẩu của người dùng
-function update_matkhau($id,$pass){
+function update_matkhau($id,$pass){ // đổi mật khẩu
     $sql="UPDATE tai_khoan SET pass='$pass' where id= '$id'";
     pdo_execute($sql);
 }
@@ -106,7 +106,7 @@ function loadone_taikhoan($idtk){
     return $result;
 }
 
-function update_taikhoan($id,$user,$pass,$img,$email,$address,$tel,$role){
+function update_taikhoan($id,$user,$pass,$img,$email,$address,$tel,$role){ //sửa
     $taikhoan = loadone_taikhoan($id);
     if($img != ""){
         if($taikhoan['img'] != null && $taikhoan['img'] != ""){
@@ -121,7 +121,7 @@ function update_taikhoan($id,$user,$pass,$img,$email,$address,$tel,$role){
     pdo_execute($sql);
 }
 
-function delete_taikhoan($id){
+function delete_taikhoan($id){ //xoá 
     $taikhoan = loadone_taikhoan($id);
     if($taikhoan['img'] != null && $taikhoan['img'] != ""){
         $imglink = "../upload/" . $taikhoan['img'];

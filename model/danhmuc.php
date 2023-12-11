@@ -4,14 +4,14 @@ function loadall_danhmuc(){
     $listdm=pdo_query($sql);
     return $listdm;
 }
-function add_danhmuc($tendm){
-    $sql = "INSERT INTO danh_muc (name) VALUES ('$tendm')";
-    pdo_execute($sql);
-}
 function loadone_danhmuc($iddm){
     $sql = "SELECT * FROM danh_muc where id = $iddm";
     $result = pdo_query_one($sql);
     return $result;
+}
+function add_danhmuc($tendm){
+    $sql = "INSERT INTO danh_muc (name) VALUES ('$tendm')";
+    pdo_execute($sql);
 }
 function update_danhmuc($iddm, $tendm){
     $sql = "UPDATE danh_muc SET name ='$tendm' WHERE id = $iddm";

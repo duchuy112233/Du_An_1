@@ -39,7 +39,13 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             $dssp = loadall_sanpham($kyw, $iddm);
             include "danhmuc.php";
             break;
+/******************************************************************************************
+ *                                                                                        * 
+ *                               __PHẦN CHI TIẾT SẢN PHẨM (N)                             *
+ *                                                                                        *
+ ******************************************************************************************/ 
         case 'sanphamct':
+            // PHẦN GỬI BÌNH LUẬN
             if (isset($_POST['guibinhluan'])) {
                 if (empty($_POST['noidung'])) {
                     $thongbao8 = "Vui lòng nhập nội dung bình luận!";
@@ -48,6 +54,7 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
                     insert_binhluan($_POST['idsp'], $_POST['noidung'], $iduser);
                 }
             }
+            // PHẦN LIST RA 
             if (isset($_GET['idsp']) && $_GET['idsp'] > 0) {
                 tangluotxem($_GET['idsp']);
                 $onesp = loadone_sanpham($_GET['idsp']);
@@ -70,6 +77,7 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             }
             include "sanphamct.php";
             break;
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
         case 'dangky':
             if (isset($_POST['dangky'])) {
                 if (empty($_POST['email']) || empty($_POST['user']) || empty($_POST['pass'])) {
@@ -121,6 +129,11 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             }
             include "taikhoan/taikhoan.php";
             break;
+/******************************************************************************************
+ *                                                                                        * 
+ *                                    __PHẦN ĐỔI MẬT KHẨU (N)                             *
+ *                                                                                        *
+ ******************************************************************************************/        
         case 'doimk':
             if (isset($_POST['doimk'])) {
                 $pass_csdl = $_SESSION['user']['pass'];
@@ -139,6 +152,11 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             }
             include "taikhoan/doimk.php";
             break;
+/******************************************************************************************
+ *                                                                                        * 
+ *                                    __PHẦN QUÊN MẬT KHẨU __                             *
+ *                                                                                        *
+ ******************************************************************************************/              
         case 'quenmk':
             if (isset($_POST['quenmk'])) {
                 $email = $_POST['email'];
@@ -150,6 +168,11 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             session_unset();
             header("location: index.php");
             break;
+/******************************************************************************************
+ *                                                                                        * 
+ *                                    __PHẦN ADD TO CART __                               *
+ *                                                                                        *
+ ******************************************************************************************/  
         case 'addtocart':
             if (isset($_POST['addtocart'])) {
                 $id = $_POST['id'];
@@ -192,6 +215,11 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             }
             include "cart/viewcart.php";
             break;
+/******************************************************************************************
+ *                                                                                        * 
+ *                                    __PHẦN DELETE CART __                               *
+ *                                                                                        *
+ ******************************************************************************************/  
         case 'deletecart':
             if (isset($_GET['idcart'])) {
                 array_splice($_SESSION['mycart'], $_GET['idcart'], 1);
@@ -203,6 +231,11 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
         case 'viewcart':
             include "cart/viewcart.php";
             break;
+/******************************************************************************************
+ *                                                                                        * 
+ *                                        __PHẦN BILL __                                  *
+ *                                                                                        *
+ ******************************************************************************************/  
         case 'bill':
             if (empty($_SESSION['mycart'])) {
                 header("location: index.php?act=viewcart");
@@ -247,6 +280,11 @@ if (isset($_GET['act']) && ($_GET['act']) != "") {
             $bill = loadone_bill($idbill);
             include "cart/billcomfirm.php";
             break;
+/******************************************************************************************
+ *                                                                                        * 
+ *                                    __PHẦN MY BILL __                                   *
+ *                                                                                        *
+ ******************************************************************************************/  
         case 'mybill':
             if (isset($_GET['per_page'])) {
                 $soluongbill = $_GET['per_page'];

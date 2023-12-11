@@ -4,11 +4,11 @@ if (!$_SESSION['user'] || $_SESSION['user']['role'] == 0) { /*Cam vao trang neu 
     header("location: ../view/index.php");
 }
 include "../model/pdo.php";
-include "../model/danhmuc.php";
+include "../model/danhmuc.php"; // (N)
 include "../model/sanpham.php";
-include "../model/taikhoan.php";
+include "../model/taikhoan.php"; // (N)
 include "../model/binhluan.php";
-include "../model/thongke.php";
+include "../model/thongke.php"; 
 include "../model/cart.php";
 include "../model/bienthe.php";
 include "../global.php";
@@ -18,8 +18,12 @@ include "header.php";
 if (isset($_GET['act']) && !empty($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
-            //Phần danh mục
-            //Danh sách danh mục
+/******************************************************************************************
+ *                                                                                        * 
+ *                                    __PHẦN DANH MỤC (N)                                 *
+ *                                                                                        *
+ ******************************************************************************************/
+        //Danh sách danh mục
         case 'listdm':
             $listdm = loadall_danhmuc();
             include "danhmuc/list.php";
@@ -37,7 +41,7 @@ if (isset($_GET['act']) && !empty($_GET['act'])) {
             }
             include "danhmuc/add.php";
             break;
-            //Sửa danh mục
+        //Sửa danh mục
         case 'editdm':
             if (isset($_GET['iddm']) && $_GET['iddm'] > 0) {
                 $onedm = loadone_danhmuc($_GET['iddm']);
@@ -50,15 +54,19 @@ if (isset($_GET['act']) && !empty($_GET['act'])) {
             }
             include "danhmuc/edit.php";
             break;
-            //Xóa danh mục
+        //Xóa danh mục
         case 'deletedm':
             if (isset($_GET['iddm']) && $_GET['iddm'] > 0) {
                 delete_danhmuc($_GET['iddm']);
                 header("location: index.php?act=listdm");
             }
             break;
-            //Phần tài khoản
-            //Danh sách tài khoản
+/******************************************************************************************
+ *                                                                                        * 
+ *                                    __PHẦN TÀI KHOẢN (N)                                *
+ *                                                                                        *
+ ******************************************************************************************/
+        //Danh sách tài khoản
         case 'listtk':
             $listtk = loadall_taikhoan();
             include "taikhoan/list.php";
@@ -79,12 +87,12 @@ if (isset($_GET['act']) && !empty($_GET['act'])) {
                     $target_file = $image_path . time() . basename($_FILES['img']['name']);
                     move_uploaded_file($_FILES['img']['tmp_name'], $target_file);
                     add_taikhoan_admin($user, $pass, $img, $email, $address, $tel, $role);
-                    $thongbao5 = "Thêm thành công";
+                    $thongbao5 = "thêm tài khoản thành công";
                 }
             }
             include "taikhoan/add.php";
             break;
-            //Sửa tài khoản
+        //Sửa tài khoản
         case 'edittk':
             if (isset($_GET['idtk']) && $_GET['idtk'] > 0) {
                 $onetk = loadone_taikhoan($_GET['idtk']);
@@ -105,14 +113,18 @@ if (isset($_GET['act']) && !empty($_GET['act'])) {
             }
             include "taikhoan/edit.php";
             break;
-            //Xóa tài khoản
+        //Xóa tài khoản
         case 'deletetk':
             if (isset($_GET['idtk']) && $_GET['idtk'] > 0) {
                 delete_taikhoan($_GET['idtk']);
                 header("location: index.php?act=listtk");
             }
             break;
-            //Phần sản phẩm
+/******************************************************************************************
+ *                                                                                        * 
+ *                                    __PHẦN SẢN PHẨM__                                   *
+ *                                                                                        *
+ ******************************************************************************************/
             //Danh sách sản phẩm
         case 'listsp':
             if (isset($_POST['clickOK'])) {
@@ -185,7 +197,11 @@ if (isset($_GET['act']) && !empty($_GET['act'])) {
                 header("location: index?act=listsp");
             }
             break;
-            //Phần bình luận
+/******************************************************************************************
+ *                                                                                        * 
+ *                                    __PHẦN BÌNH LUẬN__                                  *
+ *                                                                                        *
+ ******************************************************************************************/
             //Danh sách bình luận
         case 'listbl':
             $listbl = load_thongke_bl();
@@ -205,6 +221,11 @@ if (isset($_GET['act']) && !empty($_GET['act'])) {
                 header("location: index.php?act=listbl");
             }
             break;
+/******************************************************************************************
+ *                                                                                        * 
+ *                                    __PHẦN THỐNG KÊ (N)                                 *
+ *                                                                                        *
+ ******************************************************************************************/
         case 'thongke':
             $thongke = load_thongke();
             $thongke1=thongke();
@@ -217,7 +238,11 @@ if (isset($_GET['act']) && !empty($_GET['act'])) {
         case 'bieudo1':
             include "thongke/char1.php";
             break;
-            //Ram
+/******************************************************************************************
+ *                                                                                        * 
+ *                                    __PHẦN RAM__                                        *
+ *                                                                                        *
+ ******************************************************************************************/
         case 'listram':
             $listram = loadall_ram();
             include "spbienthe/bt_ram/list.php";
@@ -253,7 +278,11 @@ if (isset($_GET['act']) && !empty($_GET['act'])) {
                 header("location: index.php?act=listram");
             }
             break;
-            //Màu
+/******************************************************************************************
+ *                                                                                        * 
+ *                                     __PHẦN MÀU__                                       *
+ *                                                                                        *
+ ******************************************************************************************/
         case 'listmau':
             $listmau = loadall_mau();
             include "spbienthe/bt_mau/list.php";
@@ -289,7 +318,11 @@ if (isset($_GET['act']) && !empty($_GET['act'])) {
                 header("location: index.php?act=listmau");
             }
             break;
-            //Sản phẩm biến thể
+/******************************************************************************************
+ *                                                                                        * 
+ *                              __PHẦN SẢN PHẨM BIẾN THỂ__                                *
+ *                                                                                        *
+ ******************************************************************************************/
         case 'listbt':
             $listspbt = loadall_spbt();
             include "spbienthe/list.php";
@@ -336,7 +369,11 @@ if (isset($_GET['act']) && !empty($_GET['act'])) {
                 header("location: index.php?act=listbt");
             }
             break;
-            //Đơn hàng
+/******************************************************************************************
+ *                                                                                        * 
+ *                                    __PHẦN ĐƠN HÀNG__                                   *
+ *                                                                                        *
+ ******************************************************************************************/
             //Danh sách đơn hàng
         case 'listdh':
             if (isset($_POST['TimKiem'])) {

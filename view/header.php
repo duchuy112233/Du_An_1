@@ -74,10 +74,10 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#">Liên hệ</a>
+                    <a href="lienhe.php">Liên hệ</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#">Góp ý</a>
+                    <a href="gop_y.php">Góp ý</a>
                 </li>
                 <li class="nav-item">
                     <a href="#">Hỏi đáp</a>
